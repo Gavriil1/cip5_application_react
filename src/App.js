@@ -1,5 +1,6 @@
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import Container from "react-bootstrap/Container";
 import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
@@ -15,7 +16,10 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import SignUpFormtest from "./pages/auth/SignUpFormtest"
+import ContactForm from "./pages/contactform/contactform"
 import NotFound from "./components/NotFound";
+
 
 function App() {
   const currentUser = useCurrentUser();
@@ -56,6 +60,8 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signintest" render={() => <SignInFormtest />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
+          <Route exact path="/signuptest" render={() => <SignUpFormtest />} />
+          <Route exact path="/contact" render={() => <ContactForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
@@ -78,6 +84,7 @@ function App() {
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>
+      <Footer />
     </div>
   );
 }

@@ -100,7 +100,7 @@ function SignInFormtest() {
           </div>
           <div className="text-center text-lg-start mt-4 pt-2">
             <button
-              type="button"
+              type="submit"
               className="btn btn-primary btn-lg"
               style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
             >

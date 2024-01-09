@@ -40,6 +40,13 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
+        to="/contact"
+      >
+        <i className="fa-regular fa-envelope"></i>Contact
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
         to="/feed"
       >
         <i className="fas fa-stream"></i>Feed
