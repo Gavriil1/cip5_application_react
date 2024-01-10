@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 import NoteModal from "./NoteModal";
+import styles from "../../styles/NoteMainPage.module.css";
+
 
 function App() {
   const [notesList, setNotesList] = useState([

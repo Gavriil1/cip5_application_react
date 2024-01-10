@@ -18,6 +18,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import SignUpFormtest from "./pages/auth/SignUpFormtest"
 import ContactForm from "./pages/contactform/contactform"
+import NoteMainPage from "./pages/notes/NoteMainPage"
 import NotFound from "./components/NotFound";
 
 
@@ -62,7 +63,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/signuptest" render={() => <SignUpFormtest />} />
           <Route exact path="/contact" render={() => <ContactForm />} />
-          <Route exact path="/notes" render={() => <NotMainPage />} />
+          <Route exact path="/notes" render={() => <NoteMainPage />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
