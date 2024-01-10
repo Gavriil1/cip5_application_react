@@ -62,6 +62,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/signuptest" render={() => <SignUpFormtest />} />
           <Route exact path="/contact" render={() => <ContactForm />} />
+          <Route exact path="/notes" render={() => <NotMainPage />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
