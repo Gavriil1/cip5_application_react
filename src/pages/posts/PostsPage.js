@@ -21,7 +21,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext"
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);useCurrentUser
   const { pathname } = useLocation();
   const currentUser = useCurrentUser();
   const [query, setQuery] = useState("");
