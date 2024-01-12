@@ -8,6 +8,7 @@ function Note(props) {
       onClick={() => props.expandNote(props.id, props.title, props.content)}
     >
       <content>
+        <p>yoyoyo</p>
         <h1 className="title-color">{props.title}</h1>
         <p className="description-color">{props.content}</p>
       </content>
@@ -19,6 +20,8 @@ function Note(props) {
       >
         <DeleteIcon fontSize="large" />
       </button>
+
+      <p>ddddddddddddddddddddddddddddddddddddddddddd</p>
     </article>
   );
 }
