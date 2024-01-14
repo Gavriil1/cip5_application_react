@@ -47,9 +47,23 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
+        to="/note"
+      >
+        <i className="fa-regular fa-envelope"></i>1Note
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
         to="/notes"
       >
         <i className="far fa-sticky-note"></i>Notes
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/notesall"
+      >
+        <i className="far fa-sticky-note"></i>NotesAll
       </NavLink>
       <NavLink
         className={styles.NavLink}

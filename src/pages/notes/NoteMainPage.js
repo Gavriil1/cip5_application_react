@@ -1,24 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 import NoteModal from "./NoteModal";
 import styles from "../../styles/NoteMainPage.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 
-
 function App() {
   const [notesList, setNotesList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const getAllNotes = async () => {
-    try {
-      const { data } = await axiosReq.get("/notes");
-      setNotesList(data); 
-    } catch (err) {
-      console.log(err);
-      // Handle errors if needed
-    }
-  };
+  useEffect(() => {
+    const getAllNotes = async () => {
+      try {
+        const { data } = await axiosReq.get("/notes");
 
+        // Ensure data is an array before setting the state
+        if (Array.isArray(data)) {
+          setNotesList(data.results);
+        } else {
+          console.error("Received data is not an array:", data);
+        }
+      } catch (err) {
+        console.error(err);
+        // Handle errors if needed
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getAllNotes();
+  }, []);
 
   function updateNotesList(note) {
     setNotesList((prev) => {
@@ -53,7 +64,7 @@ function App() {
     setNotesList((prev) => {
       return prev.map((note, index) => {
         if (index === id) {
-          note = {
+          return {
             ...note,
             [event.target.getAttribute("data-name")]: innerText
           };
@@ -61,6 +72,10 @@ function App() {
         return note;
       });
     });
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -76,18 +91,16 @@ function App() {
           onHide={() => setModalShow(false)}
           saveNote={saveNote}
         />
-        {notesList.map((note, index) => {
-          return (
-            <Note
-              expandNote={expandNote}
-              deleteNote={deleteNote}
-              id={index}
-              key={note.title + note.content}
-              title={note.title}
-              content={note.content}
-            />
-          );
-        })}
+        {notesList.map((note, id) => (
+          <Note
+            expandNote={expandNote}
+            deleteNote={deleteNote}
+            id={id}
+            key={id}
+            title={note.title}
+            content={note.content}
+          />
+        ))}
       </main>
     </div>
   );
