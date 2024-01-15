@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -14,25 +13,24 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
-function NoteEditForm() {
+function EditNote() {
   const [errors, setErrors] = useState({});
-
   const [postData, setPostData] = useState({
     title: "",
     content: "",
   });
-  const { title, content } = postData;
 
+  const { title, content } = postData;
   const history = useHistory();
   const { id } = useParams();
 
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const { data } = await axiosReq.get(`/note/${id}/`);
+        const { data } = await axiosReq.get(`/notes/${id}/`);
         const { title, content, is_owner } = data;
 
-        is_owner ? setPostData({ title, content}) : history.push("/");
+        is_owner ? setPostData({ title, content }) : history.push("/");
       } catch (err) {
         console.log(err);
       }
@@ -50,15 +48,14 @@ function NoteEditForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
 
+    const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
 
-    
     try {
-      await axiosReq.put(`/note/${id}/`, formData);
-      history.push(`/note/${id}`);
+      await axiosReq.put(`/notes/${id}/`, formData);
+      history.push(`/notes/${id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -104,10 +101,10 @@ function NoteEditForm() {
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
+        Save
       </Button>
     </div>
   );
@@ -119,9 +116,6 @@ function NoteEditForm() {
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
-
-
-
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
@@ -133,4 +127,4 @@ function NoteEditForm() {
   );
 }
 
-export default NoteEditForm;
+export default EditNote;
