@@ -30,27 +30,13 @@ const NavBar = () => {
     <NavLink
       className={styles.NavLink}
       activeClassName={styles.Active}
-      to="/posts/create"
+      to="/note/create"
     >
-      <i className="far fa-plus-square"></i>Add post
+      <i className="fa-regular fa-note-sticky"></i>Add Note
     </NavLink>
   );
   const loggedInIcons = (
     <>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/contact"
-      >
-        <i className="fa-regular fa-envelope"></i>Contact
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/note"
-      >
-        <i className="fa-regular fa-envelope"></i>1Note
-      </NavLink>
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
@@ -61,24 +47,46 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
+        to="/contact"
+      >
+        <i className="fa-regular fa-envelope"></i>Contact
+      </NavLink>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <i className="fa-solid fa-user-astronaut"></i>Profile
+      </NavLink>
+      {/* <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/note"
+      >
+        <i className="fa-regular fa-envelope"></i>1Note
+      </NavLink> */}
+
+      {/* <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
         to="/notesall"
       >
         <i className="far fa-sticky-note"></i>NotesAll
-      </NavLink>
-      <NavLink
+      </NavLink> */}
+      {/* <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/feed"
       >
         <i className="fas fa-stream"></i>Feed
-      </NavLink>
-      <NavLink
+      </NavLink> */}
+      {/* <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/liked"
       >
         <i className="fas fa-heart"></i>Liked
-      </NavLink>
+      </NavLink> */}
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>

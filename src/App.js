@@ -20,10 +20,11 @@ import SignUpFormtest from "./pages/auth/SignUpFormtest"
 import ContactForm from "./pages/contactform/contactform"
 import NoteMainPage from "./pages/notes/NoteMainPage"
 import NotFound from "./components/NotFound";
-import Note1 from "./pages/notes/Note1"
+import Note from "./pages/notes/Note"
 import NotesAll from "./pages/notes/NotesAll"
 import DeleteNote from "./pages/notes/DeleteNote"
 import EditNote from "./pages/notes/EditNote"
+import CreateArea from "./pages/notes/CreateArea"
 
 function App() {
   const currentUser = useCurrentUser();
@@ -66,9 +67,10 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/signuptest" render={() => <SignUpFormtest />} />
           <Route exact path="/contact" render={() => <ContactForm />} />
-          <Route exact path="/notes" render={() => <NoteMainPage />} />
-          <Route exact path="/notesall" render={() => <NotesAll />} />
-          <Route exact path="/note/:id" render={() => <Note1 />} />
+          <Route exact path="/notes" render={() => <NotesAll />} />
+          <Route exact path="/note/create" render={() => <CreateArea />} />
+          {/* <Route exact path="/notesall" render={() => <NotesAll />} /> */}
+          <Route exact path="/note/:id" render={() => <Note />} />
           <Route exact path="/note/:id/delete" render={() => <DeleteNote />} />
           <Route exact path="/note/:id/edit" render={() => <EditNote />} />
           

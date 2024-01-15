@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Note from "./Note";
+import Note from "./Notebk";
 import CreateArea from "./CreateArea";
 import NoteModal from "./NoteModal";
 import styles from "../../styles/NoteMainPage.module.css";
