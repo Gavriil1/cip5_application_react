@@ -24,9 +24,6 @@ import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
-import UsernameForm from "./UsernameForm";
-import UserPasswordForm from "./UserPasswordForm"
-import ProfileEditForm from "./ProfileEditForm"
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -139,22 +136,24 @@ function ProfilePage() {
   );
 
   return (
-<div>
-      <div>
-        {mainProfile}
-      </div>
-      <div>
-        <ProfileEditForm />
-      </div>
-      <div>
-        <UsernameForm />
-      </div>
-
-      <div>
-        <UserPasswordForm />
-      </div>
-      
-    </div>
+    <Row>
+      <Col className="py-2 p-0 p-lg-2" lg={8}>
+        <PopularProfiles mobile />
+        <Container className={appStyles.Content}>
+          {hasLoaded ? (
+            <>
+              {mainProfile}
+              {mainProfilePosts}
+            </>
+          ) : (
+            <Asset spinner />
+          )}
+        </Container>
+      </Col>
+      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+        <PopularProfiles />
+      </Col>
+    </Row>
   );
 }
 
