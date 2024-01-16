@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import style from  "../../styles/Button.module.css";
 
 const ContactForm = () => {
     const currentUser = useCurrentUser();
@@ -99,7 +100,7 @@ const ContactForm = () => {
       contact form was found on google, from sites like this https://colorlib.com/wp/bootstrap-contact-form/
            */}
         <div className="d-flex justify-content-center h-100">
-          <div className="card" style={{ height: 470, width: 1000 }}>
+          <div className={style.card} style={{ height: 470, width: 1000 }}>
             <div className="card-header">
               <h2 className="text-white text-center">Feedback Form</h2>
             </div>

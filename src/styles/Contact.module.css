@@ -1,0 +1,362 @@
+/* login Register page */
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+
+.main_body{
+background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+margin-bottom: 160px;
+   clear: both;
+} 
+
+.main_container{
+height: 70%;
+align-content: center;
+}
+
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 600px;
+background-color: rgba(0,0,0,0.5) !important;
+
+}
+
+.input-group-prepend span{
+width: 45px;
+height: 38px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
+}
+
+#id_username {
+  height: 35px;
+  width: 105%;
+  border-style: none;
+  margin-top:-5px;
+  margin-left:-12px;
+}
+
+#id_password {
+  height: 35px;
+  width: 105%;
+  border-style: none;
+  margin-top:-5px;
+  margin-left:-12px;
+}
+
+#id_password1 {
+  height: 35px;
+  width: 105%;
+  border-style: none;
+  margin-top:-5px;
+  margin-left:-10px;
+}
+
+#id_password2 {
+  height: 35px;
+  width: 105%;
+  border-style: none;
+  margin-top:-5px;
+  margin-left:-10px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+/* task form create/update */
+ .body_task_form {
+    background-color: #FAFAFA;
+    font-family: 'Nunito', sans-serif;
+    background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    position:relative;
+    margin: 0px;
+    min-height: 100%;
+    padding-bottom: 6.74rem;
+    box-sizing: inherit;
+    font-family: 'Raleway', sans-serif;
+} 
+
+
+ p {color: #FAFAFA;}
+ label {
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.header_bar_task_form{
+    display: flex;
+    justify-content: space-between;
+    color: #f3ef0a;
+    padding: 10px;
+    background: linear-gradient(90deg, #6842f1 0%, #9f6feb 43%, #8a6feb 100% );
+}
+
+.header_bar_task_form a {
+    color: rgb(247, 247, 247);
+    text-decoration: none;
+} 
+
+
+ .login_btn_task_form{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn_task_form:hover{
+    color: black;
+    background-color: white;
+}
+
+
+ .card_body_task_form {
+    margin-top:-40px;
+    padding: 60px;
+ } 
+ 
+ 
+  .header-bar{
+              display: flex;
+              justify-content: space-between;
+              color: #f3ef0a;
+              padding: 10px;
+              background: linear-gradient(90deg, #6842f1 0%, #9f6feb 43%, #8a6feb 100% );
+          }
+  
+          .header-bar a {
+              color: rgb(247, 247, 247);
+              text-decoration: none;
+          }
+          
+
+  
+  .card_delete{
+    height: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 100px;
+    width: 700px;
+    background-color: rgba(0,0,0,0.5) !important;
+
+    } 
+
+  .span_delete{
+  width: 45px;
+  background-color: #FFC312;
+  color: black;
+  border:0 !important;
+  }
+  
+  
+  .login_btn_delete{
+  color: black;
+  background-color: #FFC312;
+  width: 100px;
+  }
+  
+  .login_btn_delete:hover{
+  color: black;
+  background-color: white;
+  }
+  
+/* homepage */
+.body-homepage {
+    background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+    padding-bottom: 6.74rem;
+    box-sizing: inherit;
+    
+    margin-bottom: 70px;
+}
+
+.panel{
+font-family: 'Raleway', sans-serif;
+padding: 0;
+border: none;
+box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+.panel .panel-heading{
+padding: 15px;
+border-radius: 0;
+}
+.panel .panel-heading .btn{
+color: #ffffff;
+background-color: #7ae9ac52;
+font-size: 14px;
+font-weight: 600;
+padding: 7px 15px;
+border: none;
+border-radius: 0;
+transition: all 0.3s ease 0s;
+}
+.panel .panel-heading .btn:hover{ box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+.panel .panel-heading .form-horizontal .form-group{ margin: 0; }
+.panel .panel-heading .form-horizontal label{
+color: #fff;
+margin-right: 10px;
+}
+.panel .panel-heading .form-horizontal .form-control{
+display: inline-block;
+width: 80px;
+border: none;
+border-radius: 0;
+}
+.panel .panel-heading .form-horizontal .form-control:focus{
+box-shadow: none;
+border: none;
+}
+.panel .panel-body{
+padding: 0;
+border-radius: 0;
+}
+.panel .panel-body .table thead tr th{
+color: #ffffff;
+background: #7ae9ac52;
+font-size: 17px;
+font-weight: 700;
+padding: 12px;
+border-bottom: none;
+}
+.panel .panel-body .table thead tr th:nth-of-type(1){ width: 120px; }
+.panel .panel-body .table thead tr th:nth-of-type(3){ width: 50%; }
+.panel .panel-body .table tbody tr td{
+color: #555;
+background: #fff;
+font-size: 15px;
+font-weight: 500;
+padding: 13px;
+vertical-align: middle;
+border-color: #e7e7e7;
+}
+.panel .panel-body .table tbody tr:nth-child(odd) td{ background: #f5f5f5; }
+.panel .panel-body .table tbody .action-list{
+padding: 0;
+margin: 0;
+list-style: none;
+}
+.panel .panel-body .table tbody .action-list li{ display: inline-block; }
+.panel .panel-body .table tbody .action-list li a{
+color: #fff;
+font-size: 13px;
+line-height: 28px;
+height: 28px;
+width: 33px;
+padding: 0;
+border-radius: 0;
+transition: all 0.3s ease 0s;
+}
+.panel .panel-footer{
+color: #fff;
+background: #535353;
+font-size: 16px;
+line-height: 33px;
+padding: 25px 15px;
+border-radius: 0;
+}
+.pagination{ margin: 0; }
+.pagination li a{
+color: #fff;
+background-color: rgba(0,0,0,0.3);
+font-size: 15px;
+font-weight: 700;
+margin: 0 2px;
+border: none;
+border-radius: 0;
+transition: all 0.3s ease 0s;
+}
+
+/* manual page */
+.body-manual {   
+  background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 6.74rem;
+  box-sizing: inherit;
+}
+
+  main{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 32px;
+  }
+  .h1_manual {
+    margin: 0;
+  }
+  .h3_manual {
+    margin: 0;
+  }
+  .p-manual{
+    font-size: 18px;
+    text-align: left;
+  }
+
+/* Books page */
+
+
+/* 404 page */
+
+.htmlfof, 
+.bodyfo{
+  background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp');
+  background-size: cover;
+  background-color: #9cc3d5;
+  background-repeat: no-repeat;
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-family: 'Numans', sans-serif;
+  user-select: none;
+  margin-bottom: 200px;
+  } 
+  .containerfof{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #2e022193;
+    padding-top: 150px
+  }
+  .h2fof{
+    font-size: 150px;
+    margin: 0;
+    text-shadow: 15px 5px 2px black;
+  }
+  .h3fof{
+    font-size: 40px;
+    margin: 20px;
+  }
+  .pfof{
+    font-size: 18px;
+    margin: 5px;
+  }
+  
+  .pfof:last-of-type{
+    margin-bottom: 65px;
+  }
+
+ 
