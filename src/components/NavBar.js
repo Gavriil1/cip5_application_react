@@ -144,7 +144,6 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              {/* <i className="fas fa-home"></i>Home */}
               {currentUser ? <><i className="far fa-sticky-note"></i>Notes</> : <><i className="fas fa-sign-in-alt"></i>Sign in</>}
             </NavLink>
 
