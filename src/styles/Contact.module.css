@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 
-.main_body{
+/* .main_body{
 background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp');
 background-size: cover;
 background-repeat: no-repeat;
@@ -10,12 +10,12 @@ height: 100%;
 font-family: 'Numans', sans-serif;
 margin-bottom: 160px;
    clear: both;
-} 
+}  */
 
-.main_container{
+/* .main_container{
 height: 70%;
 align-content: center;
-}
+} */
 
 .card{
 height: 370px;
@@ -78,7 +78,7 @@ background-color: white;
 }
 
 /* task form create/update */
- .body_task_form {
+ /* .body_task_form {
     background-color: #FAFAFA;
     font-family: 'Nunito', sans-serif;
     background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp'); 
@@ -91,26 +91,26 @@ background-color: white;
     padding-bottom: 6.74rem;
     box-sizing: inherit;
     font-family: 'Raleway', sans-serif;
-} 
+}  */
 
 
  p {color: #FAFAFA;}
  label {
   background-color: rgba(0,0,0,0.5); 
 }
-
+/* 
 .header_bar_task_form{
     display: flex;
     justify-content: space-between;
     color: #f3ef0a;
     padding: 10px;
     background: linear-gradient(90deg, #6842f1 0%, #9f6feb 43%, #8a6feb 100% );
-}
+} */
 
-.header_bar_task_form a {
+/* .header_bar_task_form a {
     color: rgb(247, 247, 247);
     text-decoration: none;
-} 
+}  */
 
 
  .login_btn_task_form{
@@ -146,60 +146,12 @@ background-color: white;
           
 
   
-  .card_delete{
-    height: 300px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-top: 100px;
-    width: 700px;
-    background-color: rgba(0,0,0,0.5) !important;
+  
+  
 
-    } 
 
-  .span_delete{
-  width: 45px;
-  background-color: #FFC312;
-  color: black;
-  border:0 !important;
-  }
-  
-  
-  .login_btn_delete{
-  color: black;
-  background-color: #FFC312;
-  width: 100px;
-  }
-  
-  .login_btn_delete:hover{
-  color: black;
-  background-color: white;
-  }
-  
-/* homepage */
-.body-homepage {
-    background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp'); 
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    position: relative;
-    margin: 0;
-    min-height: 100%;
-    padding-bottom: 6.74rem;
-    box-sizing: inherit;
-    
-    margin-bottom: 70px;
-}
 
-.panel{
-font-family: 'Raleway', sans-serif;
-padding: 0;
-border: none;
-box-shadow: 0 0 10px rgba(0,0,0,0.08);
-}
-.panel .panel-heading{
-padding: 15px;
-border-radius: 0;
-}
+
 .panel .panel-heading .btn{
 color: #ffffff;
 background-color: #7ae9ac52;

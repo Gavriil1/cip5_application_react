@@ -4,6 +4,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import style from  "../../styles/Contact.module.css";
+import Button from "react-bootstrap/Button";
+
 
 const ContactForm = () => {
   const currentUser = useCurrentUser();
@@ -44,15 +46,17 @@ const ContactForm = () => {
 
   return (
       <div className="main_container">
-          <div className={`d-flex justify-content-center h-100 ${style.card}`} style={{ height: 470, width: 1000 }}>
+          <div className={'d-flex justify-content-center h-100 '}>
               <div className={`card-body ${style.card_body_task_form}`} style={{ height: 570 }}>
-              <h2 className="text-white text-center">Feedback Form</h2>
+              <h2 className="text-black text-center">Feedback Form</h2>
+              <br></br>
                   <form
                       id="contact-form"
                       name="contact-form"
                       method="POST"
                       className="was-validated"
                       onSubmit={handleSubmit}
+                      style={{ maxWidth: '100%', margin: '0 auto' }}
                   >
                       <div className="row">
                           <div className="col-md-6">
@@ -135,7 +139,7 @@ const ContactForm = () => {
                       </div>
                   </form>
               </div>
-              <div className="card-footer"></div>
+              {/* <div className="card-footer"></div> */}
           </div>
       </div>
   );
