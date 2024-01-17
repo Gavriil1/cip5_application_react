@@ -37,13 +37,13 @@ const NavBar = () => {
   );
   const loggedInIcons = (
     <>
-      <NavLink
+      {/* <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/notes"
       >
         <i className="far fa-sticky-note"></i>Notes
-      </NavLink>
+      </NavLink> */}
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
@@ -100,13 +100,13 @@ const NavBar = () => {
   );
   const loggedOutIcons = (
     <>
-      <NavLink
+      {/* <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/signin"
       >
         <i className="fas fa-sign-in-alt"></i>Sign in
-      </NavLink>
+      </NavLink> */}
       <NavLink
         to="/signup"
         className={styles.NavLink}
@@ -125,7 +125,7 @@ const NavBar = () => {
       fixed="top"
     >
       <Container>
-        <NavLink to="/">
+        <NavLink to="/doh">
           <Navbar.Brand>
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
@@ -144,7 +144,8 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              {/* <i className="fas fa-home"></i>Home */}
+              {currentUser ? <><i className="far fa-sticky-note"></i>Notes</> : <><i className="fas fa-sign-in-alt"></i>Sign in</>}
             </NavLink>
 
             {currentUser ? loggedInIcons : loggedOutIcons}
