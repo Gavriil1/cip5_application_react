@@ -94,10 +94,10 @@ background-color: white;
 }  */
 
 
- p {color: #FAFAFA;}
+ /* p {color: #FAFAFA;}
  label {
   background-color: rgba(0,0,0,0.5); 
-}
+} */
 /* 
 .header_bar_task_form{
     display: flex;
@@ -114,9 +114,12 @@ background-color: white;
 
 
  .login_btn_task_form{
-    color: black;
-    background-color: #FFC312;
+    /* color: black;
+    background-color: #FFC312; */
     width: 100px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
 }
 
 .login_btn_task_form:hover{

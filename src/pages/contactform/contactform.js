@@ -35,7 +35,7 @@ const ContactForm = () => {
 
       try {
           const { data } = await axiosReq.post("api/contact/", formData);
-          history.push(`/posts/${data.id}`);
+          history.push(`/notes`);
       } catch (err) {
           console.log(err);
           if (err.response?.status !== 401) {
@@ -137,6 +137,7 @@ const ContactForm = () => {
                               className={`btn btn-lg btn-block float-right ${style.login_btn_task_form}`}
                           />
                       </div>
+                      
                   </form>
               </div>
               {/* <div className="card-footer"></div> */}
