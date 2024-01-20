@@ -45,9 +45,9 @@ function CreateArea(props) {
     formData.append("content", content);
   
     try {
-      const { data } = await axiosReq.post("/notes/", formData);
-      history.push(`/notes`);
-    } catch (err) {
+      const postResponse = await axiosReq.post("/notes/", formData);
+      props.reloadNotes();
+      } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);

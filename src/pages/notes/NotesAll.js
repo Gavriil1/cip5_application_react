@@ -7,6 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router-dom";
+import CreateArea from "./CreateArea";
 
 function App() {
   const [notesList, setNotesList] = useState([]);
@@ -70,6 +71,21 @@ function App() {
     });
   };
 
+  const reloadNotes = async () => {
+    try {
+      const { data } = await axiosReq.get("/notes");
+      if (Array.isArray(data.results)) {
+        setNotesList(data.results);
+      } else {
+        console.error("Received data.results is not an array:", data.results);
+      }
+    } catch (err) {
+      console.error(err);
+      // Handle errors if needed
+    }
+  };
+
+
   const deleteNote = async (id) => {
     try {
       console.log("Deleting note with ID:", id);
@@ -99,6 +115,7 @@ function App() {
       <Header />
       <main className="container">
         <NoteModal />
+        <CreateArea reloadNotes={reloadNotes} />
 
         <div className="row">
           {notesList.map((note) => (
