@@ -55,7 +55,7 @@ function EditNote() {
 
     try {
       await axiosReq.put(`/notes/${id}/`, formData);
-      history.push(`/notes/${id}`);
+      history.push(`/notes`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {

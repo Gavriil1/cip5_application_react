@@ -46,7 +46,7 @@ function CreateArea(props) {
   
     try {
       const { data } = await axiosReq.post("/notes/", formData);
-      history.push(`/notes/${data.id}`);
+      history.push(`/notes`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
