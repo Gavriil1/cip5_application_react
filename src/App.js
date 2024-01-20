@@ -25,6 +25,7 @@ import NotesAll from "./pages/notes/NotesAll"
 import DeleteNote from "./pages/notes/DeleteNote"
 import EditNote from "./pages/notes/EditNote"
 import CreateArea from "./pages/notes/CreateArea"
+import Test from "./pages/Test"
 
 function App() {
   const currentUser = useCurrentUser();
@@ -79,6 +80,7 @@ function App() {
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route exact path="/test" render={() => <Test />} />
           <Route
                 exact
                 path="/profiles/:id/edit/username"

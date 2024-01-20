@@ -25,11 +25,11 @@ function App() {
   useEffect(() => {
     // Create a variable to track whether the component is mounted
     let isMounted = true;
-  
+
     const getAllNotes = async () => {
       try {
         const { data } = await axiosReq.get("/notes");
-        
+
         // Check if the component is still mounted before updating state
         if (isMounted) {
           if (Array.isArray(data.results)) {
@@ -52,10 +52,10 @@ function App() {
         }
       }
     };
-  
+
     // Fetch all notes
     getAllNotes();
-  
+
     // Cleanup function to set isMounted to false when the component is unmounted
     return () => {
       isMounted = false;
@@ -74,10 +74,10 @@ function App() {
     try {
       console.log("Deleting note with ID:", id);
       await axiosReq.delete(`/notes/${id}`);
-  
+
       // Update local state to remove the deleted note
       setNotesList((prevNotes) => prevNotes.filter((note) => note.id !== id));
-  
+
       // Optionally, re-fetch the notes list from the server to ensure consistency
       const { data } = await axiosReq.get("/notes");
       if (Array.isArray(data.results)) {
@@ -100,32 +100,34 @@ function App() {
       <main className="container">
         <NoteModal />
 
-        {notesList.map((note) => (
-          <div className="modal show" style={{ display: 'block', position: 'initial' }} key={note.id}>
-            <div>
-              <Modal.Dialog>
-                <Modal.Header closeButton>
-                  <h2 className="title-color" >
-                    {note.title}
-                  </h2>
-                </Modal.Header>
-                <Modal.Body>
-                  <p className="description-color" >
-                    {note.content}
-                  </p>
-                </Modal.Body>
-                <Modal.Footer>
-                  <button onClick={() => deleteNote(note.id)} variant="secondary">
-                    <DeleteIcon fontSize="large" />
-                  </button>
-                  <button variant="primary" onClick={() => handleEditClick(note.id)}>
-                    Edit
-                  </button>
-                </Modal.Footer>
-              </Modal.Dialog>
+        <div className="row">
+          {notesList.map((note) => (
+            <div className="col-lg-4 col-md-6 col-sm-12" key={note.id}>
+              <div className="modal show" style={{ display: 'block', position: 'initial' }}>
+                <Modal.Dialog>
+                  <Modal.Header closeButton>
+                    <h2 className="title-color">
+                      {note.title}
+                    </h2>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <p className="description-color">
+                      {note.content}
+                    </p>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <button onClick={() => deleteNote(note.id)} variant="secondary">
+                      <DeleteIcon fontSize="large" />
+                    </button>
+                    <button variant="primary" onClick={() => handleEditClick(note.id)}>
+                      Edit
+                    </button>
+                  </Modal.Footer>
+                </Modal.Dialog>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </main>
     </div>
   );
