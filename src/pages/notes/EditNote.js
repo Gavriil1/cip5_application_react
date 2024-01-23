@@ -1,28 +1,44 @@
 import React, { useEffect, useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Alert from "react-bootstrap/Alert";
-
-import styles from "../../styles/PostCreateEditForm.module.css";
-import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
-
+import { Button, Modal } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
-import { axiosReq } from "../../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 
 function EditNote() {
   const [errors, setErrors] = useState({});
-  const [postData, setPostData] = useState({
+  const [note, setNote] = useState({
+    id: "",
     title: "",
     content: "",
   });
 
-  const { title, content } = postData;
   const history = useHistory();
   const { id } = useParams();
+  const [like_id, setLikeId] = useState(53);
+
+  const handleLike = async (id) => {
+    console.log("this is id of note");
+    console.log(id);
+    try {
+      const { data } = await axiosRes.post("/likes/", { post: id });
+      console.log("how are you");
+      console.log(like_id);
+      // setLikeId(data.id);
+      console.log(like_id);
+    } catch (err) {
+      console.log(err.data);
+    }
+  };
+
+  const handleUnlike = async (id) => {
+    try {
+      await axiosRes.delete(`/likes/${like_id}/`);
+      console.log(like_id);
+      // setLikeId(0);
+      console.log(like_id);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     const handleMount = async () => {
@@ -30,7 +46,11 @@ function EditNote() {
         const { data } = await axiosReq.get(`/notes/${id}/`);
         const { title, content, is_owner } = data;
 
-        is_owner ? setPostData({ title, content }) : history.push("/");
+        if (is_owner && title !== undefined && content !== undefined) {
+          setNote({ id, title, content });
+        } else {
+          history.push("/");
+        }
       } catch (err) {
         console.log(err);
       }
@@ -39,22 +59,26 @@ function EditNote() {
     handleMount();
   }, [history, id]);
 
-  const handleChange = (event) => {
-    setPostData({
-      ...postData,
-      [event.target.name]: event.target.value,
+  const handleTitleChange = (event) => {
+    setNote({
+      ...note,
+      title: event.target.textContent,
     });
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleContentChange = (event) => {
+    setNote({
+      ...note,
+      content: event.target.textContent,
+    });
+  };
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("content", content);
-
+  const handleSubmit = async () => {
     try {
-      await axiosReq.put(`/notes/${id}/`, formData);
+      await axiosReq.put(`/notes/${id}/`, {
+        title: note.title,
+        content: note.content,
+      });
       history.push(`/notes`);
     } catch (err) {
       console.log(err);
@@ -64,66 +88,38 @@ function EditNote() {
     }
   };
 
-  const textFields = (
-    <div className="text-center">
-      <Form.Group>
-        <Form.Label>Title</Form.Label>
-        <Form.Control
-          type="text"
-          name="title"
-          value={title}
-          onChange={handleChange}
-        />
-      </Form.Group>
-      {errors?.title?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Form.Group>
-        <Form.Label>Content</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={6}
-          name="content"
-          value={content}
-          onChange={handleChange}
-        />
-      </Form.Group>
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        Cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Save
-      </Button>
-    </div>
-  );
-
   return (
-    <Form onSubmit={handleSubmit}>
-      <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-          <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-          >
-            <div className="d-md-none">{textFields}</div>
-          </Container>
-        </Col>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
-      </Row>
-    </Form>
+    <Modal.Dialog>
+      <Modal.Header>
+        <Modal.Title className="title-color">
+          <h2 contentEditable={true} onBlur={handleTitleChange}>
+            {note.title}
+          </h2>
+        </Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body className="description-color">
+        <p contentEditable={true} onBlur={handleContentChange}>
+          {note.content}
+        </p>
+      </Modal.Body>
+
+      <Modal.Footer>
+        <button
+          onClick={() =>
+            like_id === 0 ? handleLike(note.id) : handleUnlike(note.id)
+          }
+        >
+          {like_id === 0 ? <p>Like</p> : <p>Unlike</p>}
+        </button>
+        <Button variant="secondary" onClick={() => history.goBack()}>
+          Cancel
+        </Button>
+        <Button variant="primary" type="button" onClick={handleSubmit}>
+          Save changes
+        </Button>
+      </Modal.Footer>
+    </Modal.Dialog>
   );
 }
 

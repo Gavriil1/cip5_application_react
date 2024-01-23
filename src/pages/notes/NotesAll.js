@@ -24,7 +24,7 @@ function App() {
   const history = useHistory();
 
   const currentUser = useCurrentUser();
-  const [like_id, setLikeId] = useState(0);
+  
 
 // useEffect(() => {
 
@@ -33,40 +33,48 @@ function App() {
 //     setLikeId(likedNote.like_id);
 //   }
 // }, [notesList.results]);
+const [like_id, setLikeId] = useState(53);
+  const handleLike = async (id) => {
+    console.log("this is id of note")
+    console.log(id)
+    try {
+      const { data } = await axiosRes.post("/likes/",  { post: id });
+      console.log("how are you")
+      console.log(like_id)
+      // setLikeId(data.id); 
+      console.log(like_id)
+    } catch (err) {
+      console.log(err.data);
+    }
+  };
 
+  const handleUnlike = async (id) => {
+    try {
+      await axiosRes.delete(`/likes/${like_id}/`);
+      console.log(like_id)
+      // setLikeId(0);  
+      console.log(like_id)
+    } catch (err) {
+      console.log(err);
+    }
+  };
   // const handleLike = async (id) => {
   //   try {
-  //     const { data } = await axiosRes.post("/likes/", { like: id }, { post: id });
-  //     setLikeId(data.id); 
+  //     const { data } = await axiosRes.post("/likes/", { note: id });
+  //     setPosts((prevPosts) => ({
+  //       ...prevPosts,
+  //       results: prevPosts.results.map((post) => {
+  //         return note.id === id
+  //           ? { ...note, likes_count: note.likes_count + 1, like_id: data.id }
+  //           : post;
+  //       }),
+  //     }));
   //   } catch (err) {
   //     console.log(err);
   //   }
   // };
-
-  const handleLike = async (id) => {
-    try {
-      const { data } = await axiosRes.post("/likes/", { post: id });
-      setPosts((prevPosts) => ({
-        ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-            : post;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
   
-  const handleUnlike = async (id) => {
-    try {
-      await axiosRes.delete(`/likes/${like_id}/`);
-      setLikeId(0);  
-    } catch (err) {
-      console.log(err);
-    }
-  };
+
 
   useEffect(() => {
     let isMounted = true;
