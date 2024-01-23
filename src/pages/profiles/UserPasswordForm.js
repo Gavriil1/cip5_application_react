@@ -53,13 +53,14 @@ const UserPasswordForm = () => {
   };
 
   return (
-    <Row>
-      <Col className="py-2 mx-auto text-center" md={6}>
+
+
         <Container className={appStyles.Content}>
+          <h1>Reset Password</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label>New password</Form.Label>
-              <Form.Control
+              <Form.Control style={{ width: '50%' }}
                 placeholder="new password"
                 type="password"
                 value={new_password1}
@@ -74,7 +75,7 @@ const UserPasswordForm = () => {
             ))}
             <Form.Group>
               <Form.Label>Confirm password</Form.Label>
-              <Form.Control
+              <Form.Control style={{ width: '50%' }}
                 placeholder="confirm new password"
                 type="password"
                 value={new_password2}
@@ -101,8 +102,8 @@ const UserPasswordForm = () => {
             </Button>
           </Form>
         </Container>
-      </Col>
-    </Row>
+
+ 
   );
 };
 

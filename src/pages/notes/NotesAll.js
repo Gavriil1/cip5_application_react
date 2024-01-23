@@ -34,10 +34,26 @@ function App() {
 //   }
 // }, [notesList.results]);
 
+  // const handleLike = async (id) => {
+  //   try {
+  //     const { data } = await axiosRes.post("/likes/", { like: id }, { post: id });
+  //     setLikeId(data.id); 
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
   const handleLike = async (id) => {
     try {
-      const { data } = await axiosRes.post("/likes/", { notelike: id }, { post: id });
-      setLikeId(data.id); 
+      const { data } = await axiosRes.post("/likes/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+            : post;
+        }),
+      }));
     } catch (err) {
       console.log(err);
     }

@@ -53,14 +53,15 @@ const UsernameForm = () => {
   };
 
   return (
-    <Row>
-      <Col className="py-2 mx-auto text-center" md={6}>
+   
+
         <Container className={appStyles.Content}>
-          <Form onSubmit={handleSubmit} className="my-2">
+          <Form onSubmit={handleSubmit} className="my-2" >
             <Form.Group>
-              <Form.Label>Change username</Form.Label>
-              <Form.Control
+              <Form.Label >Change username</Form.Label>
+              <Form.Control style={{ width: '50%' }}
                 placeholder="username"
+
                 type="text"
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
@@ -85,8 +86,8 @@ const UsernameForm = () => {
             </Button>
           </Form>
         </Container>
-      </Col>
-    </Row>
+
+
   );
 };
 

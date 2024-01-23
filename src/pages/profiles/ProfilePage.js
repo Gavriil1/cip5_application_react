@@ -141,10 +141,15 @@ function ProfilePage() {
   return (
 <div>
       <div>
-        {mainProfile}
+      <h1>User:{currentUser?.username}</h1>
+      <p>You may change the following settings:</p>
+        {/* {mainProfile} */}
       </div>
       <div>
+        <p>Profile Picture</p>
         <ProfileEditForm />
+        <br></br>
+        <br></br>
       </div>
       <div>
         <UsernameForm />
