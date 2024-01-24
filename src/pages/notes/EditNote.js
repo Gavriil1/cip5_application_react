@@ -47,9 +47,9 @@ function EditNote() {
         const data = response.data.results; // adjust this line based on your API response structure
         
         // Find the like with the specific post value
-        console.log("this goes before comapiros" + id)
+
         const like = data.find(like => like.post == id);
-        console.log("this goes after comapiros" + id)
+ 
         
         if (like) {
           // If a like with the specific post value is found, set like_id to the post value

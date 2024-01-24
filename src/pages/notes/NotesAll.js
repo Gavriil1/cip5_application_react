@@ -9,73 +9,99 @@ import Button from 'react-bootstrap/Button';
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router-dom";
 import CreateArea from "./CreateArea";
+import Form from "react-bootstrap/Form";
+import styles from "../../styles/PostsPage.module.css";
 
 
 function App() {
   const [notesList, setNotesList] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  // Other state variables for the modal
-  // const [modalShow, setModalShow] = React.useState(false);
-  // const [modalTitle, setModalTitle] = useState("");
-  // const [modalContent, setModalContent] = useState("");
-  // const [modalId, setModalId] = useState();
-  // const [isEditable, setIsEditable] = useState(true);
   const history = useHistory();
+  const [query, setQuery] = useState("");
 
   const currentUser = useCurrentUser();
-  const [like_id, setLikeId] = useState();
-  
+  const [like_id, setLikeId] = useState([]);
+  // console.log("this is my like_id: " + like_id)
 
-// useEffect(() => {
+// Define fetchLikes
+const fetchLikes = async () => {
+  try {
+    // Get all likes
+    // console.log("hi I am fetchLikes function")
+    const response = await axiosRes.get('/likes/');
+    const data = response.data.results; // adjust this line based on your API response structure
+    // console.log("This is response data: " + JSON.stringify(data));
+    
+    // Create an array to store all post values
+    let postValues = [];
 
-//   const likedNote = notesList.results.find((note) => note.like_id !== null);
-//   if (likedNote) {
-//     setLikeId(likedNote.like_id);
-//   }
-// }, [notesList.results]);
-
-  const handleLike = async (id) => {
-    console.log("this is id of note")
-    console.log(id)
-    console.log(like_id)
-    try {
-      const { data } = await axiosRes.post("/likes/",  { post: id });
-      console.log("how are you")
-      console.log(like_id)
-      setLikeId(data.id); 
-      console.log(like_id)
-    } catch (err) {
-      console.log(err.data);
+    // Loop through all likes
+    for (let like of data) {
+      // Save the post value of each like
+      postValues.push(like.post);
     }
-  };
 
-  const handleUnlike = async (id) => {
-    try {
-      await axiosRes.delete(`/likes/${like_id}/`);
-      console.log(like_id)
-      setLikeId(0);  
-      console.log(like_id)
-    } catch (err) {
-      console.log(err);
+    // Save postValues to like_id
+    setLikeId(postValues);
+
+    // Now like_id contains all the post values for each like
+    // console.log(like_id);
+
+  } catch (err) {
+    // console.log(err);
+  }
+};
+
+useEffect(() => {
+  // Call fetchLikes
+  fetchLikes();
+}, []);
+
+const handleLike = async (id) => {
+  // console.log("this is id of note")
+  // console.log(id)
+  // console.log(like_id)
+  try {
+    const { data } = await axiosRes.post("/likes/",  { post: id });
+    // console.log("how are you")
+    // console.log(like_id)
+
+    // Call fetchLikes to refresh like_id
+    fetchLikes();
+
+    // console.log(like_id)
+  } catch (err) {
+    console.log(err.data);
+  }
+};
+
+const handleUnlike = async (noteid) => {
+  try {
+    // Get all likes
+    const response = await axiosRes.get('/likes/');
+    const data = response.data.results; // adjust this line based on your API response structure
+    
+    // Find the like with the post value saved in like_id
+    // console.log("the noteid is :" + noteid)
+    const like = data.find(like => like.post === noteid);
+    // console.log("the noteid is :" + noteid)
+    
+    if (like) {
+      // Delete the like
+      await axiosRes.delete(`/likes/${like.id}/`);
+      // console.log(like_id);
+      fetchLikes();
+      // console.log(like_id);
+    } else {
+      console.log(`No like found with post value ${like_id}`);
     }
-  };
-  // const handleLike = async (id) => {
-  //   try {
-  //     const { data } = await axiosRes.post("/likes/", { note: id });
-  //     setPosts((prevPosts) => ({
-  //       ...prevPosts,
-  //       results: prevPosts.results.map((post) => {
-  //         return note.id === id
-  //           ? { ...note, likes_count: note.likes_count + 1, like_id: data.id }
-  //           : post;
-  //       }),
-  //     }));
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-  
+  } catch (err) {
+    console.log(err);
+  } 
+};
+
+
+
 
 
   useEffect(() => {
@@ -83,7 +109,8 @@ function App() {
 
     const getAllNotes = async () => {
       try {
-        const { data } = await axiosReq.get("/notes");
+        // const { data } = await axiosReq.get("/notes/?search=${query}");
+        const { data } = await axiosReq.get(`/notes/?search=${query}`);
         if (isMounted) {
           if (Array.isArray(data.results)) {
             setNotesList(data.results);
@@ -110,7 +137,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, [])
+  }, [query])
 
   const updateNotesList = (note) => {
     setNotesList((prev) => {
@@ -139,11 +166,7 @@ function App() {
     try {
       console.log("Deleting note with ID:", id);
       await axiosReq.delete(`/notes/${id}`);
-
-      // Update local state to remove the deleted note
       setNotesList((prevNotes) => prevNotes.filter((note) => note.id !== id));
-
-      // Optionally, re-fetch the notes list from the server to ensure consistency
       const { data } = await axiosReq.get("/notes");
       if (Array.isArray(data.results)) {
         setNotesList(data.results);
@@ -155,7 +178,6 @@ function App() {
     }
   };
   const handleEditClick = (id) => {
-    // Redirect to the edit page for the specific note
     history.push(`/note/${id}/edit`);
   };
 
@@ -168,6 +190,19 @@ function App() {
       <Header />
       <main className="container">
         <NoteModal />
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <Form
+          className={styles.SearchBar}
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <Form.Control
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            type="text"
+            className="mr-sm-2"
+            placeholder="Search posts"
+          />
+        </Form>
         <CreateArea reloadNotes={reloadNotes} />
 
         <div className="row">
@@ -177,7 +212,7 @@ function App() {
                 <Modal.Dialog>
                   <Modal.Header closeButton>
                     <h2 className="title-color">
-                      {note.title}
+                    {note.id} {note.title}
                     </h2>
                   </Modal.Header>
                   <Modal.Body>
@@ -186,8 +221,11 @@ function App() {
                     </p>
                   </Modal.Body>
                   <Modal.Footer>
-                  <button onClick={like_id === 0 ? () => handleLike(note.id) : () => handleUnlike(note.id)}>
+                  {/* <button onClick={like_id === 0 ? () => handleLike(note.id) : () => handleUnlike(note.id)}>
                         {like_id === 0 ? <p>Like</p> : <p>NoLike</p>}
+                  </button> */}
+                  <button onClick={Array.isArray(like_id) && like_id.includes(note.id) ? () => handleUnlike(note.id) : () => handleLike(note.id)}>
+                      {Array.isArray(like_id) && like_id.includes(note.id) ? <p>Unlike</p> : <p>Like</p>}
                   </button>
                     <button onClick={() => deleteNote(note.id)} variant="secondary">
                       <DeleteIcon fontSize="large" />
