@@ -24,6 +24,7 @@ function App() {
   const history = useHistory();
 
   const currentUser = useCurrentUser();
+  const [like_id, setLikeId] = useState();
   
 
 // useEffect(() => {
@@ -33,15 +34,16 @@ function App() {
 //     setLikeId(likedNote.like_id);
 //   }
 // }, [notesList.results]);
-const [like_id, setLikeId] = useState(53);
+
   const handleLike = async (id) => {
     console.log("this is id of note")
     console.log(id)
+    console.log(like_id)
     try {
       const { data } = await axiosRes.post("/likes/",  { post: id });
       console.log("how are you")
       console.log(like_id)
-      // setLikeId(data.id); 
+      setLikeId(data.id); 
       console.log(like_id)
     } catch (err) {
       console.log(err.data);
@@ -52,7 +54,7 @@ const [like_id, setLikeId] = useState(53);
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
       console.log(like_id)
-      // setLikeId(0);  
+      setLikeId(0);  
       console.log(like_id)
     } catch (err) {
       console.log(err);
@@ -184,8 +186,8 @@ const [like_id, setLikeId] = useState(53);
                     </p>
                   </Modal.Body>
                   <Modal.Footer>
-                  <button onClick={() => (like_id === 0 ? handleLike(note.id) : handleUnlike(note.id))}>
-                     {like_id === 0 ? <p>Like</p> : <p>Unlike</p>}
+                  <button onClick={like_id === 0 ? () => handleLike(note.id) : () => handleUnlike(note.id)}>
+                        {like_id === 0 ? <p>Like</p> : <p>NoLike</p>}
                   </button>
                     <button onClick={() => deleteNote(note.id)} variant="secondary">
                       <DeleteIcon fontSize="large" />

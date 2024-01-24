@@ -13,7 +13,38 @@ function EditNote() {
 
   const history = useHistory();
   const { id } = useParams();
-  const [like_id, setLikeId] = useState(53);
+  const [like_id, setLikeId] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axiosRes.get(`/likes/${id}`);
+        setLikeId(response.data.like_id);
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+  
+    fetchData();
+  }, [id]);
+  
+
+  // useEffect(() => {
+  //   const checkLike = async () => {
+  //     try {
+  //       const response = await axiosRes.get(`/likes/${id}`);
+  //       if (response.data) {
+  //         setLikeId(1);
+  //       } else {
+  //         setLikeId(0);
+  //       }
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  
+  //   checkLike();
+  // }, [id]);
 
   const handleLike = async (id) => {
     console.log("this is id of note");
@@ -22,7 +53,7 @@ function EditNote() {
       const { data } = await axiosRes.post("/likes/", { post: id });
       console.log("how are you");
       console.log(like_id);
-      // setLikeId(data.id);
+      setLikeId(data.id);
       console.log(like_id);
     } catch (err) {
       console.log(err.data);
@@ -33,7 +64,7 @@ function EditNote() {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
       console.log(like_id);
-      // setLikeId(0);
+      setLikeId(false);
       console.log(like_id);
     } catch (err) {
       console.log(err);
@@ -107,10 +138,10 @@ function EditNote() {
       <Modal.Footer>
         <button
           onClick={() =>
-            like_id === 0 ? handleLike(note.id) : handleUnlike(note.id)
+            like_id === false ? handleLike(note.id) : handleUnlike(note.id)
           }
         >
-          {like_id === 0 ? <p>Like</p> : <p>Unlike</p>}
+          {like_id === false ? <p>Like</p> : <p>Unlike</p>}
         </button>
         <Button variant="secondary" onClick={() => history.goBack()}>
           Cancel
