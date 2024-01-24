@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import { ConnectingAirportsOutlined } from "@mui/icons-material";
+import { fabClasses } from "@mui/material";
 
 function EditNote() {
   const [errors, setErrors] = useState({});
@@ -13,38 +15,12 @@ function EditNote() {
 
   const history = useHistory();
   const { id } = useParams();
-  const [like_id, setLikeId] = useState(false);
+  const noteid = id;
+  console.log("noteid value is " + noteid);
+  const [like_id, setLikeId] = useState(26);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axiosRes.get(`/likes/${id}`);
-        setLikeId(response.data.like_id);
-      } catch (error) {
-        console.error('Error fetching data: ', error);
-      }
-    };
-  
-    fetchData();
-  }, [id]);
-  
 
-  // useEffect(() => {
-  //   const checkLike = async () => {
-  //     try {
-  //       const response = await axiosRes.get(`/likes/${id}`);
-  //       if (response.data) {
-  //         setLikeId(1);
-  //       } else {
-  //         setLikeId(0);
-  //       }
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  
-  //   checkLike();
-  // }, [id]);
+
 
   const handleLike = async (id) => {
     console.log("this is id of note");
@@ -53,24 +29,70 @@ function EditNote() {
       const { data } = await axiosRes.post("/likes/", { post: id });
       console.log("how are you");
       console.log(like_id);
-      setLikeId(data.id);
+      console.log("this" + data.post)
+      setLikeId(data.post);
       console.log(like_id);
     } catch (err) {
       console.log(err.data);
     }
   };
 
-  const handleUnlike = async (id) => {
+
+  
+  useEffect(() => {
+    const checkLikeExists = async () => {
+      try {
+        // Get all likes
+        const response = await axiosRes.get('/likes/');
+        const data = response.data.results; // adjust this line based on your API response structure
+        
+        // Find the like with the specific post value
+        console.log("this goes before comapiros" + id)
+        const like = data.find(like => like.post == id);
+        console.log("this goes after comapiros" + id)
+        
+        if (like) {
+          // If a like with the specific post value is found, set like_id to the post value
+          setLikeId(like.post);
+        } else {
+          // If no like with the specific post value is found, set like_id to false
+          setLikeId(false);
+        }
+      } catch (err) {
+        console.log(err);
+        // In case of an error, set like_id to false
+        setLikeId(false);
+      }
+    };
+  
+    checkLikeExists();
+  }, [id]); // Add id as a dependency so the effect runs whenever id changes
+   
+
+
+  const handleUnlike = async () => {
     try {
-      await axiosRes.delete(`/likes/${like_id}/`);
-      console.log(like_id);
-      setLikeId(false);
-      console.log(like_id);
+      // Get all likes
+      const response = await axiosRes.get('/likes/');
+      const data = response.data.results; // adjust this line based on your API response structure
+      
+      // Find the like with the post value saved in like_id
+      const like = data.find(like => like.post === like_id);
+      
+      if (like) {
+        // Delete the like
+        await axiosRes.delete(`/likes/${like.id}/`);
+        console.log(like_id);
+        setLikeId(false);
+        console.log(like_id);
+      } else {
+        console.log(`No like found with post value ${like_id}`);
+      }
     } catch (err) {
       console.log(err);
-    }
+    } 
   };
-
+  
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -123,14 +145,14 @@ function EditNote() {
     <Modal.Dialog>
       <Modal.Header>
         <Modal.Title className="title-color">
-          <h2 contentEditable={true} onBlur={handleTitleChange}>
+          <h2 contentEditable={false} onBlur={handleTitleChange}>
             {note.title}
           </h2>
         </Modal.Title>
       </Modal.Header>
 
       <Modal.Body className="description-color">
-        <p contentEditable={true} onBlur={handleContentChange}>
+        <p contentEditable={false} onBlur={handleContentChange}>
           {note.content}
         </p>
       </Modal.Body>
