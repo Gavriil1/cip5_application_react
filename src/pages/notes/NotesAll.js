@@ -4,13 +4,13 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from '@mui/icons-material/Edit';
 import NoteModal from "./NoteModal";
 import Header from "./Header";
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import { Button, Modal, Alert } from "react-bootstrap";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router-dom";
 import CreateArea from "./CreateArea";
 import Form from "react-bootstrap/Form";
 import styles from "../../styles/PostsPage.module.css";
+import Container from 'react-bootstrap/Container';
 
 
 function App() {
@@ -21,55 +21,36 @@ function App() {
 
   const currentUser = useCurrentUser();
   const [like_id, setLikeId] = useState([]);
-  // console.log("this is my like_id: " + like_id)
-
-// Define fetchLikes
 const fetchLikes = async () => {
   try {
-    // Get all likes
-    // console.log("hi I am fetchLikes function")
     const response = await axiosRes.get('/likes/');
-    const data = response.data.results; // adjust this line based on your API response structure
-    // console.log("This is response data: " + JSON.stringify(data));
-    
-    // Create an array to store all post values
+    const data = response.data.results; 
     let postValues = [];
-
-    // Loop through all likes
     for (let like of data) {
-      // Save the post value of each like
       postValues.push(like.post);
     }
 
-    // Save postValues to like_id
+
     setLikeId(postValues);
-
-    // Now like_id contains all the post values for each like
-    // console.log(like_id);
-
   } catch (err) {
-    // console.log(err);
+    console.log(err);
   }
 };
 
 useEffect(() => {
-  // Call fetchLikes
+
   fetchLikes();
 }, []);
 
 const handleLike = async (id) => {
-  // console.log("this is id of note")
-  // console.log(id)
-  // console.log(like_id)
+
   try {
     const { data } = await axiosRes.post("/likes/",  { post: id });
-    // console.log("how are you")
-    // console.log(like_id)
 
-    // Call fetchLikes to refresh like_id
+
+
     fetchLikes();
 
-    // console.log(like_id)
   } catch (err) {
     console.log(err.data);
   }
@@ -77,21 +58,13 @@ const handleLike = async (id) => {
 
 const handleUnlike = async (noteid) => {
   try {
-    // Get all likes
     const response = await axiosRes.get('/likes/');
-    const data = response.data.results; // adjust this line based on your API response structure
-    
-    // Find the like with the post value saved in like_id
-    // console.log("the noteid is :" + noteid)
+    const data = response.data.results; 
     const like = data.find(like => like.post === noteid);
-    // console.log("the noteid is :" + noteid)
     
     if (like) {
-      // Delete the like
       await axiosRes.delete(`/likes/${like.id}/`);
-      // console.log(like_id);
       fetchLikes();
-      // console.log(like_id);
     } else {
       console.log(`No like found with post value ${like_id}`);
     }
@@ -109,7 +82,6 @@ const handleUnlike = async (noteid) => {
 
     const getAllNotes = async () => {
       try {
-        // const { data } = await axiosReq.get("/notes/?search=${query}");
         const { data } = await axiosReq.get(`/notes/?search=${query}`);
         if (isMounted) {
           if (Array.isArray(data.results)) {
@@ -133,7 +105,6 @@ const handleUnlike = async (noteid) => {
 
     getAllNotes();
 
-    // Cleanup function to set isMounted to false when the component is unmounted
     return () => {
       isMounted = false;
     };
@@ -157,7 +128,6 @@ const handleUnlike = async (noteid) => {
       }
     } catch (err) {
       console.error(err);
-      // Handle errors if needed
     }
   };
 
@@ -181,12 +151,26 @@ const handleUnlike = async (noteid) => {
     history.push(`/note/${id}/edit`);
   };
 
-
-
+ 
+  const [showSecondAlert, setShowSecondAlert] = useState(false); // Second Alert is initially hidden
+    useEffect(() => {
+      if (history.location.state?.showAlert) {
+        setShowSecondAlert(true);
+        setTimeout(() => {
+          setShowSecondAlert(false);
+        }, 3000);
+      }
+  }, []);
 
 
   return (
     <div className="d-flex flex-column h-100">
+       <Container>
+    {/* {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>} */}
+    {showSecondAlert && <Alert variant="primary" dismissible onClose={() => setShowSecondAlert(false)} style={{ textAlign: "center" }}>The Changes in the note were not saved.</Alert>} 
+    {/* {showSecondAlert && <Alert variant="primary" dismissible onClose={() => setShowSecondAlert(false)}>Second Alert</Alert>} 
+    {showThirdAlert && <Alert variant="primary" dismissible onClose={() => setShowThirdAlert(false)}>Third Alert</Alert>}  */}
+  </Container>
       <Header />
       <main className="container">
         <NoteModal />

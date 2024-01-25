@@ -89,12 +89,12 @@ function CreateArea(props) {
         </Alert>
       ))}
 
-      <Button
+      {/* <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         cancel
-      </Button>
+      </Button> */}
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         create
       </Button>
