@@ -45,16 +45,28 @@ const UserPasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
-      history.goBack();
+      // history.goBack();
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
     }
   };
 
+  //Adding password alert
+  const [showPasswordAlert, setPasswordAlert] = useState(false);
+  const PasswordAlert = () => {
+    console.log("First Button clicked!");
+    setPasswordAlert(true); 
+    setTimeout(() => {
+      setPasswordAlert(false);
+    }, 3000);
+  };
+
   return (
-
-
+    <>
+        <Container>
+            {showPasswordAlert && <Alert variant="success" dismissible onClose={() => setPasswordAlert(false)} style={{ textAlign: "center" }}>Password Updated Su.</Alert>} 
+        </Container>
         <Container className={appStyles.Content}>
           <h1>Reset Password</h1>
           <Form onSubmit={handleSubmit}>
@@ -88,22 +100,24 @@ const UserPasswordForm = () => {
                 {message}
               </Alert>
             ))}
-            <Button
+            {/* <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => history.goBack()}
             >
               cancel
-            </Button>
+            </Button> */}
             <Button
-              type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                type="submit"
+                className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                onClick={PasswordAlert}
             >
-              save
+                save
             </Button>
+
           </Form>
         </Container>
 
- 
+        </>
   );
 };
 

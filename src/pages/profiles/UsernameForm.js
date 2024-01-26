@@ -45,16 +45,29 @@ const UsernameForm = () => {
         ...prevUser,
         username,
       }));
-      history.goBack();
+      // history.goBack();
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
     }
   };
 
-  return (
-   
+  // Create alert for username form.
+  const [showUsernameAlert, setShowUsernameAlert] = useState(false);
+  const editUsername = () => {
+    console.log("First Button clicked!");
+    setShowUsernameAlert(true); 
+    setTimeout(() => {
+      setShowUsernameAlert(false);
+    }, 3000);
+  };
 
+
+  return (
+        <>  
+        <Container>
+        {showUsernameAlert && <Alert variant="success" dismissible onClose={() => setShowUsernameAlert(false)} style={{ textAlign: "center" }}>Username Updated Successfully.</Alert>} 
+        </Container>
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2" >
             <Form.Group>
@@ -72,22 +85,23 @@ const UsernameForm = () => {
                 {message}
               </Alert>
             ))}
-            <Button
+            {/* <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => history.goBack()}
             >
               cancel
-            </Button>
+            </Button> */}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               type="submit"
+              onClick={editUsername}
             >
               save
             </Button>
           </Form>
         </Container>
 
-
+        </>
   );
 };
 

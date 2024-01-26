@@ -103,13 +103,6 @@ function CreateArea(props) {
 
   // Create "Create note" alert
   const [showCreatenoteAlert, setShowCreatenotedAlert] = useState(false);
-  // const CreateNoteAlert = () => {
-  //     console.log("note created alert sent");
-  //     history.push({
-  //       pathname: "/notes",
-  //       state: { NoteAlert: true }
-  //     });
-  //   };
   const CreateNoteAlert = () => {
     console.log("First Button clicked!");
     setShowCreatenotedAlert(true); 

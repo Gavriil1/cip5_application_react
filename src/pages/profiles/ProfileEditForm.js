@@ -76,12 +76,23 @@ const ProfileEditForm = () => {
         ...currentUser,
         profile_image: data.image,
       }));
-      history.goBack();
+      // history.goBack();
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
     }
   };
+
+    // Adding alert for changing avatar
+    const [showIconAlert, setShowIconAlert] = useState(false);
+    const CreateIconlert = () => {
+      console.log("First Button clicked!");
+      setShowIconAlert(true); 
+      setTimeout(() => {
+        setShowIconAlert(false);
+      }, 3000);
+    };
+  
 
   const textFields = (
     <>
@@ -101,20 +112,26 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
-      <Button
+      {/* <Button
         style={{ float: 'left' }}
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
       >
         cancel
-      </Button>
-      <Button style={{ float: 'left' }} className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      </Button> */}
+      <Button style={{ float: 'left' }} className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={CreateIconlert}>
         save
       </Button>
     </>
   );
 
+
+
   return (
+    <>
+    <Container>
+        {showIconAlert && <Alert variant="success" dismissible onClose={() => setShowIconAlert(false)} style={{ textAlign: "center" }}>Profile Picture Updated Successfully.</Alert>} 
+    </Container>
     <Form onSubmit={handleSubmit}>
 
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
@@ -160,6 +177,7 @@ const ProfileEditForm = () => {
         </Col>
 
     </Form>
+    </>
   );
 };
 
