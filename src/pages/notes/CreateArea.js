@@ -101,8 +101,29 @@ function CreateArea(props) {
     </div>
   );
 
+  // Create "Create note" alert
+  const [showCreatenoteAlert, setShowCreatenotedAlert] = useState(false);
+  // const CreateNoteAlert = () => {
+  //     console.log("note created alert sent");
+  //     history.push({
+  //       pathname: "/notes",
+  //       state: { NoteAlert: true }
+  //     });
+  //   };
+  const CreateNoteAlert = () => {
+    console.log("First Button clicked!");
+    setShowCreatenotedAlert(true); 
+    setTimeout(() => {
+      setShowCreatenotedAlert(false);
+    }, 3000);
+  };
+
  
   return (
+    <>
+    <Container>
+    {showCreatenoteAlert && <Alert variant="success" dismissible onClose={() => setShowCreatenotedAlert(false)} style={{ textAlign: "center" }}>Note Created Successfully.</Alert>} 
+    </Container>
     <div>
       <Form
         className="create-note"
@@ -139,17 +160,18 @@ function CreateArea(props) {
           />
         </Form.Group>
   
-        <Button
+        {/* <Button
           className={`${btnStyles.Button} ${btnStyles.Blue}`}
           onClick={() => history.goBack()}
         >
           cancel
-        </Button>
-        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-          create
+        </Button> */}
+        <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={CreateNoteAlert}>
+            create
         </Button>
       </Form>
     </div>
+    </>
   );
   
 

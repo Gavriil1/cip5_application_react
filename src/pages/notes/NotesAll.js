@@ -151,7 +151,7 @@ const handleUnlike = async (noteid) => {
     history.push(`/note/${id}/edit`);
   };
 
- 
+  //show alert redirect from editnotepage for cancel
   const [showSecondAlert, setShowSecondAlert] = useState(false); // Second Alert is initially hidden
     useEffect(() => {
       if (history.location.state?.showAlert) {
@@ -161,15 +161,73 @@ const handleUnlike = async (noteid) => {
         }, 3000);
       }
   }, []);
+    //show alert redirect from editnotepage for save
+    const [showThirdAlert, setShowThirdAlert] = useState(false); // Second Alert is initially hidden
+    useEffect(() => {
+      if (history.location.state?.showSaveAlert) {
+        setShowThirdAlert(true);
+        setTimeout(() => {
+          setShowThirdAlert(false);
+        }, 3000);
+      }
+  }, []);
 
+  //show alert after deliting the note.
+  const [showDeleteAlert, setShowDeletedAlert] = useState(false);
+  const NoteDeletedAlert = () => {
+    console.log("First Button clicked!");
+    setShowDeletedAlert(true); 
+    setTimeout(() => {
+      setShowDeletedAlert(false);
+    }, 3000);
+  };
+  //show like alert
+  const [showFirstAlert, setShowFirstAlert] = useState(false); // First Alert is initially hidden
+  const likeUpdateGood = () => {
+    console.log("First Button clicked!");
+    setShowFirstAlert(true); // Show the first alert when the first button is clicked
+
+    // Set a timer to hide the alert after 2 seconds
+    setTimeout(() => {
+      setShowFirstAlert(false);
+    }, 3000);
+  };
+  //show email received notification
+  const [showEmailAlert, setShowEmailAlert] = useState(false); // Second Alert is initially hidden
+  useEffect(() => {
+    if (history.location.state?.emailAlert) {
+      setShowEmailAlert(true);
+      console.log("email request received")
+      setTimeout(() => {
+        setShowEmailAlert(false);
+      }, 3000);
+    }
+}, []);
+ 
+  //show note creation alert
+  const [showCreatenoteAlert, setShowCreatenotedAlert] = useState(false);
+  useEffect(() => {
+
+    if (history.location.state?.NoteAlert) {
+      setShowCreatenotedAlert(true);
+      console.log("note created alert received")
+      setTimeout(() => {
+        setShowCreatenotedAlert(false);
+      }, 3000);
+    }
+}, []);
 
   return (
     <div className="d-flex flex-column h-100">
        <Container>
     {/* {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>} */}
-    {showSecondAlert && <Alert variant="primary" dismissible onClose={() => setShowSecondAlert(false)} style={{ textAlign: "center" }}>The Changes in the note were not saved.</Alert>} 
-    {/* {showSecondAlert && <Alert variant="primary" dismissible onClose={() => setShowSecondAlert(false)}>Second Alert</Alert>} 
-    {showThirdAlert && <Alert variant="primary" dismissible onClose={() => setShowThirdAlert(false)}>Third Alert</Alert>}  */}
+    {showSecondAlert && <Alert variant="danger" dismissible onClose={() => setShowSecondAlert(false)} style={{ textAlign: "center" }}>Note is not saved.</Alert>} 
+    {/* {/* {showSecondAlert && <Alert variant="primary" dismissible onClose={() => setShowSecondAlert(false)}>Second Alert</Alert>}  */}
+    {showThirdAlert && <Alert variant="success" dismissible onClose={() => showThirdAlert(false)} style={{ textAlign: "center" }}>Note Was Saved</Alert>}
+    {showDeleteAlert && <Alert variant="warning" dismissible onClose={() => showThirdAlert(false)} style={{ textAlign: "center" }}>The Note was deleted</Alert>}
+    {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>}
+    {showEmailAlert && <Alert variant="success" dismissible onClose={() => setShowEmailAlert(false)} style={{ textAlign: "center" }}>We Received your message. Thank you !</Alert>}
+    {showCreatenoteAlert && <Alert variant="danger" dismissible onClose={() => setShowCreatenotedAlert(false)} style={{ textAlign: "center" }}>Note Created Successfully.</Alert>} 
   </Container>
       <Header />
       <main className="container">
@@ -208,12 +266,21 @@ const handleUnlike = async (noteid) => {
                   {/* <button onClick={like_id === 0 ? () => handleLike(note.id) : () => handleUnlike(note.id)}>
                         {like_id === 0 ? <p>Like</p> : <p>NoLike</p>}
                   </button> */}
-                  <button onClick={Array.isArray(like_id) && like_id.includes(note.id) ? () => handleUnlike(note.id) : () => handleLike(note.id)}>
-                      {Array.isArray(like_id) && like_id.includes(note.id) ? <p>Unlike</p> : <p>Like</p>}
+                  <button onClick={() => {
+                        if (Array.isArray(like_id) && like_id.includes(note.id)) {
+                          handleUnlike(note.id);
+                        } else {
+                          handleLike(note.id);
+                        }
+                        likeUpdateGood();
+                      }}>
+                        {Array.isArray(like_id) && like_id.includes(note.id) ? <p>Unlike</p> : <p>Like</p>}
                   </button>
-                    <button onClick={() => deleteNote(note.id)} variant="secondary">
+
+                  <button onClick={() => { deleteNote(note.id); NoteDeletedAlert(); }} variant="secondary">
                       <DeleteIcon fontSize="large" />
-                    </button>
+                  </button>
+
                     <button variant="primary" onClick={() => handleEditClick(note.id)}>
                       <EditIcon fontSize="large"/>
                     </button>

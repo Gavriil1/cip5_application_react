@@ -44,6 +44,15 @@ const ContactForm = () => {
       }
   };
 
+  const [showEmailAlert, setShowEmailAlert] = useState(false); // Second Alert is initially hidden
+  const handleEmailSend = () => {
+    console.log("email sent!");
+    history.push({
+      pathname: "/notes",
+      state: { emailAlert: true }
+    });
+  };
+
   return (
       <div className="main_container">
           <div className={'d-flex justify-content-center h-100 '}>
@@ -135,6 +144,7 @@ const ContactForm = () => {
                               type="submit"
                               value="Send Feedback"
                               className={`btn btn-lg btn-block float-right ${style.login_btn_task_form}`}
+                              onClick={handleEmailSend}
                           />
                       </div>
                       

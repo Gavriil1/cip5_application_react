@@ -147,15 +147,14 @@ function EditNote() {
       });
     };
     //Save button is pressed
-    const [showThirdAlert, setShowThirdAlert] = useState(false); // Third Alert is initially hidden
     const handleThirdClick = () => {
       console.log("Third Button clicked!");
       history.push({
         pathname: "/notes",
-        state: { showAlert: true }
+        state: { showSaveAlert: true }
       });
     };
-  
+    
 
   return (
 
