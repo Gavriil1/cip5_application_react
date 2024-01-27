@@ -22,6 +22,7 @@ import NoteMainPage from "./pages/notes/NoteMainPage"
 import NotFound from "./components/NotFound";
 import Note from "./pages/notes/Note"
 import NotesAll from "./pages/notes/NotesAll"
+import NotesAllLike from "./pages/notes/NotesAllLike"
 import DeleteNote from "./pages/notes/DeleteNote"
 import EditNote from "./pages/notes/EditNote"
 import CreateArea from "./pages/notes/CreateArea"
@@ -41,10 +42,10 @@ function App() {
             path="/"
             render={() => (
               // <PostsPage message="No results found. Adjust the search keyword." />
-              currentUser ? <NotesAll /> : <SignInForm />
+              currentUser ? <NotesAll message="Yo results found. Adjust the search keyword or like a post."/> : <SignInForm />
             )}
           />
-          <Route
+          {/* <Route
             exact
             path="/feed"
             render={() => (
@@ -53,8 +54,8 @@ function App() {
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />
             )}
-          />
-          <Route
+          /> */}
+          {/* <Route
             exact
             path="/liked"
             render={() => (
@@ -63,16 +64,50 @@ function App() {
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
             )}
-          />
+          /> */}
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signintest" render={() => <SignInFormtest />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/signuptest" render={() => <SignUpFormtest />} />
           <Route exact path="/contact" render={() => <ContactForm />} />
-          <Route exact path="/notes" render={() => <NotesAll />} />
+          
+          {/* <Route
+           exact
+           path="/notes"
+           render={() => <NotesAll
+            message="No results found. Adjust the search keyword or like a post."
+           />} /> */}
+
+          <Route
+            exact
+            path="/notes"
+            render={() => (
+              <NotesAll
+                message="No results found. Adjust the search keyword or like a post."
+
+              />
+            )}
+          />
+
+          <Route
+            exact
+            path="/important"
+            render={() => (
+              <NotesAllLike
+                message="No important notes found. Mark the note as important or adjust a search"
+                // filter={`likes__owner__profile=${profile_id}`}
+                // filter={`id__in=${like_id.join(',')}`}
+              />
+            )}
+          />
+
+S
           <Route exact path="/note/create" render={() => <CreateArea />} />
           {/* <Route exact path="/notesall" render={() => <NotesAll />} /> */}
-          <Route exact path="/note/:id" render={() => <Note />} />
+          <Route
+           exact
+           path="/note/:id"
+           render={() => <Note />} />
           <Route exact path="/note/:id/delete" render={() => <DeleteNote />} />
           <Route exact path="/note/:id/edit" render={() => <EditNote />} />
           

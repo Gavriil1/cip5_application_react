@@ -97,14 +97,18 @@ useEffect(() => {
   const getAllNotes = async () => {
     try {
       const { data } = await axiosReq.get(`/notes/`);
+      const response = await axiosRes.get('/likes/');
+      const likesData = response.data.results; 
+      let postValues = [];
+      for (let like of likesData) {
+        postValues.push(like.post);
+        console.log("postvalues are" + postValues)
+      }
+      const likedNotes = data.results.filter(note => postValues.includes(note.id));
       if (isMounted) {
         if (Array.isArray(data.results) && data.results.length > 0) {
-          console.log("Are you here?");
-          setNotesList(data.results);
+          setNotesList(likedNotes);
         } else {
-          console.error("Received data.results is not an array or is empty:", data.results);
-          console.log("are you in else")
-          // <p>No results found</p>
           setNotesList([]); // Clear the notes list
         }
         setLoading(false);
@@ -120,6 +124,9 @@ useEffect(() => {
       }
     }
   };
+  
+  
+  
 
   getAllNotes();
 
