@@ -83,6 +83,11 @@ const SignUpForm = () => {
                   Username
                 </label>
               </div>
+              {errors.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
               {/* Password input */}
               <div className="form-outline mb-3">
                 <input
@@ -98,6 +103,12 @@ const SignUpForm = () => {
                   Password
                 </label>
               </div>
+              {errors.password1?.map((message, idx) => (
+              <Alert key={idx} variant="warning">
+                {message}
+              </Alert>
+            ))}
+
 
 
               <div className="form-outline mb-3">
@@ -114,6 +125,12 @@ const SignUpForm = () => {
                   Password
                 </label>
               </div>
+              {errors.password2?.map((message, idx) => (
+              <Alert key={idx} variant="warning">
+                {message}
+              </Alert>
+            ))}
+
 
 
 
@@ -128,14 +145,18 @@ const SignUpForm = () => {
                   className="btn btn-primary btn-lg"
                   style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
                 >
-                  Login
+                  Sign up
                 </button>
-                <p className="small fw-bold mt-2 pt-1 mb-0">
-                  Don't have an account?{" "}
-                  <a href="#!" className="link-danger">
-                    Register
-                  </a>
-                </p>
+                {errors.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} variant="warning" className="mt-3">
+                {message}
+              </Alert>
+            ))}
+                <Container >
+                    <Link className="small fw-bold mt-2 pt-1 mb-0" to="/signin">
+                      Already have an account? <span style={{ color: 'blue' }}>Login</span>
+                    </Link>
+              </Container>
               </div>
             </form>
           </div>

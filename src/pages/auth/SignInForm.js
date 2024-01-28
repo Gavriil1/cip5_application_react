@@ -83,6 +83,11 @@ function SignInFormtest() {
               Username
             </label>
           </div>
+          {errors.username?.map((message, idx) => (
+              <Alert key={idx} variant="warning">
+                {message}
+              </Alert>
+            ))}
           {/* Password input */}
           <div className="form-outline mb-3">
             <input
@@ -98,6 +103,11 @@ function SignInFormtest() {
               Password
             </label>
           </div>
+          {errors.password?.map((message, idx) => (
+              <Alert key={idx} variant="warning">
+                {message}
+              </Alert>
+            ))}
           <div className="text-center text-lg-start mt-4 pt-2">
             <button
               type="submit"
@@ -106,12 +116,16 @@ function SignInFormtest() {
             >
               Login
             </button>
-            <p className="small fw-bold mt-2 pt-1 mb-0">
-              Don't have an account?{" "}
-              <a href="#!" className="link-danger">
-                Register
-              </a>
-            </p>
+            {errors.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} variant="warning" className="mt-3">
+                {message}
+              </Alert>
+            ))}
+            <Container >
+          <Link className="small fw-bold mt-2 pt-1 mb-0" to="/signup">
+            Don't have an account? <span style={{ color: 'blue' }}>Register</span>
+          </Link>
+        </Container>
           </div>
         </form>
       </div>
