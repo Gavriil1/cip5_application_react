@@ -4,7 +4,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from '@mui/icons-material/Edit';
 import StarIcon from '@mui/icons-material/Star';
 import AddIcon from '@mui/icons-material/Add';  
-import NoteModal from "./NoteModal";
 import Header from "./Header";
 import { Modal, Alert } from "react-bootstrap";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -19,7 +18,7 @@ import { useLocation } from "react-router";
 //   message: "Default message when not provided",
 // };
 
-function NotesAll({ message }) {
+function NotesAll({ message, filter = "" }) {
 
   // console.log("the filter is " + filter)
   const [notesList, setNotesList] = useState([]);
@@ -96,7 +95,7 @@ useEffect(() => {
 
   const getAllNotes = async () => {
     try {
-      const { data } = await axiosReq.get(`/notes/`);
+      const { data } = await axiosReq.get(`/notes/?${filter}search=${query}`);
       if (isMounted) {
         if (Array.isArray(data.results) && data.results.length > 0) {
           console.log("Are you here?");
@@ -126,7 +125,7 @@ useEffect(() => {
   return () => {
     isMounted = false;
   };
-}, [ pathname]);
+}, [ pathname, filter, query]);
 
   const updateNotesList = (note) => {
     setNotesList((prev) => {
@@ -249,7 +248,6 @@ useEffect(() => {
   </Container>
       <Header />
       <main className="container">
-        <NoteModal />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}

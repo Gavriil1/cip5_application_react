@@ -4,7 +4,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from '@mui/icons-material/Edit';
 import StarIcon from '@mui/icons-material/Star';
 import AddIcon from '@mui/icons-material/Add';  
-import NoteModal from "./NoteModal";
 import Header from "./Header";
 import { Modal, Alert } from "react-bootstrap";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -256,7 +255,6 @@ useEffect(() => {
   </Container>
       <Header />
       <main className="container">
-        <NoteModal />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}

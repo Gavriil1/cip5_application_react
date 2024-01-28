@@ -9,7 +9,6 @@ import SignInForm from "./pages/auth/SignInForm";
 import SignInFormtest from "./pages/auth/SignInFormtest";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
-import PostsPage from "./pages/posts/PostsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import PostEditForm from "./pages/posts/PostEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
@@ -18,12 +17,11 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import SignUpFormtest from "./pages/auth/SignUpFormtest"
 import ContactForm from "./pages/contactform/contactform"
-import NoteMainPage from "./pages/notes/NoteMainPage"
 import NotFound from "./components/NotFound";
-import Note from "./pages/notes/Note"
+// import Note from "./pages/notes/Note"
 import NotesAll from "./pages/notes/NotesAll"
 import NotesAllLike from "./pages/notes/NotesAllLike"
-import DeleteNote from "./pages/notes/DeleteNote"
+// import DeleteNote from "./pages/notes/DeleteNote"
 import EditNote from "./pages/notes/EditNote"
 import CreateArea from "./pages/notes/CreateArea"
 import Test from "./pages/Test"
@@ -103,19 +101,16 @@ function App() {
 
 S
           <Route exact path="/note/create" render={() => <CreateArea />} />
-          {/* <Route exact path="/notesall" render={() => <NotesAll />} /> */}
-          <Route
-           exact
-           path="/note/:id"
-           render={() => <Note />} />
-          <Route exact path="/note/:id/delete" render={() => <DeleteNote />} />
           <Route exact path="/note/:id/edit" render={() => <EditNote />} />
           
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
-          <Route exact path="/test" render={() => <Test />} />
+          <Route exact path="/test" render={() => <NotesAll
+                message="No important notes found. Mark the note as important or adjust a search"
+                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+          />} />
           <Route
                 exact
                 path="/profiles/:id/edit/username"
