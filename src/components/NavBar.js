@@ -26,15 +26,15 @@ const NavBar = () => {
     }
   };
 
-  const addPostIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/note/create"
-    >
-      <i className="fa-regular fa-note-sticky"></i>Add Note
-    </NavLink>
-  );
+  // const addPostIcon = (
+  //   <NavLink
+  //     className={styles.NavLink}
+  //     activeClassName={styles.Active}
+  //     to="/note/create"
+  //   >
+  //     <i className="fa-regular fa-note-sticky"></i>Add Note
+  //   </NavLink>
+  // );
   const loggedInIcons = (
     <>
       <NavLink
@@ -56,7 +56,8 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <i className="fa-solid fa-user-astronaut"></i>Profile
+        {/* <i className="fa-solid fa-user-astronaut"></i>Profile */}
+        <Avatar src={currentUser?.profile_image} text="User: " height={40} /> {currentUser?.username}
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
@@ -65,7 +66,6 @@ const NavBar = () => {
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
       </NavLink>
     </>
   );
@@ -94,7 +94,7 @@ const NavBar = () => {
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addPostIcon}
+        {/* {currentUser && addPostIcon} */}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}

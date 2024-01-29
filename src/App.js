@@ -78,7 +78,7 @@ S
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/test" render={() => <NotesAll
                 message="No important notes found. Mark the note as important or adjust a search"
-                filter={`likes__owner__profile=${profile_id}`}
+                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
           />} />
           <Route
                 exact
