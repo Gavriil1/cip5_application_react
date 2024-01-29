@@ -62,8 +62,7 @@ function App() {
             render={() => (
               <NotesAllLike
                 message="No important notes found. Mark the note as important or adjust a search"
-                // filter={`likes__owner__profile=${profile_id}`}
-                // filter={`id__in=${like_id.join(',')}`}
+                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
             )}
           />
