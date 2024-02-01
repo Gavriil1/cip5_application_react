@@ -20,7 +20,7 @@ import {
 } from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Post from "../posts/Post";
+// import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
@@ -77,8 +77,8 @@ function ProfilePage() {
           <h3 className="m-2">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
-              <div>{profile?.posts_count}</div>
-              <div>posts</div>
+              {/* <div>{profile?.posts_count}</div>
+              <div>posts</div> */}
             </Col>
             <Col xs={3} className="my-2">
               <div>{profile?.followers_count}</div>
@@ -114,29 +114,29 @@ function ProfilePage() {
     </>
   );
 
-  const mainProfilePosts = (
-    <>
-      <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
-      <hr />
-      {profilePosts.results.length ? (
-        <InfiniteScroll
-          children={profilePosts.results.map((post) => (
-            <Post key={post.id} {...post} setPosts={setProfilePosts} />
-          ))}
-          dataLength={profilePosts.results.length}
-          loader={<Asset spinner />}
-          hasMore={!!profilePosts.next}
-          next={() => fetchMoreData(profilePosts, setProfilePosts)}
-        />
-      ) : (
-        <Asset
-          src={NoResults}
-          message={`No results found, ${profile?.owner} hasn't posted yet.`}
-        />
-      )}
-    </>
-  );
+  // const mainProfilePosts = (
+  //   <>
+  //     <hr />
+  //     <p className="text-center">{profile?.owner}'s posts</p>
+  //     <hr />
+  //     {profilePosts.results.length ? (
+  //       <InfiniteScroll
+  //         children={profilePosts.results.map((post) => (
+  //           <Post key={post.id} {...post} setPosts={setProfilePosts} />
+  //         ))}
+  //         dataLength={profilePosts.results.length}
+  //         loader={<Asset spinner />}
+  //         hasMore={!!profilePosts.next}
+  //         next={() => fetchMoreData(profilePosts, setProfilePosts)}
+  //       />
+  //     ) : (
+  //       <Asset
+  //         src={NoResults}
+  //         message={`No results found, ${profile?.owner} hasn't posted yet.`}
+  //       />
+  //     )}
+  //   </>
+  // );
 
   return (
 <div>

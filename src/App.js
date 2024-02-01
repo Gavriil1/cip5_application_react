@@ -6,10 +6,10 @@ import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
-import PostCreateForm from "./pages/posts/PostCreateForm";
-import PostPage from "./pages/posts/PostPage";
+// import PostCreateForm from "./pages/posts/PostCreateForm";
+// import PostPage from "./pages/posts/PostPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
-import PostEditForm from "./pages/posts/PostEditForm";
+// import PostEditForm from "./pages/posts/PostEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
@@ -71,9 +71,9 @@ S
           <Route exact path="/note/create" render={() => <CreateArea />} />
           <Route exact path="/note/:id/edit" render={() => <EditNote />} />
           
-          <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          {/* <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
-          <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+          <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} /> */}
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/test" render={() => <NotesAll
                 message="No important notes found. Mark the note as important or adjust a search"
