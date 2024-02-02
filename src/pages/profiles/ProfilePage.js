@@ -26,6 +26,8 @@ function ProfilePage() {
         <UserPasswordForm />
       </div>
       
+      <div style={{ height: '140px' }}></div>
+
     </div>
   );
 }
