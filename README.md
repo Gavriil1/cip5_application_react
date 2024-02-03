@@ -124,14 +124,26 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 
 ### Wireframes
 
-<details><summary>Big screens - laptop & desktop</summary>
-<img src="docs/wireframes/wireframes-snapfood-desktop.png">
+<details><summary>Sign In Page</summary>
+    <img src="docs/wireframes/signin.png">
 </details>
-<details><summary>Medium screens - tablet</summary>
-<img src="docs/wireframes/wireframes-snapfood-tablet.png">
+<details><summary>Sign Up Page</summary>
+    <img src="docs/wireframes/register.png">
 </details>
-<details><summary>Small screens - mobile</summary>
-<img src="docs/wireframes/wireframes-snapfood-mobile.png">
+<details><summary>Contact Form</summary>
+    <img src="docs/wireframes/contactform.png">
+</details>
+<details><summary>Main Note Page</summary>
+    <img src="docs/wireframes/notes.png">
+</details>
+<details><summary>Important Note Page</summary>
+    <img src="docs/wireframes/important.png">
+</details>
+<details><summary>Edit Form Page</summary>
+    <img src="docs/wireframes/editform.png">
+</details>
+<details><summary>User Page</summary>
+    <img src="docs/wireframes/user.png">
 </details>
 
 ##### Back to [top](#table-of-contents)
