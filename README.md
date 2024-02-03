@@ -145,6 +145,10 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 <details><summary>User Page</summary>
     <img src="docs/wireframes/user.png">
 </details>
+<details><summary>404 Page</summary>
+    <img src="docs/wireframes/404.png">
+</details>
+
 
 ##### Back to [top](#table-of-contents)
 

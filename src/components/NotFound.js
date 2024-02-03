@@ -1,12 +1,20 @@
-import logo from "../assets/logo.png";
-import styles from "../styles/NotFound.module.css";
+import React from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
-import React from 'react'
-
-const NotFound = () => {
+function NotFoundPage() {
   return (
-    <div>Sorry, the page you are looking for doesjnt exist </div>
-  )
+      <div className="page-wrap d-flex flex-row align-items-center">
+          <Container>
+              <Row className="justify-content-center">
+                  <Col md={12} className="text-center">
+                      <span className="display-1 d-block">404</span>
+                      <div className="mb-4 lead">The page you are looking for was not found.</div>
+                      <Button variant="link" href="/">Back to Notes</Button>
+                  </Col>
+              </Row>
+          </Container>
+      </div>
+  );
 }
 
-export default NotFound
+export default NotFoundPage;

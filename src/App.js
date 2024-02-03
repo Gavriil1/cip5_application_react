@@ -35,14 +35,11 @@ function App() {
             exact
             path="/"
             render={() => (
-              // <PostsPage message="No results found. Adjust the search keyword." />
               currentUser ? <NotesAll message="Yo results found. Adjust the search keyword or like a post."/> : <SignInForm />
             )}
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
-          {/* <Route exact path="/signintest" render={() => <SignInFormtest />} /> */}
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          {/* <Route exact path="/signuptest" render={() => <SignUpFormtest />} /> */}
           <Route exact path="/contact" render={() => <ContactForm />} />
 
           <Route
@@ -70,10 +67,6 @@ function App() {
 S
           <Route exact path="/note/create" render={() => <CreateArea />} />
           <Route exact path="/note/:id/edit" render={() => <EditNote />} />
-          
-          {/* <Route exact path="/posts/create" render={() => <PostCreateForm />} />
-          <Route exact path="/posts/:id" render={() => <PostPage />} />
-          <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} /> */}
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/test" render={() => <NotesAll
                 message="No important notes found. Mark the note as important or adjust a search"
