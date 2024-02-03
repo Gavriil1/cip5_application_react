@@ -3,10 +3,6 @@ import { Button, Modal, Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
 import { axiosReq, axiosRes } from "../../api/axiosDefaults";
 import Container from 'react-bootstrap/Container';
-import { Form } from 'react-bootstrap';
-import StarIcon from '@mui/icons-material/Star';
-import AddIcon from '@mui/icons-material/Add';  
-
 
 
 function EditNote() {
@@ -111,14 +107,14 @@ function EditNote() {
   const handleTitleChange = (event) => {
     setNote({
       ...note,
-      title: event.target.value,
+      title: event.target.textContent,
     });
   };
 
   const handleContentChange = (event) => {
     setNote({
       ...note,
-      content: event.target.value,
+      content: event.target.textContent,
     });
   };
 
@@ -157,55 +153,51 @@ function EditNote() {
     };
     
 
-    return (
-      <>
-        <Container>
-          {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>}
-          {showSecondAlert && <Alert variant="success" dismissible onClose={() => setShowSecondAlert(false)} style={{ textAlign: "center" }}>The Note was saved Successfully</Alert>} 
-        </Container>
-    
-        <Modal.Dialog>
-        <Modal.Header style={{ backgroundColor: like_id === false ? 'green' : 'yellow' }}>
-        <Modal.Title className="title-color">
-        Edit Note
-        </Modal.Title>
-        </Modal.Header>
+  return (
 
-    
-          <Modal.Body className="description-color">
-            <Form style={{ width: '100%' }}>
-              <Form.Group controlId="noteTitle">
-                <Form.Label>Note Title</Form.Label>
-                <Form.Control type="text" value={note.title} onChange={handleTitleChange} />
-              </Form.Group>
-    
-              <Form.Group controlId="noteContent">
-                <Form.Label>Note Content</Form.Label>
-                <Form.Control as="textarea" value={note.content} onChange={handleContentChange} />
-              </Form.Group>
-            </Form>
-          </Modal.Body>
-    
-          <Modal.Footer>
-            <button
-              onClick={() => {
-                like_id === false ? handleLike(note.id) : handleUnlike(note.id);
-              }}
-            >
-              {like_id === false ? <AddIcon fontSize="large"/> : <StarIcon fontSize="large"/>}
-            </button>
-    
-            <Button variant="secondary" onClick={() => { history.push("/notes"); handleSecondClick(); }}>
-              Cancel
-            </Button>
-    
-            <Button variant="primary" type="button" onClick={() => { handleSubmit(); handleThirdClick(); }}>
-              Save changes
-            </Button>
-          </Modal.Footer>
-        </Modal.Dialog>
-      </>
-    );
-            }    
-    export default EditNote;
-    
+    <>
+    <Container>
+    {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>}
+    {showSecondAlert && <Alert variant="success" dismissible onClose={() => setShowSecondAlert(false)} style={{ textAlign: "center" }}>The Note was saved Successfully</Alert>} 
+  </Container>
+
+    <Modal.Dialog>
+      <Modal.Header>
+        <Modal.Title className="title-color">
+          <h2 contentEditable={true} onBlur={handleTitleChange}>
+            {note.title}
+          </h2>
+        </Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body className="description-color">
+        <p contentEditable={true} onBlur={handleContentChange}>
+          {note.content}
+        </p>
+      </Modal.Body>
+
+      <Modal.Footer>
+      <button
+          onClick={() => {
+            like_id === false ? handleLike(note.id) : handleUnlike(note.id);
+
+          }}
+        >
+          {like_id === false ? <p>Like</p> : <p>Unlike</p>}
+      </button>
+
+      <Button variant="secondary" onClick={() => { history.push("/notes"); handleSecondClick(); }}>
+           Cancel
+      </Button>
+
+      <Button variant="primary" type="button" onClick={() => { handleSubmit(); handleThirdClick(); }}>
+          Save changes
+      </Button>
+
+      </Modal.Footer>
+    </Modal.Dialog>
+    </>
+  );
+}
+
+export default EditNote;
