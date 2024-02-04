@@ -302,82 +302,95 @@ The Application Programming Interface (API) for this front-end application was c
 <img src="docs/features/navbar2.png">
 </details>
 
-
-
-### Landing page
-- Includes navbar, main body and a footer
-- Lading page main body includes explanation what the app is about
-- Contains direct links to sign-up and log-in pages
-- User stories covered: 1, 3
-
-<details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-landing-page.png">
+### Contact Form
+- Enables users to contact the admin/site owner to share feedback.
+<details><summary>See feature screenshots</summary>
+  <img src="docs/features/feedbackform.png">
 </details>
 
 
+### Main notes page
+- Main notes page is displayed for logged-in users 
+- Contains :
+  - Search Bar.
+  - Create Note field
+  - Notes created by sign in user.
+- Displays all notes ordered by the most recent one
+- User stories covered: 
 
-### Post create/update form
-- Contains image, title, category and description
+<details><summary>See feature screenshot</summary>
+<img src="docs/features/notesmainpage.png">
+</details>
+
+### Important notes page
+- Main notes page is displayed for logged-in users 
+- Contains :
+  - Search Bar.
+  - Create Note field
+  - Notes created by sign in user.
+- Displays only important notes which were liked by a user.
+- User stories covered: 
+
+<details><summary>See feature screenshot</summary>
+<img src="docs/features/important.png">
+</details>
+
+### User Settings page
+On thsi page user may change or modify his/her:
+  - Picture
+  - Username
+  - Reset Password
+
+<details><summary>See feature screenshot</summary>
+<img src="docs/features/usersettingpage.png">
+</details>
+
+
+### Notes create form
+
+- Contains Note title and note description
 - Description field is optional
-- Allows user to share their pictures with others
-- Allows user to categorise their post to make it easy to be found by other users
-- User stories covered: 7, 8, 18, 23
+- Allows a user to create notes
+- User stories covered: 
 
 <details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-post-create-edit-form.png">
+<img src="docs/features/notescreateform.png">
 </details>
 
+### Note Update form
 
-### Main posts page
-- Main posts page is displayed for logged-in users instead of the landing page
-- Contains 3 small menus:
-  - Add, likes & feed
-  - Top Users
-  - Post category badges
-- Contain search bar above all posts
-- Without any applied search filter displays posts added by all users
-- Display all posts ordered by the most recent one
-- User stories covered: 9, 19,
+- Contains Note title and note description
+- User may modify the note and click on "Save Changes"
+- He may like/unlike note. 
+- If he clicks cancel he redirected to homepage.
+- User stories covered: 
 
-<details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-main-posts-page.png">
+<details><summary>See feature screenshots</summary>
+<img src="docs/features/noteupdateform.png">
 </details>
 
+### Note Update settings on Main page
 
-### Post page
-- Contains details of a single post - image, title, description (if provided by the user) and its category tag
-- Contains number of likes and comments the post has
-- Contains like icon to allow user to like the post
-- Features comments section below the post
-- User stories covered: 10, 11, 12, 13, 14
-
-<details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-post-page.png">
+- Contains Note title and note description
+- Each Note has "Like/Unlick", Delete and Edit Note button.
+<details>
+<summary>See feature screenshots</summary>
+<img src="docs/features/updatesettingsmainpage.png">
 </details>
-
-
-### Comments
-- Enable users to share their opinion on a specific post
-- Display passed time since adding the post (e.g. 4 minutes ago)
-- Users have an option to update or delete the comment
-- User stories covered: 14, 15, 16, 17
-
-<details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-comments.png">
-</details>
-
 
 ### Likes
-- Allow user to express their interest in the post
-- Like icons is marked green if user likes the post
-- User cannot like their own posts
-- Allow user to narrow their search to liked posts only when clicked on the ‘Feed’ option in the small menu
-- User stories covered: 11
+- Allow user to mark his note as important.
+- Liked  notes are marked yellow  if user likes the post
+- No Liked notes are market as green.
+- User can see and therefore can like only his own notes.
+- Allow user to seperate important notes from not important notes.
+- User stories covered: 
 
 <details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-likes-1.png">
-<img src="docs/features/feature-likes-2.png">
+  <img src="docs/features/likes1.png">
+  <img src="docs/features/likes2.png">
 </details>
+
 
 
 ### Profile page
