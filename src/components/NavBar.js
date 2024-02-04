@@ -25,16 +25,6 @@ const NavBar = () => {
       console.log(err);
     }
   };
-
-  // const addPostIcon = (
-  //   <NavLink
-  //     className={styles.NavLink}
-  //     activeClassName={styles.Active}
-  //     to="/note/create"
-  //   >
-  //     <i className="fa-regular fa-note-sticky"></i>Add Note
-  //   </NavLink>
-  // );
   const loggedInIcons = (
     <>
       <NavLink
@@ -56,7 +46,6 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        {/* <i className="fa-solid fa-user-astronaut"></i>Profile */}
         <Avatar src={currentUser?.profile_image} text="User: " height={40} /> {currentUser?.username}
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
@@ -89,12 +78,11 @@ const NavBar = () => {
       fixed="top"
     >
       <Container>
-        <NavLink to="/doh">
+        <NavLink to="/">
           <Navbar.Brand>
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-        {/* {currentUser && addPostIcon} */}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}

@@ -4,7 +4,7 @@
 
 💻 [Visit live website](https://ci-pp5-snapfood.onrender.com/)
 
-![Mockup image](docs/readme/ami-responsivedesign-snapfood.jpg)
+![Mockup image](docs/amiresponsive/amiresponsive.png)
 
 
 ## Table of Contents
@@ -164,44 +164,39 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 
 ### Libraries, frameworks and dependencies
 
-- [Axios](https://axios-http.com/docs/intro) - axios were used for promise-based HTTP. Axios was utilized for dispatching API requests from the React project to the API, which helped in circumventing any CORS errors during cookie transmission.
-- [ClassNames](https://www.npmjs.com/package/classnames/) -   This tool helps to change the look of things on the website based on certain conditions. The reason for using it was to change the look of elements  based on what style is needed and to apply more than one style to these elements.
-- [JWT](https://jwt.io/) - library to decode out JSON Web token. Justification: I used JWT to prevent unauthenticated user from making extra network requests to refresh their access token. Also used to remove the timestamp from the browser when the user refreshes token expires or the user logs out.
-- [React 17](https://17.reactjs.org/) - JavaScript library for building front end of the application. 
-- [React-Bootstrap 4.6](https://react-bootstrap-v4.netlify.app/) -  used the Bootstrap React library to build the front-end UI interface, including styling and responsiveness
-- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - I utilized this component to automatically load content, such as notes, when the user scrolls down the page, eliminating the need to navigate to the next or previous page.
-- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - used for dynamic routing.  I utilized this library to manage the navigation between different component views and to control what the user sees based on the URL they visit in the browser.
+- [Axios](https://axios-http.com/docs/intro) - Axios was employed as a promise-based HTTP client in the project. It was instrumental in sending API requests from the React application to the API, effectively preventing any CORS errors during the transmission of cookies.
+- [ClassNames](https://www.npmjs.com/package/classnames/) -   This utility facilitates the modification of the website’s aesthetic elements contingent upon specific conditions. The rationale behind its implementation was to dynamically alter the visual representation of components in accordance with the required stylistic parameters, and to concurrently apply multiple styles to these components
+- [JWT](https://jwt.io/) - The utilization of JSON Web Tokens (JWT) was instrumental in precluding unauthenticated users from initiating superfluous network requests for access token renewal. Furthermore, it facilitated the elimination of the timestamp from the browser in instances where the token expired upon user refresh or the user opted to log out
+- [React](https://17.reactjs.org/) - JavaScript library for building front end of the application. 
+- [React-Bootstrap 4.6](https://react-bootstrap-v4.netlify.app/) -  The Bootstrap React library was employed to construct the user interface on the front-end, encompassing both stylistic elements and responsiveness.
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - This component was employed to facilitate the automatic loading of content, for instance, notes, as the user scrolls down the page. This effectively obviates the necessity for the user to manually navigate to subsequent or preceding pages.
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - This library was leveraged for dynamic routing. It was instrumental in managing the transition between various component views and dictating the content visible to the user, contingent on the URL accessed in the browser.
 
 ### Tools & Programs
 
-- [Am I Responsive](http://ami.responsivedesign.is/) was used to create the multi-device mock-up at the top of this README.md file
-- [Balsamiq](https://balsamiq.com/) to create the projects wireframes
-- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for debugging of the code and checking site for responsiveness
-- [Cloudinary](https://cloudinary.com/) to store static files
-- [Coolors](https://coolors.co/?home) was used to create the color scheme palette
-- [Favicon.io](https://favicon.io) for making the site favicon
-- [Fiverr](https://www.fiverr.com/logo-maker/saved-logos?tab=designs) - app logo was created using Fiverr
-- [Font Awesome](https://fontawesome.com/) - Icons from Font Awesome were used throughout the site
-- [Google Fonts](https://fonts.google.com/) - import of Inter font
-- [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
-- [GitHub](https://github.com/) was used as a remote repository to store project code
-- [Gitpod](https://gitpod.io) was used to host a virtual workspace
-- [Render Platform](https://render.com) was used to deploy the project into live environment
-- [Remove.bg](https://www.remove.bg/) was used to remove background on app images
-- [Unscreen](https://www.unscreen.com/upload) - remove white background from the loading gif (spinner)
+- [Am I Responsive](http://ami.responsivedesign.is/) Was used to check the responsiveness of a website.
+- [Balsamiq](https://balsamiq.com/) wireframes creation tool
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for code debugging and for checking the responsiveness of a website
+- [Cloudinary](https://cloudinary.com/) was used to store static files and images.
+- [Font Awesome](https://fontawesome.com/) - Icons sourced from Font Awesome were incorporated extensively across the website
+- [MUI](https://mui.com/material-ui/material-icons/) - Icons from material UI were used in parallel to fontawesome.
+- [Google Fonts](https://fonts.google.com/) - Was used for font input.
+- [GitHub](https://github.com/) It served as a remote repository for the preservation of project code
+- [Gitpod](https://gitpod.io) was used to develop the application.
+- [Heroku](https://heroku.com) was used to deploy the project into live environment
 - Validation:
   - [WC3 Validator](https://validator.w3.org/) was used to validate the html
   - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) was used to validate the css
   - [ESLint](https://eslint.org/) used to validate JSX code
-  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) used to validate performance, accessibility, best practice and SEO of the app
-  - [Wave](https://wave.webaim.org/) - used to evaluate application accessibility
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) It was employed to ascertain the performance, accessibility, adherence to best practices, and Search Engine Optimization (SEO) of the application.
+  - [Wave](https://wave.webaim.org/) - It was employed to assess the accessibility of the application
 
 ##### Back to [top](#table-of-contents)
 
 
 ## Front-End
 
-### React
+<!-- ### React
 
 React is a declarative, efficient, and flexible JavaScript library for building user interfaces. Its primary goal is to make it easy to reason about an interface and its state at any point in time, by dividing the UI into a collection of independent and reusable components ([source](https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/)).
 
@@ -246,19 +241,68 @@ There were various components created and reused across this application.
   - User stories covered: 4, 28
 
 - `<PopularProfiles />` - reusable component showing first three most followed profiles in the app. The component displays user avatar, name and follow/unfollow button. These buttons are hidden on medium screen size devices. The component is used across the app together with the `<LikeFeedAddPost />` component and post categories badges on relevant pages.
-  - User stories covered: 32
+  - User stories covered: 32 -->
 
 
 ## Back-End API
 
 ### Django REST Framework
 
-The API for this Front-End application was built with the Django REST Framework. The repository with a README file for the DRF Back-End can be found [here](https://github.com/aleksandracodes/snapfood-drf-api).
+The Application Programming Interface (API) for this front-end application was constructed utilizing the Django REST Framework. For more information DRF you may click here. [here]https://www.django-rest-framework.org/).
 
 ##### Back to [top](#table-of-contents)
 
 
 ## Features
+
+
+### Login Form
+- Is used for a use to login to his account. User must have an account to login.
+- To login user needs to add username and password. Both fields are mandatory to login
+- Once a user loggs in he is navigated to notes page. 
+- Warning message is displayed on incorrect input
+- User stories covered: 
+
+<details><summary>See feature screenshot</summary>
+<img src="docs/features/login.png">
+</details>
+
+### Sign up form
+- A new user can create a new account by using this form.
+- To create an account, a user needs to provide a nickname, password, and password validation.
+- A user cannot use a duplicate username to register the account.
+- Once registered, the user is redirected to the login page.
+- User stories covered: 
+
+<details><summary>See feature screenshots</summary>
+<img src="docs/features/signupform.png">
+</details>
+
+
+### Footer
+- A footer is displayed at the bottom of a each page.
+- Contains copyrights info and links to social media
+- User stories:
+
+<details><summary>See feature screenshot</summary>
+    <img src="docs/features/footer.png">
+</details>
+
+### Logo and Navigation Bar
+- The Navbar is present on each page at the top of the screen.
+- We have two navbar variants:
+    The navbar for new or not logged-in users will display the Logo, Sign up, and Log in icons - options to either register or log in.
+    The navbar for logged-in users displays the Logo, Notes, Important, Contact, Avatar/User, and Sign out icons.
+- The navbar is responsive and becomes a hamburger menu on small screens.
+- By clicking on the logo icon, the user can navigate to the landing page, which is either the sign-in form or the notes page.
+- User stories covered: 
+
+<details><summary>See feature screenshots</summary>
+<img src="docs/features/navbar1.png">
+<img src="docs/features/navbar2.png">
+</details>
+
+
 
 ### Landing page
 - Includes navbar, main body and a footer
@@ -270,58 +314,6 @@ The API for this Front-End application was built with the Django REST Framework.
 <img src="docs/features/feature-landing-page.png">
 </details>
 
-
-### Logo and Navigation Bar
-- Featured and consistent on the all pages
-- Two variants of the navbar:
-  - New or not logged-in users will see the Home, Sign up & Log in icons - options to either register or log in
-  - Logged-in users will see the Home icon and their user avatar & name with option on click to either view their profile or log out
-- The nav bar is fully responsive and changes to a toggler (hamburger menu) on smaller size screens
-- User stories covered: 2, 3
-
-<details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-navbar-1.png">
-<img src="docs/features/feature-navbar-2.png">
-<img src="docs/features/feature-navbar-3.png">
-<img src="docs/features/feature-navbar-4.png">
-</details>
-
-
-### Footer
-- A footer is displayed at the bottom of the landing page
-- Contains copyrights info
-- Contains links to social media and GitHub page (opening in a separate window)
-
-<details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-footer.png">
-</details>
-
-
-### Sign up form
-- New users can create an account
-- The user must provide a valid username (between 1-10 characters long), password and password confirmation
-- Password must meet certain criteria which user can see on hovering/taping the ‘view password criteria’ button
-- User cannot register the same details twice for an account
-- Once registered, the user is redirected to the login page to log in
-- User stories covered: 4
-
-<details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-signup-1.png">
-<img src="docs/features/feature-signup-2.png">
-</details>
-
-
-### Login form
-- Returning users can login to their account
-- The user must have an account in the system and they must enter the correct username and password
-- Both fields are mandatory
-- Once logged in the user will be navigated to the main posts page
-- Warning message is displayed on incorrect input
-- User stories covered: 5
-
-<details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-login.png">
-</details>
 
 
 ### Post create/update form
