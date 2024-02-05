@@ -18,7 +18,7 @@ import { useLocation } from "react-router";
 //   message: "Default message when not provided",
 // };
 
-function NotesAll({ message, filter = "" }) {
+function NotesAll({ message }) {
 
   // console.log("the filter is " + filter)
   const [notesList, setNotesList] = useState([]);
@@ -95,15 +95,19 @@ useEffect(() => {
 
   const getAllNotes = async () => {
     try {
-      const { data } = await axiosReq.get(`/notes/?${filter}search=${query}`);
+      const { data } = await axiosReq.get(`/notes/`);
+      const response = await axiosRes.get('/likes/');
+      const likesData = response.data.results; 
+      let postValues = [];
+      for (let like of likesData) {
+        postValues.push(like.post);
+        console.log("postvalues are" + postValues)
+      }
+      const likedNotes = data.results.filter(note => postValues.includes(note.id));
       if (isMounted) {
         if (Array.isArray(data.results) && data.results.length > 0) {
-          console.log("Are you here?");
-          setNotesList(data.results);
+          setNotesList(likedNotes);
         } else {
-          console.error("Received data.results is not an array or is empty:", data.results);
-          console.log("are you in else")
-          // <p>No results found</p>
           setNotesList([]); // Clear the notes list
         }
         setLoading(false);
@@ -119,21 +123,24 @@ useEffect(() => {
       }
     }
   };
+  
+  
+  
 
   getAllNotes();
 
   return () => {
     isMounted = false;
   };
-}, [ pathname, filter, query]);
+}, [ pathname]);
 
-  // const updateNotesList = (note) => {
-  //   setNotesList((prev) => {
-  //     return [note, ...prev].filter(
-  //       (element, index, array) => array.indexOf(element) === index
-  //     );
-  //   });
-  // };
+  const updateNotesList = (note) => {
+    setNotesList((prev) => {
+      return [note, ...prev].filter(
+        (element, index, array) => array.indexOf(element) === index
+      );
+    });
+  };
 
   const reloadNotes = async () => {
     try {
@@ -237,7 +244,9 @@ useEffect(() => {
   return (
     <div className="d-flex flex-column h-100">
        <Container>
+    {/* {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>} */}
     {showSecondAlert && <Alert variant="danger" dismissible onClose={() => setShowSecondAlert(false)} style={{ textAlign: "center" }}>Note is not saved.</Alert>} 
+    {/* {/* {showSecondAlert && <Alert variant="primary" dismissible onClose={() => setShowSecondAlert(false)}>Second Alert</Alert>}  */}
     {showThirdAlert && <Alert variant="success" dismissible onClose={() => showThirdAlert(false)} style={{ textAlign: "center" }}>Note Was Saved</Alert>}
     {showDeleteAlert && <Alert variant="warning" dismissible onClose={() => showThirdAlert(false)} style={{ textAlign: "center" }}>The Note was deleted</Alert>}
     {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>}
@@ -259,8 +268,11 @@ useEffect(() => {
             placeholder="Search posts"
           />
         </Form>
-        {/* <CreateArea reloadNotes={reloadNotes} /> */}
+        <CreateArea reloadNotes={reloadNotes} />
 
+        {/* <div style={{ marginTop: '20px' }}>
+        {notesList.length === 0 && <p>No results found.</p>} 
+        </div> */}
         <div style={{ marginTop: '20px' }}>
         {notesList.length === 0 && <p>{message}</p>} 
         </div>
@@ -271,7 +283,7 @@ useEffect(() => {
             <div className="col-lg-4 col-md-6 col-sm-12" key={note.id}>
               <div className="modal show" style={{ display: 'block', position: 'initial' }}>
                 <Modal.Dialog>
-                <Modal.Header  style={{ backgroundColor: Array.isArray(like_id) && like_id.includes(note.id) ? 'yellow' : 'green' }}>
+                <Modal.Header closeButton style={{ backgroundColor: Array.isArray(like_id) && like_id.includes(note.id) ? 'yellow' : 'green' }}>
                   <h2 className="title-color">
                       {note.id} {note.title}
                   </h2>
@@ -284,6 +296,9 @@ useEffect(() => {
                     </p>
                   </Modal.Body>
                   <Modal.Footer>
+                  {/* <button onClick={like_id === 0 ? () => handleLike(note.id) : () => handleUnlike(note.id)}>
+                        {like_id === 0 ? <p>Like</p> : <p>NoLike</p>}
+                  </button> */}
                   <button onClick={() => {
                         if (Array.isArray(like_id) && like_id.includes(note.id)) {
                           handleUnlike(note.id);
