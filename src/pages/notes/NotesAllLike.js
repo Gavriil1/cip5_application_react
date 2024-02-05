@@ -10,7 +10,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router-dom";
 import CreateArea from "./CreateArea";
 import Form from "react-bootstrap/Form";
-import styles from "../../styles/PostsPage.module.css";
+import styles from "../../styles/NotesPage.module.css";
 import Container from 'react-bootstrap/Container';
 import { useLocation } from "react-router";
 

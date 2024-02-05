@@ -1,21 +1,5 @@
-/* login Register page */
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
-
-/* .main_body{
-background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp');
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
-margin-bottom: 160px;
-   clear: both;
-}  */
-
-/* .main_container{
-height: 70%;
-align-content: center;
-} */
 
 .card{
 height: 370px;
@@ -77,45 +61,9 @@ color: black;
 background-color: white;
 }
 
-/* task form create/update */
- /* .body_task_form {
-    background-color: #FAFAFA;
-    font-family: 'Nunito', sans-serif;
-    background-image: url('https://res.cloudinary.com/dtdqranu0/image/upload/v1698497050/static/images/background1.b6a16b1040a3.webp'); 
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    position:relative;
-    margin: 0px;
-    min-height: 100%;
-    padding-bottom: 6.74rem;
-    box-sizing: inherit;
-    font-family: 'Raleway', sans-serif;
-}  */
-
-
- /* p {color: #FAFAFA;}
- label {
-  background-color: rgba(0,0,0,0.5); 
-} */
-/* 
-.header_bar_task_form{
-    display: flex;
-    justify-content: space-between;
-    color: #f3ef0a;
-    padding: 10px;
-    background: linear-gradient(90deg, #6842f1 0%, #9f6feb 43%, #8a6feb 100% );
-} */
-
-/* .header_bar_task_form a {
-    color: rgb(247, 247, 247);
-    text-decoration: none;
-}  */
 
 
  .login_btn_task_form{
-    /* color: black;
-    background-color: #FFC312; */
     width: 100px;
     color: #fff;
     background-color: #007bff;

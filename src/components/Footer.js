@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../styles/Footer.module.css";
+// import styles from "../styles/Footer.module.css";
 
 function Footer() {
   return (
-    <footer className={styles.Footer}>
+    <footer >
       {/* Add your footer content here */}
       <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary fixed-bottom" >
                   {/* Copyright */}
