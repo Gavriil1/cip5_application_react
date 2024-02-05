@@ -127,13 +127,13 @@ useEffect(() => {
   };
 }, [ pathname, filter, query]);
 
-  const updateNotesList = (note) => {
-    setNotesList((prev) => {
-      return [note, ...prev].filter(
-        (element, index, array) => array.indexOf(element) === index
-      );
-    });
-  };
+  // const updateNotesList = (note) => {
+  //   setNotesList((prev) => {
+  //     return [note, ...prev].filter(
+  //       (element, index, array) => array.indexOf(element) === index
+  //     );
+  //   });
+  // };
 
   const reloadNotes = async () => {
     try {

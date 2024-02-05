@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Modal, Alert } from "react-bootstrap";
 import { useHistory, useParams } from "react-router";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../../../api/axiosDefaults";
 import Container from 'react-bootstrap/Container';
 
 
