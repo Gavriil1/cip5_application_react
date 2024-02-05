@@ -394,117 +394,69 @@ On thsi page user may change or modify his/her:
 
 
 ### Profile page
-- Contains information about the user
-- Displays info how many posts and followers user has and how many users they are following
 - Displays profile information if it was provided by the profile owner
-- Contains a dropdown menu to edit the profile and change profile password
-- User stories covered: 25, 26, 27, 29, 30
+- Allows user to change his profile Avatar, password, username
+- User stories covered:
 
 <details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-profile-page.png">
+<img src="docs/features/profilepage.png">
 </details>
 
 
 ### Profile avatar
-- Allow users to change their default avatar to their own avatar or picture
-- Displayed in the navbar, at top of the post, within profile page and by user comment
-- Displayed within ’Top Users’ menu
-- User stories covered: 25, 26
+- Permit users to replace their default profile picture with a personal avatar or photo.
+- The updated avatar is visible in the navigation bar, on the user's profile page, 
+- User stories covered: 
 
 <details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-avatar.png">
+<img src="docs/features/avatar.png">
+</details>
+
+### Username change form
+- Allows user to change their profile username
+- User stories covered: 
+
+<details><summary>See feature screenshots</summary>
+<img src="docs/features/username.png">
 </details>
 
 
 ### Password change form
 - Allows user to change their profile password
-- Contains password criteria visible on hover/tap of ‘view password criteria’ button
-- User stories covered: 28
+- User stories covered: 
 
 <details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-password-change-form-1.png">
-<img src="docs/features/feature-password-change-form-2.png">
+<img src="docs/features/resetpassword.png">
 </details>
 
 
 ### Infinite scroll
 - Allows user to scroll through the content without having to select the next/previous page
-- Used for the posts and comments
+- Used for the notes
 - Improves general user experience and user engagement
-- Displays the loading spinner before loading
-- User stories covered: 20
+- User stories covered: 
 
-<details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-infinite-scroll-1.png">
-<img src="docs/features/feature-infinite-scroll-2.png">
-</details>
-
-
-### Follow/unfollow
-- Users are able to follow a specific profile they like and then be able to easily view their posts in the Feed
-- User stories covered: 31
-
-<details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-follow-unfollow.png">
-</details>
-
-
-### ‘Add, liked, feed’ menu
-- Allow user to create a post
-- Featured on every page (except for the create/update post/profile or change password)
-- Allow user to view only posts they liked
-- Allow user to view only posts created by users they follow
-- User stories covered: 7, 21, 22
-
-<details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-add-liked-feed-1.png">
-<img src="docs/features/feature-add-liked-feed-2.png">
-</details>
-
-
-### Top Users menu
-- Displays three most followed users in the app
-- Contains follow buttons next to username which allow following these users
-- Featured on the majority of pages (except for edit post/profile or change password)
-- User stories covered: 32
-
-<details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-top-users-1.png">
-<img src="docs/features/feature-top-users-2.png">
-</details>
-
-
-### Category badges:
-- Allow to tag the post by the type of the cuisine
-- Allow other users to find content they are most interested in 
-- User stories covered: 23
-
-<details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-category-badges-1.png">
-<img src="docs/features/feature-category-badges-2.png">
-</details>
 
 
 ### Search bar
-- By typing a phrase in the search bar users can find a specific post or a user they are looking for
-- Allows to search through all post title, users or post category
-- Allows search through liked posts only or posts by users followed
-- User can click on the eraser icon to clear the search content instead of hitting the backspace button
-- User stories covered: 24
+- Users may find the desired note by entering a keyword in the search bar.
+- It allows users to search through all note titles.
+- It enables searching through liked notes on the "Important" page.
+- User stories covered:
 
 <details><summary>See feature screenshots</summary>
-<img src="docs/features/feature-search-bar-1.png">
-<img src="docs/features/feature-search-bar-2.png">
+<img src="docs/features/searchbar.png">
+
 </details>
 
 
 ### 404 error page
-- Displays if the user enters a URL that does not exist
-- Contains a button to redirect user to the main page (in addition to the one in the nabber)
-- User stories covered: 34
+- This is displayed when the user attempts to access an incorrect or unauthorized URL.
+- It contains text indicating that the page does not exist, along with a link to the homepage.
+- User stories covered:
 
 <details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-404-page.png">
+<img src="docs/features/404.png">
 </details>
 
 
@@ -519,22 +471,23 @@ On thsi page user may change or modify his/her:
 
 ## Future features / improvements
 
-Example of potential improvements to this project:
+Examples of potential improvements for future versions of the project:
 
 - Authentication
-  - Allow user sign up to the app using email or require email input for registration
-  - Forgotten password option to recover access to the account via email
-  - Allow user authentication with already existing accounts, e.g. LinkedIn, Google, etc. 
+  - Allow users to sign up for the app using email, Gmail/Apple/Microsoft/SSO authentication.
+  - Include a functionality to recover passwords through email.
 - Profile
-  - Option to send a message to other user
-- Posts
-  - Additional field to include the recipe of the dish
-  - Show most liked posts in the app - similar to ‘Top Users’ menu
-- Comments
-  - Option to reply to a selected comment and create a conversation
-  - Option to like/unlike other users’ comments
-
-I was initially planning to have the functionality to delete user account but I decided to keep all the signed-up users within the database and do not allow them to remove their profile.
+  - Provide an option to share a note with another user, or with a non-registered user by sharing a note link.
+- Notes
+  - Improve the design of the note.
+  - Add an option to include pictures in the note.
+- Search Bar
+  - Add additional filters to the search bar.
+- Profile Page
+  - Add PayPal as a payment method to allow users to pay for extra features on the app.
+  - Create a log page where users can monitor their actions.
+- User Account
+  - Allow users to delete their account.
 
 ##### Back to [top](#table-of-contents)
 
