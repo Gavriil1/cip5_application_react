@@ -522,26 +522,17 @@ ate-angle,none))}.fa-stack{dis"
 <img src="docs/validation/html/notepagehtmlcheck.png">
 </details>
 
-<details><summary>Post edit page</summary>
-<img src="docs/validation/html-validation-post-edit-page.png">
+<details><summary>Important Page</summary>
+<img src="docs/validation/html/importantpagehtmlcheck.png">
 </details>
 
-<details><summary>Profile page</summary>
-<img src="docs/validation/html-validation-profile-page.png">
+<details><summary>Note Edit Page</summary>
+<img src="docs/validation/html/noteedithtmlcheck.png">
 </details>
 
-<details><summary>Profile edit page</summary>
-<img src="docs/validation/html-validation-profile-edit-page.png">
+<details><summary>404 page</summary>
+<img src="docs/validation/html/404htmlcheck.png">
 </details>
-
-<details><summary>Password change page</summary>
-<img src="docs/validation/html-validation-password-change-page.png">
-</details>
-
-<details><summary>404 error page</summary>
-<img src="docs/validation/html-validation-404-page.png">
-</details>
-
 
 ### CSS
 
