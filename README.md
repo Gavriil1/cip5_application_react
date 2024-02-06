@@ -497,24 +497,29 @@ Examples of potential improvements for future versions of the project:
 ### HTML
 The W3C Markup Validation Service was used to validate the HTML of the website. No errors were identified. 
 
-<details><summary>Main page</summary> 
-<img src="docs/validation/html-validation-main-page.png"> 
-</details> 
+On all pages we have the following error, which is related to  fontawesome library. Since we cannot adjust and change fontawesome library I treat the error as false positive:
 
-<details><summary>Signup page</summary> 
-<img src="docs/validation/html-validation-signup-page.png"> 
-</details>
+"CSS: transform: var(--fa-rotate-angle, none) is not a transform value.
+ate-angle,none))}.fa-stack{dis"
 
 <details><summary>Login page</summary> 
-<img src="docs/validation/html-validation-login-page.png"> 
+<img src="docs/validation/html/loginpagehtmcheck.png"> 
 </details>
 
-<details><summary>Post page</summary>
-<img src="docs/validation/html-validation-post-page.png">
+<details><summary>Signup page</summary> 
+<img src="docs/validation/html/signuppagehtmlcheck.png"> 
 </details>
 
-<details><summary>Post create page</summary>
-<img src="docs/validation/html-validation-post-create-page.png">
+<details><summary>Contact Form</summary> 
+<img src="docs/validation/html/contactformpagehtmlpage.png"> 
+</details> 
+
+<details><summary>Profile Page</summary>
+<img src="docs/validation/html/userprofilehtmlcheck.png">
+</details>
+
+<details><summary>Notes Page</summary>
+<img src="docs/validation/html/notepagehtmlcheck.png">
 </details>
 
 <details><summary>Post edit page</summary>

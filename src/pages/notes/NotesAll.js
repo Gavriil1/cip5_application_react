@@ -13,6 +13,7 @@ import Form from "react-bootstrap/Form";
 import styles from "../../styles/NotesPage.module.css";
 import Container from 'react-bootstrap/Container';
 import { useLocation } from "react-router";
+import { Button } from 'react-bootstrap';
 
 // NotesAll.defaultProps = {
 //   message: "Default message when not provided",
@@ -284,26 +285,26 @@ useEffect(() => {
                     </p>
                   </Modal.Body>
                   <Modal.Footer>
-                  <button onClick={() => {
+                  <Button onClick={() => {
                         if (Array.isArray(like_id) && like_id.includes(note.id)) {
                           handleUnlike(note.id);
                         } else {
                           handleLike(note.id);
                         }
                         likeUpdateGood();
-                      }}>
+                      }} variant="success">
                         {Array.isArray(like_id) && like_id.includes(note.id) ? <StarIcon fontSize="large"/> : <AddIcon fontSize="large"/>}
-                  </button>
+                  </Button>
 
-                  <button onClick={() => { deleteNote(note.id); NoteDeletedAlert(); }} variant="secondary">
+                  <Button onClick={() => { deleteNote(note.id); NoteDeletedAlert(); }} variant="info">
                       <DeleteIcon fontSize="large" />
-                  </button>
+                  </Button>
 
-                    <button variant="primary" onClick={() => handleEditClick(note.id)}>
+                    <Button variant="warning" onClick={() => handleEditClick(note.id)}>
                       <EditIcon fontSize="large"/>
     
                       
-                    </button>
+                    </Button>
                   </Modal.Footer>
                 </Modal.Dialog>
               </div>

@@ -139,7 +139,7 @@ const ProfileEditForm = () => {
             <Form.Group>
               {image && (
                 <figure style={{ float: 'left' }}>
-                  <Image src={image} fluid />
+                  <Image src={image} fluid alt="Profile"/>
                 </figure>
               )}
               {errors?.image?.map((message, idx) => (

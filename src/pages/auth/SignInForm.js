@@ -63,6 +63,7 @@ function SignInFormtest() {
    
           <div className="form-outline mb-4">
             <input
+              id="form3Example3"
               className="form-control form-control-lg"
               type="text"
               placeholder="Username"
@@ -82,6 +83,7 @@ function SignInFormtest() {
           {/* Password input */}
           <div className="form-outline mb-3">
             <input
+              id="form3Example4"
               className="form-control form-control-lg"
               type="password"
               placeholder="Password"

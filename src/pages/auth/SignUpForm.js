@@ -52,6 +52,7 @@ const SignUpForm = () => {
             <form onSubmit={handleSubmit}>
               <div className="form-outline mb-4">
                 <input
+                  id="form3Example3"
                   className="form-control form-control-lg"
                   type="text"
                   placeholder="Username"
@@ -70,6 +71,7 @@ const SignUpForm = () => {
             ))}
               <div className="form-outline mb-3">
                 <input
+                  id="form3Example4"
                   className="form-control form-control-lg"
                   type="password"
                   placeholder="Password"
@@ -92,6 +94,7 @@ const SignUpForm = () => {
 
               <div className="form-outline mb-3">
                 <input
+                  id="form3Example5"
                   className="form-control form-control-lg"
                   type="password"
                   placeholder="Confirm Passowrd"
@@ -100,7 +103,7 @@ const SignUpForm = () => {
                   onChange={handleChange}
     
                 />
-                <label className="form-label" htmlFor="form3Example4">
+                <label className="form-label" htmlFor="form3Example5">
                   Password
                 </label>
               </div>
