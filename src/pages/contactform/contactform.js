@@ -80,7 +80,7 @@ const ContactForm = () => {
                                       value={formData.name}
                                       onChange={handleChange}
                                   />
-                                  <label htmlFor="name" className="text-white">
+                                  <label htmlFor="name" className="text-black">
                                       Your name
                                   </label>
                               </div>
@@ -96,7 +96,7 @@ const ContactForm = () => {
                                       value={formData.email}
                                       onChange={handleChange}
                                   />
-                                  <label htmlFor="email" className="text-white">
+                                  <label htmlFor="email" className="text-black">
                                       Your email
                                   </label>
                               </div>
@@ -115,7 +115,7 @@ const ContactForm = () => {
                                       value={formData.subject}
                                       onChange={handleChange}
                                   />
-                                  <label htmlFor="subject" className="text-white">
+                                  <label htmlFor="subject" className="text-black">
                                       Subject
                                   </label>
                               </div>
@@ -133,7 +133,7 @@ const ContactForm = () => {
                                       value={formData.message}
                                       onChange={handleChange}
                                   />
-                                  <label htmlFor="message" className="text-white">
+                                  <label htmlFor="message" className="text-black">
                                       Your message
                                   </label>
                               </div>
