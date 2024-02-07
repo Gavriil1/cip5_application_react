@@ -196,7 +196,7 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 
 ## Front-End
 
-<!-- ### React
+### React
 
 React is a declarative, efficient, and flexible JavaScript library for building user interfaces. Its primary goal is to make it easy to reason about an interface and its state at any point in time, by dividing the UI into a collection of independent and reusable components ([source](https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/)).
 
@@ -209,18 +209,25 @@ I used React for this application for several reasons:
 
 There were various components created and reused across this application.
 
-- `<Asset />` - multipurpose reusable compontent which displays different versions of the component depending on the props we pass to it:
-  - loading gif (spinner) when content is being loaded
-  - image with src and alt attribute
-  - paragraph with a message
+- `<NavBar />` - This is a reusable component that generates a navigation bar. It displays different options for logged-in and logged-out users. For logged-out users, it shows ‘Sign In’ and ‘Sign Up’ options. For logged-in users, it displays ‘Notes’, ‘Important’, ‘Contact Page’, ‘Profile Page’, and ‘Sign Out’ options
+  - User stories covered: 
 
-  - User stories covered: 20
+- `<Footer />` - This is a reusable component that generates a footer of the page. It has copyright information and social media links.
+  - User stories covered: 
 
-- `<Avatar />` - resuable component, used to render profile images in the UI. Passed props allow for setting image source and size and adjust image dimensions depending on where the component is rendered. Example of use include the `<NavBar />` component, Post page or the Profile page. On mobile screens Avatar component within the Profile Page will be significantly bigger than on other screen sizes.
-  - User stories covered: 25, 26
+- `<NotFount />` - This is a reusable component that generates 404 error when the user tries to visit incorrect page. 
+  - User stories covered: 
 
-- `<DropdownMenu />` - reusable component, used to render the dropdown menu which allows user to edit or delete their own posts orcomments, and also edit their profile or change profile password.
-  - User stories covered: 16, 17, 27, 28
+
+- `<Avatar />` - This is a reusable component used to configure the profile picture size in the UI.
+  - User stories covered: 
+
+- `<CrateArea />` - This is a reusable component used to create a new notes. This component is assigned to Notesall page.
+  - User stories covered: 
+
+- `<EditNote />` - This is a reusable component used to modify the note: content, title, like status. T
+  - User stories covered: 
+
 
 - `<FeedbackMsg />` - component for displaying feedback messages to the user upon editing/deleting comments, deleting post, updating profile information or a password.
   - User stories covered: 35
@@ -241,7 +248,7 @@ There were various components created and reused across this application.
   - User stories covered: 4, 28
 
 - `<PopularProfiles />` - reusable component showing first three most followed profiles in the app. The component displays user avatar, name and follow/unfollow button. These buttons are hidden on medium screen size devices. The component is used across the app together with the `<LikeFeedAddPost />` component and post categories badges on relevant pages.
-  - User stories covered: 32 -->
+  - User stories covered: 32
 
 
 ## Back-End API
