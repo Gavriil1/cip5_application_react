@@ -12,6 +12,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
+import PropTypes from 'prop-types';
 
 function CreateArea(props) {
   const [errors, setErrors] = useState({});
@@ -172,3 +173,7 @@ function CreateArea(props) {
 }
 
 export default CreateArea;
+
+CreateArea.propTypes = {
+  reloadNotes: PropTypes.func.isRequired,
+};

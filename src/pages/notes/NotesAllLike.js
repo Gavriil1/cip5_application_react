@@ -14,6 +14,7 @@ import styles from "../../styles/NotesPage.module.css";
 import Container from 'react-bootstrap/Container';
 import { useLocation } from "react-router";
 import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 // NotesAll.defaultProps = {
 //   message: "Default message when not provided",
@@ -317,3 +318,8 @@ useEffect(() => {
 }
 
 export default NotesAll;
+
+NotesAll.propTypes = {
+  message: PropTypes.string,
+  filter: PropTypes.string,
+};
