@@ -116,7 +116,7 @@ const SignUpForm = () => {
                 <button
                   type="submit"
                   className="btn btn-primary btn-lg"
-                  style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                  style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem", backgroundColor: "#004085" }}
                 >
                   Sign up
                 </button>

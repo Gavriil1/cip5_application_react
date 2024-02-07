@@ -4,6 +4,7 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { Link, useHistory } from "react-router-dom";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import image from "../../assets/draw2.webp"
 
 function SignInFormtest() {
   const setCurrentUser = useSetCurrentUser();
@@ -49,7 +50,7 @@ function SignInFormtest() {
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-md-9 col-lg-6 col-xl-5">
         <img
-          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          src={image}
           className="img-fluid"
           alt="Sample"
         />
@@ -105,7 +106,7 @@ function SignInFormtest() {
             <button
               type="submit"
               className="btn btn-primary btn-lg"
-              style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+              style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem", backgroundColor: "#004085" }}
             >
               Login
             </button>
@@ -115,9 +116,9 @@ function SignInFormtest() {
               </Alert>
             ))}
             <Container >
-          <Link className="small fw-bold mt-2 pt-1 mb-0" to="/signup">
-            Don&apos;t have an account? <span style={{ color: 'blue' }}>Register</span>
-          </Link>
+            <Link className="small fw-bold mt-2 pt-1 mb-0" to="/signup">
+                      Already have an account? <span style={{ color: 'blue' }}>Register</span>
+                    </Link>
         </Container>
           </div>
         </form>
