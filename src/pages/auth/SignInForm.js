@@ -116,7 +116,7 @@ function SignInFormtest() {
             ))}
             <Container >
           <Link className="small fw-bold mt-2 pt-1 mb-0" to="/signup">
-            Don't have an account? <span style={{ color: 'blue' }}>Register</span>
+            Don&apos;t have an account? <span style={{ color: 'blue' }}>Register</span>
           </Link>
         </Container>
           </div>
