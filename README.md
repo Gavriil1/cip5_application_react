@@ -57,55 +57,56 @@ The key functionality aspects:
 
 ### First sprint
 
-#### Navigation 
 
-1. As a user, I can view the home page that describes the application, enabling me to understand its purpose.
-2. As a user, I can access a navigation bar on all pages, allowing me to conveniently navigate back to the main page or visit my profile page.
-3. As a user who is not logged in, I can see options to log in or sign up, providing me the ability to access my account or create a new one.
- 
 #### Authentication 
 
-4. As a newcomer, I have the ability to set up a new account, enabling me to utilize the application.
-5. As a user who has used the app before, I can enter my existing login details to gain access to the application.
-6. As a user, I can stay logged in until I decide to log out, ensuring uninterrupted use of the application.
+1. As a new user, I can create a new account.
+2. As a user who has an account, I want to be able to log in to my account.
+3. As a user, I can use links to navigate from the login page to the sign-up page and back.
 
+#### Navigation 
+
+4. As a user, I can view the home page that describes the application, enabling me to understand its purpose.
+5. As a user, I can access a navigation bar on all pages, allowing me to conveniently navigate back to the main page or visit my profile page.
+6. As a user who is not logged in, I can see options to log in or sign up, providing me the ability to access my account or create a new one.
+ 
 ### Second sprint
 
-#### Notes
+#### Note Page/Important page
 
-7. As a user, I can create notes so that I can organize my thoughts and tasks.
-10. As a user, I can view the details of a single note so that I can see its full content and any associated reminders or tasks.
-11. As a user, I can mark a specific note as important so that I can easily access it later.
+7. As a user, I can create notes to organize my thoughts and tasks.
+8. As a user, I can view the details of a single note to see its title and content.
+9. I can use the “Delete” button to delete a note.
+10. I can use the like/unlike button to mark a note as important.
+11. I can identify if the note is liked by the modal title or icon which appears on the “Like/Unlike” button.
+12. I can use the search field to search for a note according to keywords in the title.
+13. I can create a note using the form at the top of the page.
+14. I can edit the content of a note by clicking the “Edit” option on each note.
+15. I want to see only important notes on the “Important” page.
 
-#### The Note Page 
-
-12. As a user, I can view the details of a single note so that I can understand its content fully.
-14. As a user, I can add remarks to a note so that I can record my thoughts about the note.
-17. As the author of a remark, I can delete my remark from the note.
-18. As the owner of a note, I can edit my note's title and content so that I can make corrections or updates after it was created.
-19. As an owner I can like the note, to increase its importance.
+#### Edit page
+16. As a user, I want to edit the “title” and “content” of a note.
+17. I want to return from the “Edit Note” page to the “Note” page without modifying the content of the note.
 
 ### Third sprint
 
-#### Main page 
+#### Contact Form
 
-19. As a user, I can view notes ordered by the most recently added/updated so that I am up to date with the latest notes.
-20. As a user, I can keep scrolling through the notes so that they are loaded automatically and I don't have to select the next page.
-21. As a user, I can see the notes I marked as important so that I can find the notes I need the most.
-23. As a user, I can view Important page, so that I can choose notes to display that I’m particularly interested in.
-24. As a user, I can search for notes with keywords so that I can find the notes I am interested in.
+18. I want to be able to send feedback email to owner of the site.
+
 
 #### User Profile Page 
 
-25. As a user, I can upload a profile picture to make it easier for others to recognize me.
-27. As a user, I can modify my username
-28. As a user, I can update my account password to maintain the security of my profile.
+19. As a user, I can update my profile picture.
+20. As a user, I can change my username.
+21. As a user, I can update my password.
 
 #### General
 
-33. As an application owner, I want my application to be fully responsive so that users can use it on various devices.
-34. As an application owner, I want users to be directed to an error page if they try to access a note that does not exist, preventing the need to use the browser's back button.
-35. As a user of the application, I can view feedback messages, so that I know if my note or profile has been updated.
+22. As a user of the application, I can see ReactBootstrap alerts after completing different actions, for example: creating a note, deleting a note, liking a note, editing a note, changing the password, changing the username, changing the profile picture, etc.
+23. As an application owner, I want my application to be fully responsive so that users can use it on various devices.
+24. As an application owner, I want users to be directed to an error page if they try to access a note that does not exist, preventing the need to use the browser’s back button.
+
 
 
 ##### Back to [top](#table-of-contents)
@@ -1222,12 +1223,4 @@ Testing has been carried out on the following browsers:
 
 ### Code
 
-This project was inspired by the ['Moments'](https://github.com/Code-Institute-Solutions/moments) social media platform which was a final walk-through project with Code Institute. I have built my own styles and added extra functionality, such as filtering of posts based on their category. The SnapFood application can be expanded on and include the potential improvements mentioned in the 'Future features / improvements' section.
-
-
-### Acknowledgements
-
-I would like to thank everyone who supported me in the development of this project:
-- My mentor Mo for professional guidance and helpful feedback
-- Tutors (Sean, Alan & John) at Code Institute for help on sorting various issues and sharing their knowledge
-- Code Institute community on Slack for their support
+This project was inspired by the ['Moments'](https://github.com/Code-Institute-Solutions/moments) social media platform which was a final walk-through project with Code Institute. I took many components from "Moments" to build my own Productivity App .
