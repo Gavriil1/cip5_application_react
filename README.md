@@ -682,61 +682,61 @@ There were a few errors related to "Redunnt link" and "NonScript" element. I ver
  
 ### Manual testing of user stories
 
-1. As a user, I can see the home page with explanation of the portal, so that I know what the app is about
+1. As a new user, I can create a new account.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp5-snapfood.onrender.com/ | Landing page loads with application description | Works as expected |
+Open Application Web Site, Click on "Sign Up". COmplete username and password fields and click "Sign up" | New account is created and the user redirected to sign in page. | Works as expected |
  
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-01.png">
+<img src="docs/userstories/user_story_1.png">
 </details>
 
+<br/>
 
-2. As a user, I can see a navbar on every page, so that I can easily return to main page and access my profile page
+
+
+2.  As a user who has an account, I want to be able to log in to my account.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Load any page of the application| Navbar with different links is displayed on top of each page | Works as expected |
+On "Sign In" use correct password and username and click "Log In" button| User signed in sucesfully to his account. | Works as expected |
  
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-02-a.png">
-<img src="docs/testing/user-stories-testing/user-story-02-b.png">
-<img src="docs/testing/user-stories-testing/user-story-02-c.png">
-<img src="docs/testing/user-stories-testing/user-story-02-d.png">
+<img src="docs/userstories/user_story_2.png">
 </details>
 
+<br/>
 
-3. As a logged-out user, I can see log in and sign up options so that I can log in or sign up
+3. As a user, I can use links to navigate from the login page to the sign-up page and back.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to the main page and ensure you are logged out. If logged in, click on the profile avatar in the navbar and select ‘logout’ from the dropdown menu | Redirects to the landing page and displays options to log in or sign up | Works as expected |
+On Sign in page I see hyperlink "Already have an account?Register". When I click on it navigate to sign up page. On sign up page I see "Already have an account? Login" When I click on it I navigate to login page. | By clicking on the links I navigate to "sign in" and "sign up" pages | Works as expected |
  
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-03.png">
+<img src="docs/userstories/user_story_3_signin_signout.png">
 </details>
 
+<br/>
 
-4. As a new user, I can create a new account so that I can access the app
+4. As a user, I can access a navigation bar on all pages, allowing me to conveniently navigate back to the main page or visit my profile page.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to https://ci-pp5-snapfood.onrender.com/, click ‘sign up’ icon in the navbar or ‘Happy to join!’ button. Type username, password and confirm the password | Redirects user to login page and on successful login with created credentials the user is logged in and this is indicated by display of their username and default avatar in the navbar | Works as expected |
+Navigate to application website. After sing sign in to your ccount  | As not autorized user I can see "Sign in", "Sign Up" options on Navmbar. As logged in user I can see and navigate to "Notes", "Important", "Contact", "User Profile"  | Works as expected |
  
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-04-a.png">
-<img src="docs/testing/user-stories-testing/user-story-04-b.png">
-<img src="docs/testing/user-stories-testing/user-story-04-c.png">
-<img src="docs/testing/user-stories-testing/user-story-04-d.png">
+<img src="docs/userstories/user_story_4_navbar.png">
 </details>
 
+<br/>
 
-5. As a returning user, I can log in with my existing credentials so that I can access the app
+5. As a user, I can create notes to organize my thoughts and tasks.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-If logged out, on the landing page click on the ‘log in’ icon in the navbar or ‘I’m already a member, log me in!’ button. Type your existing username and password | Logs user in and displays the main posts page. Displays username and default avatar/profile picture in the navbar | Works as expected |
+As a logged in user, I am on "Note" page. I complete fields "Title", "Content" and click create | New Note is created | Works as expected |
  
 <details><summary>Screenshots</summary>
 <img src="docs/testing/user-stories-testing/user-story-05-a.png">
