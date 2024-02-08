@@ -71,8 +71,9 @@ const UserPasswordForm = () => {
           <h1>Reset Password</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-              <Form.Label>New password</Form.Label>
+              <Form.Label htmlFor="newPassword"><strong>New password</strong></Form.Label>
               <Form.Control style={{ width: '50%' }}
+                id="newPassword"
                 placeholder="new password"
                 type="password"
                 value={new_password1}
@@ -86,8 +87,9 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Confirm password</Form.Label>
+              <Form.Label htmlFor="ConfirmNewPassword"><strong>Confirm password</strong></Form.Label>
               <Form.Control style={{ width: '50%' }}
+                id="ConfirmNewPassword"
                 placeholder="confirm new password"
                 type="password"
                 value={new_password2}

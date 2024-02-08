@@ -250,16 +250,20 @@ useEffect(() => {
       <main className="container">
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
-          className={styles.SearchBar}
-          onSubmit={(event) => event.preventDefault()}
-        >
-          <Form.Control
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            type="text"
-            className="mr-sm-2"
-            placeholder="Search posts"
-          />
+              className={styles.SearchBar}
+              onSubmit={(event) => event.preventDefault()}
+            >
+            <Form.Group>
+            <Form.Label htmlFor="searchNotes"><strong>Search</strong></Form.Label>
+            <Form.Control
+              id="searchNotes"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              type="text"
+              className="mr-sm-2"
+              placeholder="Search posts"
+            />
+            </Form.Group>
         </Form>
         {/* <CreateArea reloadNotes={reloadNotes} /> */}
 
@@ -293,15 +297,21 @@ useEffect(() => {
                           handleLike(note.id);
                         }
                         likeUpdateGood();
-                      }} variant="success">
+                      }} variant="success"
+                      aria-label="Like or unlike note"
+                      >
                         {Array.isArray(like_id) && like_id.includes(note.id) ? <StarIcon fontSize="large"/> : <AddIcon fontSize="large"/>}
                   </Button>
 
-                  <Button onClick={() => { deleteNote(note.id); NoteDeletedAlert(); }} variant="info">
+                  <Button onClick={() => { deleteNote(note.id); NoteDeletedAlert(); }} variant="info"
+                  aria-label="Delete note"
+                  >
                       <DeleteIcon fontSize="large" />
                   </Button>
 
-                    <Button variant="warning" onClick={() => handleEditClick(note.id)}>
+                    <Button variant="warning" onClick={() => handleEditClick(note.id)}
+                    aria-label="Edit note"
+                    >
                       <EditIcon fontSize="large"/>
     
                       

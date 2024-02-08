@@ -13,7 +13,7 @@ function ProfilePage() {
       <p>You may change the following settings:</p>
       </div>
       <div>
-        <p>Profile Picture</p>
+        {/* <p>Profile Picture</p> */}
         <ProfileEditForm />
         <br></br>
         <br></br>

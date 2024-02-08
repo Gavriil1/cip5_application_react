@@ -136,7 +136,12 @@ const ProfileEditForm = () => {
 
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>
+            
             <Form.Group>
+            <div style={{ textAlign: 'left', paddingLeft: 0 }}>
+              <Form.Label htmlFor="image-upload" ><strong>Picture Upload</strong></Form.Label>
+              </div>
+              <div>
               {image && (
                 <figure style={{ float: 'left' }}>
                   <Image src={image} fluid alt="Profile"/>
@@ -147,6 +152,7 @@ const ProfileEditForm = () => {
                   {message}
                 </Alert>
               ))}
+              </div>
               {/* <div>
                 <Form.Label
                   className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
@@ -155,6 +161,8 @@ const ProfileEditForm = () => {
                   Change the image
                 </Form.Label>
               </div> */}
+              
+              <div>
               <Form.File
                 id="image-upload"
                 ref={imageFile}
@@ -168,6 +176,10 @@ const ProfileEditForm = () => {
                   }
                 }}
               />
+              </div>
+              {/* <div style={{ textAlign: 'left', paddingLeft: 0 }}>
+              <Form.Label htmlFor="image-upload" >Picture Upload</Form.Label>
+              </div> */}
             </Form.Group>
             {/* <div className="d-md-none">{textFields}</div> */}
           </Container>

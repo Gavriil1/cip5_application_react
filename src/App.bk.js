@@ -21,22 +21,11 @@ import NotesAllLike from "./pages/notes/NotesAllLike"
 import EditNote from "./pages/notes/EditNote"
 import CreateArea from "./pages/notes/CreateArea"
 import Test from "./pages/Test"
-import React, { useEffect, useState } from "react";
 
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
-
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    if (currentUser !== undefined) {
-      setIsLoading(false);
-    }
-  }, [currentUser]);
-
-  if (isLoading) {
-    return <div>Loading...</div>; // Or replace with a loading spinner
-  }
+  
   return (
     <div className={styles.App}>
       <NavBar />
@@ -49,8 +38,6 @@ function App() {
               currentUser ? <NotesAll message="Yo results found. Adjust the search keyword or like a post."/> : <SignInForm />
             )}
           />
-          consoel.log("yo")
-          console.log(currentUser)
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/contact" render={() => <ContactForm />} />

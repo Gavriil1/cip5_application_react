@@ -2,13 +2,8 @@ import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-
-import AddIcon from "@material-ui/icons/Add";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
@@ -30,14 +25,6 @@ function CreateArea(props) {
     });
   };
 
-  // function handleInput(event) {
-  //   setNote((prev) => {
-  //     return {
-  //       ...prev,
-  //       [name]: value
-  //     };
-  //   });
-  // }
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -59,9 +46,12 @@ function CreateArea(props) {
   
   const textFields = (
     <div className="text-center">
+      
+      <Form>
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label htmlFor="title">Title</Form.Label>
         <Form.Control
+          id="title"
           type="text"
           name="title"
           value={title}
@@ -75,34 +65,29 @@ function CreateArea(props) {
       ))}
 
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label htmlFor="content">Content</Form.Label>
         <Form.Control
           as="textarea"
+          id="content"
           rows={6}
           name="content"
           value={content}
           onChange={handleChange}
         />
       </Form.Group>
+      </Form>
       {errors?.content?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
-
-      {/* <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        cancel
-      </Button> */}
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
         create
       </Button>
     </div>
   );
 
-  // Create "Create note" alert
+
   const [showCreatenoteAlert, setShowCreatenotedAlert] = useState(false);
   const CreateNoteAlert = () => {
     console.log("First Button clicked!");
@@ -131,7 +116,9 @@ function CreateArea(props) {
         }}
       >
         <Form.Group>
+        <Form.Label htmlFor="title"><strong>Title</strong></Form.Label>
           <Form.Control
+            id = "title"
             className="title-color"
             type="text"
             onChange={handleChange}
@@ -143,7 +130,9 @@ function CreateArea(props) {
         </Form.Group>
   
         <Form.Group>
+        <Form.Label htmlFor="note"><strong>Note</strong></Form.Label>
           <Form.Control
+            id = "note"
             onChange={handleChange}
             name="content"
             as="textarea"
