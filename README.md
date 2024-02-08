@@ -736,14 +736,13 @@ Navigate to application website. After sing sign in to your ccount  | As not aut
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-As a logged in user, I am on "Note" page. I complete fields "Title", "Content" and click create | New Note is created | Works as expected |
+As a logged in user, I am on "Note" page. I complete fields "Title", "Content" and click "create" | New Note is created | Works as expected |
  
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-05-a.png">
-<img src="docs/testing/user-stories-testing/user-story-05-b.png">
-<img src="docs/testing/user-stories-testing/user-story-05-c.png">
+<img src="docs/userstories/user_story_5_create_note.png">
 </details>
 
+<br/>
 
 6.	As a user, I can maintain my logged-in status until I choose to log out so that my use of app is not compromised
 

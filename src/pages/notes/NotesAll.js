@@ -249,7 +249,7 @@ useEffect(() => {
   </Container>
       <Header />
       <main className="container">
-        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
               className={styles.SearchBar}
               onSubmit={(event) => event.preventDefault()}
@@ -280,7 +280,7 @@ useEffect(() => {
                 <Modal.Dialog>
                 <Modal.Header  style={{ backgroundColor: Array.isArray(like_id) && like_id.includes(note.id) ? 'yellow' : 'green' }}>
                   <h2 className="title-color">
-                      {note.id} {note.title}
+                       {note.title}
                   </h2>
                 </Modal.Header>
 
