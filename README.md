@@ -744,49 +744,60 @@ As a logged in user, I am on "Note" page. I complete fields "Title", "Content" a
 
 <br/>
 
-6.	As a user, I can maintain my logged-in status until I choose to log out so that my use of app is not compromised
+6. As a user, I can view the details of a single note to see its title and content.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Log in to the application and do not log out within the 24 hours | Users stay logged in for 24 hours unless choosing to log out themselves | Works as expected |
+As a user I navigate to "Notes page" after I click on Pensic button on the note| When I am on "Notes page" I see title and content for all notes. When I click on pencil I navigate to page, where I see the content of a single note but in bigger windows | Works as expected |
  
-
-7. As a user, I can create posts so that I can share my food images with the community
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Click on the ‘Add post’ in the left-hand side small menu and the posts create page will be shown | Add the post title, select the category and upload image (post description is optional) and click ‘create’ button. The post will appear in the main posts page | Works as expected |
- 
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-07-a.png">
-<img src="docs/testing/user-stories-testing/user-story-07-b.png">
-<img src="docs/testing/user-stories-testing/user-story-07-c.png">
+ <details><summary>Screenshots</summary>
+<img src="docs/userstories/user_story_6a-view_note_content.png">
+<img src="docs/userstories/user_story_6b-view_note_content.png">
 </details>
 
+<br/>
 
-8.	As a user, I can categorise my post so that other users can find it by its tag
+7. I can use the “Delete” button to delete a note.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Click on the ‘Add post’ in the left-hand side small menu and the posts create page will be shown. Add posts details and select a category of the post (mandatory field) | Post is added and a category badge (type of cuisine) is displayed within the post under its title and description | Works as expected |
+As logged in user I navigate to "Note" or "Import" page and click on bin icon | the note is deleted | Works as expected |
  
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-08-a.png">
-<img src="docs/testing/user-stories-testing/user-story-08-b.png">
-<img src="docs/testing/user-stories-testing/user-story-08-c.png">
+<img src="docs/userstories/user_story_7a-deletenote.png">
+<img src="docs/userstories/user_story_7b-deletenote.png">
+
 </details>
 
+<br/>
 
-9. As a user, I can view other people’s posts so that I can get inspired by their images 
+8. I can use the like/unlike button to mark a note as important.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-As a logged in user navigate to the main page by clicking on the 'Home' icon in the navbar | All posts will be displayed on the page | Works as expected |
+On "Note", "Important" or "Edit" page I click on "Like/Unlike" button | Title of note change color, in addition icon of like/unlike button changes  | Works as expected |
+ 
+<details><summary>Screenshots</summary>
+<img src="docs/userstories/usere_story_8a_like.png">
+<img src="docs/userstories/usere_story_8b_like.png">
+<img src="docs/userstories/usere_story_8c_like.png">
+</details>
+
+<br/>
+
+9. I can identify if the note is liked by the modal title or icon which appears on the “Like/Unlike” button.
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+I navigate to "Important" page. After I navigate to "Note" page, finaly I click on "Penscil" icon | I  see all important notes on "Important" page. On "Note", "Edit" page I can see liked notes with yello colour and start icon on "Like/Unlike" button | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-09-a.png">
+<img src="docs/userstories/user_story_9a_seelike.png">
+<img src="docs/userstories/user_story_9b_seelike.png">
+<img src="docs/userstories/user_story_9c_seelike.png">
 </details>
 
+<br/>
 
 10. As a user, I can view the details of a single post so that I can see its full description and other users’ comments
 
