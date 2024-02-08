@@ -187,21 +187,28 @@ function EditNote() {
           </Modal.Body>
     
           <Modal.Footer>
-            <button
-              onClick={() => {
-                like_id === false ? handleLike(note.id) : handleUnlike(note.id);
-              }}
-            >
-              {like_id === false ? <AddIcon fontSize="large"/> : <StarIcon fontSize="large"/>}
-            </button>
+          <button 
+  aria-label={like_id === false ? 'Like' : 'Unlike'}
+  onClick={() => {
+    like_id === false ? handleLike(note.id) : handleUnlike(note.id);
+  }}
+>
+  {like_id === false ? <AddIcon fontSize="large"/> : <StarIcon fontSize="large"/>}
+</button>
+
     
-            <Button variant="secondary" onClick={() => { history.push("/notes"); handleSecondClick(); }}>
+            <Button variant="secondary" onClick={() => { history.push("/notes"); handleSecondClick(); }} aria-label="Cancel">
               Cancel
             </Button>
     
-            <Button variant="primary" type="button" onClick={() => { handleSubmit(); handleThirdClick(); }}>
-              Save changes
-            </Button>
+            <Button 
+                style={{ backgroundColor: '#004085' }} 
+                variant="primary" 
+                type="button" 
+                onClick={() => { handleSubmit(); handleThirdClick(); }}
+              >
+                Save changes
+              </Button>
           </Modal.Footer>
         </Modal.Dialog>
       </>
