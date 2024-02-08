@@ -167,7 +167,7 @@ function EditNote() {
         <Modal.Dialog>
         <Modal.Header style={{ backgroundColor: like_id === false ? 'green' : 'yellow' }}>
         <Modal.Title className="title-color">
-        Edit Note
+        <h1>Edit Note</h1>
         </Modal.Title>
         </Modal.Header>
 

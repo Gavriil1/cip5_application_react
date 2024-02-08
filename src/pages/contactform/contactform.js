@@ -57,7 +57,7 @@ const ContactForm = () => {
       <div className="main_container">
           <div className={'d-flex justify-content-center h-100 '}>
               <div className={`card-body ${style.card_body_task_form}`} style={{ height: 570 }}>
-              <h2 className="text-black text-center">Feedback Form</h2>
+              <h1 className="text-black text-center">Feedback Form</h1>
               <br></br>
                   <form
                       id="contact-form"

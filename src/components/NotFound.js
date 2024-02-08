@@ -7,9 +7,9 @@ function NotFoundPage() {
           <Container>
               <Row className="justify-content-center">
                   <Col md={12} className="text-center">
-                      <span className="display-1 d-block">404</span>
+                      <h1><span className="display-1 d-block">404</span></h1>
                       <div className="mb-4 lead">The page you are looking for was not found.</div>
-                      <Button variant="link" href="/">Back to Notes</Button>
+                      <Button style={{ color: '#ffffff', backgroundColor: '#004085' }} href="/">Back to Notes</Button>
                   </Col>
               </Row>
           </Container>

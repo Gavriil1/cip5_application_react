@@ -636,50 +636,42 @@ Lighthouse was used to test the performance, accessibility, best practice and SE
 
 ### Wave
 The WAVE WebAIM web accessibility evaluation tool was used to test the websites accessibility.
-There were a few errors related to missing labels and contrast issues on buttons. These errors were rectified.
+There were a few errors related to "Redunnt link" and "NonScript" element. I verified that I can ignore these two errors.
 
-<details><summary>Landing page</summary>
-<img src="docs/validation/wave-landing-page.png">
+<img src="docs/validation/wave/allowto not fix.png">
+
+<details><summary>Log in page</summary>
+<img src="docs/validation/wave/signinwave.png">
 </details>
 
 <details><summary>Sign up page</summary>
-<img src="docs/validation/wave-sign-up.png">
+<img src="docs/validation/wave/signupwave.png">
 </details>
 
-<details><summary>Log in page</summary>
-<img src="docs/validation/wave-log-in.png">
+
+<details><summary>Note page</summary>
+<img src="docs/validation/wave/notewaive.png">
 </details>
 
-<details><summary>Main posts page</summary>
-<img src="docs/validation/wave-main-posts-page.png">
+<details><summary>Important page</summary>
+<img src="docs/validation/wave/importantwave.png">
 </details>
 
-<details><summary>Post page</summary>
-<img src="docs/validation/wave-post-page.png">
+<details><summary>Profile Page</summary>
+<img src="docs/validation/wave/userprofilewave.png">
 </details>
 
-<details><summary>Post create page</summary>
-<img src="docs/validation/wave-post-create-page.png">
+<details><summary>Contact Form</summary>
+<img src="docs/validation/wave/feedbackwave.png">
 </details>
 
-<details><summary>Post edit page</summary>
-<img src="docs/validation/wave-post-edit-page.png">
+<details><summary>Edit Page</summary>
+<img src="docs/validation/wave/editpagewave.png">
 </details>
 
-<details><summary>Profile page</summary>
-<img src="docs/validation/wave-profile-page.png">
-</details>
-
-<details><summary>Profile edit page</summary>
-<img src="docs/validation/wave-profile-edit-page.png">
-</details>
-
-<details><summary>Password change page</summary>
-<img src="docs/validation/wave-password-change-page.png">
-</details>
 
 <details><summary>404 error page</summary>
-<img src="docs/validation/wave-404-page.png">
+<img src="docs/validation/wave/404wavecheck.png">
 </details>
 
 ##### Back to [top](#table-of-contents)
