@@ -12,12 +12,18 @@ export const useSetProfileData = () => useContext(SetProfileDataContext);
 
 export const ProfileDataProvider = ({ children }) => {
   const [profileData, setProfileData] = useState({
-    // we will use the pageProfile later!
     pageProfile: { results: [] },
     popularProfiles: { results: [] },
   });
 
   const currentUser = useCurrentUser();
+
+    /*
+    Makes a request to the /followers/ endpoint
+    Sends information about what profile (its id)
+    the user just followed (clicked)
+    Updates profile page and PopularProfiles data
+  */
 
   const handleFollow = async (clickedProfile) => {
     try {

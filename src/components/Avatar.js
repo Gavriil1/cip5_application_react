@@ -2,6 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "../styles/Avatar.module.css";
 
+/*
+  Avatar component with default height prop
+*/
+
 const Avatar = ({ src, height = 45, text }) => {
   return (
     <span>

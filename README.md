@@ -163,31 +163,31 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 
 ### Libraries, frameworks and dependencies
 
-- [Axios](https://axios-http.com/docs/intro) - Axios was employed as a promise-based HTTP client in the project. It was instrumental in sending API requests from the React application to the API, effectively preventing any CORS errors during the transmission of cookies.
-- [ClassNames](https://www.npmjs.com/package/classnames/) -   This utility facilitates the modification of the website’s aesthetic elements contingent upon specific conditions. The rationale behind its implementation was to dynamically alter the visual representation of components in accordance with the required stylistic parameters, and to concurrently apply multiple styles to these components
+- [Axios](https://axios-http.com/docs/intro) - Axios was employed as a promise-based HTTP client in the project. It was used to  send API requests from the React application to the API, effectively preventing any CORS errors during the transmission of cookies.
+- [ClassNames](https://www.npmjs.com/package/classnames/) - ClassNames were used as "class" in standard css.
 - [JWT](https://jwt.io/) - The utilization of JSON Web Tokens (JWT) was instrumental in precluding unauthenticated users from initiating superfluous network requests for access token renewal. Furthermore, it facilitated the elimination of the timestamp from the browser in instances where the token expired upon user refresh or the user opted to log out
 - [React](https://17.reactjs.org/) - JavaScript library for building front end of the application. 
-- [React-Bootstrap 4.6](https://react-bootstrap-v4.netlify.app/) -  The Bootstrap React library was employed to construct the user interface on the front-end, encompassing both stylistic elements and responsiveness.
-- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - This component was employed to facilitate the automatic loading of content, for instance, notes, as the user scrolls down the page. This effectively obviates the necessity for the user to manually navigate to subsequent or preceding pages.
-- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - This library was leveraged for dynamic routing. It was instrumental in managing the transition between various component views and dictating the content visible to the user, contingent on the URL accessed in the browser.
+- [React-Bootstrap 4.6](https://react-bootstrap-v4.netlify.app/) -  The Bootstrap React library was employed to construct the user interface on the front-end.
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - This component was employed to enable the automatic loading of content to avoid pagination, so the user could see the content without distruptions
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - This library was used for dynamic routing. 
 
 ### Tools & Programs
 
-- [Am I Responsive](http://ami.responsivedesign.is/) Was used to check the responsiveness of a website.
-- [Balsamiq](https://balsamiq.com/) wireframes creation tool
-- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for code debugging and for checking the responsiveness of a website
-- [Cloudinary](https://cloudinary.com/) was used to store static files and images.
-- [Font Awesome](https://fontawesome.com/) - Icons sourced from Font Awesome were incorporated extensively across the website
-- [MUI](https://mui.com/material-ui/material-icons/) - Icons from material UI were used in parallel to fontawesome.
+- [Am I Responsive](http://ami.responsivedesign.is/) Was used to verify if the site is responsive
+- [Balsamiq](https://balsamiq.com/) was used as wireframes creation tool
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for code debugging and for checking the responsivenes of a website
+- [Cloudinary](https://cloudinary.com/) It was used to store static files and images
+- [Font Awesome](https://fontawesome.com/) - Icons sourced from Font Awesome were extensively incorporated across the website.
+- [MUI](https://mui.com/material-ui/material-icons/) - Icons from Material UI were used in parallel to Font Awesome.
 - [Google Fonts](https://fonts.google.com/) - Was used for font input.
-- [GitHub](https://github.com/) It served as a remote repository for the preservation of project code
-- [Gitpod](https://gitpod.io) was used to develop the application.
+- [GitHub](https://github.com/) Was used as a code repository.
+- [Gitpod](https://gitpod.io) was used as IDE development tool
 - [Heroku](https://heroku.com) was used to deploy the project into live environment
 - Validation:
   - [WC3 Validator](https://validator.w3.org/) was used to validate the html
   - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) was used to validate the css
   - [ESLint](https://eslint.org/) used to validate JSX code
-  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) It was employed to ascertain the performance, accessibility, adherence to best practices, and Search Engine Optimization (SEO) of the application.
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) It was employed to verifying the performance, accessibility, adherence to best practices, and Search Engine Optimization (SEO) of the application.
   - [Wave](https://wave.webaim.org/) - It was employed to assess the accessibility of the application
 
 ##### Back to [top](#table-of-contents)
@@ -197,16 +197,19 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 
 ### React
 
-React is a declarative, efficient, and flexible JavaScript library for building user interfaces. Its primary goal is to make it easy to reason about an interface and its state at any point in time, by dividing the UI into a collection of independent and reusable components ([source](https://www.freecodecamp.org/news/the-react-handbook-b71c27b0a795/)).
+React.js, an open-source JavaScript library, was developed by Jordan Walke, a software engineer at Meta (formerly Facebook). It serves as a powerful framework for creating interactive user interfaces and web applications more efficiently than using vanilla JavaScript. React’s focus on components allows developers to build reusable UI elements, making it a popular choice for single-page applications and beyond
 
 I used React for this application for several reasons:
-- Speed - applying React significantly increases the page loading speed and reducing the wait, which affects user experience and satisfaction
-- Flexibility - the React code is easier to maintain and is flexible due to its modular structure, compared to other front-end frameworks
-- React Bootstrap - excellent choice for improving user experience, used for styling and responsiveness. It comes with ready-to-use React built components. They are implemented with accessibility in mind, which is a vital factor when creating a front-end application. I used plain Bootstrap in my previous projects, so it was an easy choice to use React Bootstrap in this app.
-- Most used library for developing social networking and media content applications - e.g. Meta (formerly Facebook), Instagram, Netflix, Airbnb, etc.
-- Reusability of components - no need to write various codes for the same features
 
-There were various components created and reused across this application.
+Flexibility: React’s modular structure makes its code easier to maintain compared to other front-end frameworks. 
+
+Speed: When building sites or apps with React, the page loading speed significantly improves because the entire page doesn’t need to refresh and reload all components. Instead, components are updated dynamically, reducing wait times and enhancing the overall user experience.
+
+React Bootstrap is an excellent choice for styling and ensuring responsiveness. It provides a collection of ready-to-use React components, significantly reducing the need to create commonly used code from scratch. With React Bootstrap, you can streamline your development process and enhance the user experience. 
+
+React is the go-to library for developing social networking and media content applications. Notably, major platforms like Meta (formerly Facebook), Instagram, Netflix, and Airbnb have all been built using React1. Its versatility and robustness make it a top choice for creating dynamic and interactive web experiences.
+
+Reusability of components – Components can be created and re used throughout the app with no need to re write code for the same features.
 
 - `<NavBar />` - This is a reusable component that generates a navigation bar. It displays different options for logged-in and logged-out users. For logged-out users, it shows ‘Sign In’ and ‘Sign Up’ options. For logged-in users, it displays ‘Notes’, ‘Important’, ‘Contact Page’, ‘Profile Page’, and ‘Sign Out’ options
   - User stories covered: 

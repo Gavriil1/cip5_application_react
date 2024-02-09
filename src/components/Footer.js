@@ -1,5 +1,9 @@
 import React from "react";
 
+/*
+  The component displays the footer at the bottom of the page
+*/
+
 function Footer() {
   return (
     <footer>

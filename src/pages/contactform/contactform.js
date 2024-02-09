@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import style from  "../../styles/Contact.module.css";
 
-
+// Form is used created to allow user to send email to the customer.
 
 const ContactForm = () => {
   const currentUser = useCurrentUser();
-  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
       name: '',
       email: '',
@@ -26,9 +24,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
       e.preventDefault();
 
-      // Check if the user is authenticated
       if (!currentUser) {
-          // Redirect to the sign-in page if not authenticated
           history.push("/signin");
           return;
       }
@@ -44,7 +40,7 @@ const ContactForm = () => {
       }
   };
 
-  const [showEmailAlert, setShowEmailAlert] = useState(false); // Second Alert is initially hidden
+
   const handleEmailSend = () => {
     console.log("email sent!");
     history.push({
@@ -150,7 +146,6 @@ const ContactForm = () => {
                       
                   </form>
               </div>
-              {/* <div className="card-footer"></div> */}
           </div>
       </div>
   );

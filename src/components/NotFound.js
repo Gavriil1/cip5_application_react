@@ -1,6 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
+/*
+  Displays a 404 page when customer enters incorrect link
+*/
+
 function NotFoundPage() {
   return (
       <div className="page-wrap d-flex flex-row align-items-center">

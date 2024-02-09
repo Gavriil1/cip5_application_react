@@ -16,7 +16,11 @@ const NavBar = () => {
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
-
+  /*
+      Handles user logout.
+      Removes the saved current user.
+      Redirects to the landing page using a
+  */
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
@@ -25,6 +29,11 @@ const NavBar = () => {
       console.log(err);
     }
   };
+
+    /* 
+      Displays the current username along with its avatar in the navbar.
+      Provides a dropdown option to view the user profile or log out upon clicking.
+  */
   const loggedInIcons = (
     <>
       <NavLink
@@ -53,6 +62,10 @@ const NavBar = () => {
       </NavLink>
     </>
   );
+  /* 
+      Displays the navbar to users who are not logged in.
+      Provides options to create a new account or log in to an existing one.
+  */
   const loggedOutIcons = (
     <>
       <NavLink

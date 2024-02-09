@@ -15,12 +15,19 @@ const SignUpForm = () => {
   const { username, password1, password2 } = signUpData;
   const [errors, setErrors] = useState({});
   const history = useHistory();
+    /* 
+    Handles changes to any of the input fields
+  */
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
       [event.target.name]: event.target.value,
     });
   };
+
+  /* 
+      Processes form data submitted during sign-up and redirects the user to the login page.
+  */
 
   const handleSubmit = async (event) => {
     event.preventDefault();

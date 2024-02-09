@@ -1,29 +1,27 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import { useHistory } from "react-router";
-import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import PropTypes from 'prop-types';
-
 function CreateArea(props) {
-  const [errors, setErrors] = useState({});
   const [note, setNote] = useState({
     title: "",
     content: "",
   });
   const {title, content} = note
-  const history = useHistory();
-
   const handleChange = (event) => {
     setNote({
       ...note,
       [event.target.name]: event.target.value,
     });
   };
+
+  /*
+    This code is used to create notes on home page.
+  */
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -33,7 +31,6 @@ function CreateArea(props) {
     formData.append("content", content);
   
     try {
-      const postResponse = await axiosReq.post("/notes/", formData);
       props.reloadNotes();
       } catch (err) {
       console.log(err);
@@ -44,49 +41,6 @@ function CreateArea(props) {
   };
   
   
-  const textFields = (
-    <div className="text-center">
-      
-      <Form>
-      <Form.Group>
-        <Form.Label htmlFor="title">Title</Form.Label>
-        <Form.Control
-          id="title"
-          type="text"
-          name="title"
-          value={title}
-          onChange={handleChange}
-        />
-      </Form.Group>
-      {errors?.title?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Form.Group>
-        <Form.Label htmlFor="content">Content</Form.Label>
-        <Form.Control
-          as="textarea"
-          id="content"
-          rows={6}
-          name="content"
-          value={content}
-          onChange={handleChange}
-        />
-      </Form.Group>
-      </Form>
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
-      </Button>
-    </div>
-  );
-
 
   const [showCreatenoteAlert, setShowCreatenotedAlert] = useState(false);
   const CreateNoteAlert = () => {
@@ -142,13 +96,6 @@ function CreateArea(props) {
             className="description-color"
           />
         </Form.Group>
-  
-        {/* <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => history.goBack()}
-        >
-          cancel
-        </Button> */}
         <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={CreateNoteAlert}>
             create
         </Button>
@@ -157,8 +104,6 @@ function CreateArea(props) {
     </>
   );
   
-
-
 }
 
 export default CreateArea;

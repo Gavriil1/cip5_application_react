@@ -18,6 +18,10 @@ function SignInFormtest() {
   const [errors, setErrors] = useState({});
 
   const history = useHistory();
+    /* 
+    Handles submitted in the form data on logging in
+    Redirect user to home page
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -30,6 +34,9 @@ function SignInFormtest() {
     }
   };
 
+  /* 
+    Manages input field changes
+  */
   const handleChange = (event) => {
     setSignInData({
       ...signInData,
@@ -81,7 +88,6 @@ function SignInFormtest() {
                 {message}
               </Alert>
             ))}
-          {/* Password input */}
           <div className="form-outline mb-3">
             <input
               id="form3Example4"
