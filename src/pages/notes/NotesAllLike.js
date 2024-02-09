@@ -8,7 +8,6 @@ import Header from "./Header";
 import { Modal, Alert } from "react-bootstrap";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router-dom";
-import CreateArea from "./CreateArea";
 import Form from "react-bootstrap/Form";
 import styles from "../../styles/NotesPage.module.css";
 import Container from 'react-bootstrap/Container';
@@ -30,10 +29,7 @@ function NotesAll({ message, filter = "" }) {
   
 
   const { pathname } = useLocation();
-  console.log("the pathname is" + pathname )
   const currentUser = useCurrentUser();
-  console.log("current user is: " + JSON.stringify(currentUser))
-  console.log("prfile id of current user is :" + currentUser?.profile_id)
   const [like_id, setLikeId] = useState([]);
 const fetchLikes = async () => {
   try {
@@ -248,7 +244,7 @@ useEffect(() => {
   </Container>
       <Header />
       <main className="container">
-        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
               className={styles.SearchBar}
               onSubmit={(event) => event.preventDefault()}
@@ -279,7 +275,7 @@ useEffect(() => {
                 <Modal.Dialog>
                 <Modal.Header  style={{ backgroundColor: Array.isArray(like_id) && like_id.includes(note.id) ? 'yellow' : 'green' }}>
                   <h2 className="title-color">
-                      {note.id} {note.title}
+                      {note.title}
                   </h2>
                 </Modal.Header>
 

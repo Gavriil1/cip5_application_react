@@ -799,135 +799,135 @@ I navigate to "Important" page. After I navigate to "Note" page, finaly I click 
 
 <br/>
 
-10. As a user, I can view the details of a single post so that I can see its full description and other users’ comments
+10. I can use the search field to search for a note according to keywords in the title.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-On the main post page click on the post image | Redirects to a specific post page and displays post details | Works as expected |
+Navigate to "Note" or "Important" page. Enter keyword in search field| All notes with required keyword are shown | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-10-a.png">
-<img src="docs/testing/user-stories-testing/user-story-10-b.png">
+<img src="docs/userstories/user_story_10a_searchfield.png">
+<img src="docs/userstories/user_story_10b_searchfield.png">
 </details>
 
+<br/>
 
-11. As user, I can like a specific post so that I can show my interest
+11. I can edit the content of a note by clicking the “Edit” option on each note.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-On the main page or within specific profile page, click on the like icon under the post | Post is liked and like icon is marked green. Post is added to liked post page (/liked) | Works as expected |
+On "Note" or "Important page click on Edit Icon. On Edit page edit content and title and click "SaveChanges"  | The changes are saved and the user sees a note with updated information | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-11-a.png">
-<img src="docs/testing/user-stories-testing/user-story-11-b.png">
-<img src="docs/testing/user-stories-testing/user-story-11-c.png">
+<img src="docs/userstories/user_story_11_edit.png">
 
 </details>
 
+<br/>
 
-12. As a user, I can view the details of a single post so that I can read other users’ comments and know what they think about it
+12. I want to see only important notes on the “Important” page.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Click on the post image | Redirects to a chosen post page and displays post details with comments below | Works as expected |
+Navigate to Important page | User sees  only important notes | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-12-a.png">
-<img src="docs/testing/user-stories-testing/user-story-12-b.png">
+<img src="docs/userstories/user_story_12_important.png">
+
 </details>
 
+<br/>
 
-13. As a user, I can view a category for the post so that I know what cuisine the food image relates to
+13. I want to return from the “Edit Note” page to the “Note” page without modifying the content of the note.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-(no specific step to follow) | Once the post has been created by the user, a category is displayed within each post | Works as expected |
+On "Edit" page click cancel. | User click on cancel, all changes in title and content are not saved | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-13.png">
+<img src="docs/userstories/user_story_13_canceledit.png">
 </details>
 
+<br/>
 
-14. As user, I can add comments to a post so that I can share my thoughts about the post with the community
+
+14. I want to be able to send feedback email to owner of the site.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Within the post page (click on the post image to navigate to) under the post write your comment in the comment box and click 'Add' | Adds a comment to the comments list and increments the number of likes by 1 | Works as expected |
+Navigate to Contact  page. Complete all the fields and click "Send Feedback" | The message is sent to a site owner. | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-14-a.png">
-<img src="docs/testing/user-stories-testing/user-story-14-b.png">
+<img src="docs/userstories/user_story_14_sendfeedback.png">
+
 </details>
 
+<br/>
 
-15. As a user, I can see when the comments were created so that I know how old a comment is
+15. As a user, I can update my profile picture.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Click on a post image to navigate to the post page  | All comments with the creation date are displayed under the post | Works as expected |
+Navigate to user profile page, click on "choose file", "upload image", save  | the users profile picture updated | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-15.png">
+<img src="docs/userstories/user_story_15_update_image.png">
 </details>
 
+<br/>
 
-16. As an owner of a comment, I can edit my comment so that I can update my existing comment
+16. As a user, I can change my username.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-In the post page, click on the dropdown icon on the right hand side of your comment and click edit icon | Opens the edit post box | Works as expected |
-Update the comment and click 'Update' button | Updates the comment, displays updated date to 'now' and displays a feedback message to the user | Works as expected |
+Navigate to user profile page. Under "username" edit a username, click "Save | The profile of the user is udpated.  | Works as expected |
 
-Note: editing of other users' comments is not possible
+
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-16-a.png">
-<img src="docs/testing/user-stories-testing/user-story-16-b.png">
-<img src="docs/testing/user-stories-testing/user-story-16-b.png">
+<img src="docs/userstories/user_story_16_edit_username.png">
+
 </details>
 
+<br/>
 
-17. As an owner of a comment, I can delete my comment from the post
+17. As a user, I can update my password.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-In the post page, click on the dropdown icon on the right hand side of your comment and click delete (bin) icon | Removes the comment from all comments, displays a feedback message to the user in place of the comment and decrements the number of likes by 1 once the message has disappeared after a delay | Works as expected |
+Navigate to user profile page. In "New Password" and "Confirm new password" type a new password, click "Save | Password Updated  | Works as expected |
 
-Note: deleting other users' comments is not possible
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-17-a.png">
-<img src="docs/testing/user-stories-testing/user-story-17-b.png">
-<img src="docs/testing/user-stories-testing/user-story-17-c.png">
+<img src="docs/userstories/user_story_17_update_password.png">
+
 </details>
 
+<br/>
 
-18. As a post owner, I can edit my post title and description so that I can make corrections or update my post after it was created
+18. As a login user I want to log out from my account
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Click on the post you have added and within the post page click on the dropdown menu and then edit post icon | Redirects to the edit post page | Works as expected |
-In the edit post page update details of your post and click 'Save' button | Updates post details and redirects to the post page | Works as expected |
-
-Note: editing of other users' post is not possible
+As logged in user I click on "sign out" option on Navbar | User logged out | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-18-a.png">
-<img src="docs/testing/user-stories-testing/user-story-18-b.png">
-<img src="docs/testing/user-stories-testing/user-story-18-c.png">
-<img src="docs/testing/user-stories-testing/user-story-18-d.png">
+<img src="docs/userstories/user_story_18_sign_out.png">
 </details>
 
+<br/>
 
-19. As a user, I can view posts ordered by most recently added so that I am up to date with the newest content
+19.  As a user of the application, I can see ReactBootstrap alerts after completing different actions, for example: creating a note, deleting a note, liking a note, editing a note, changing the password, changing the username, changing the profile picture, etc.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Add a new post and navigate to the main posts page | Adds post on top of the other posts and displays a date when it was added | Works as expected |
+Complete any action on the page, for example: create note, edit note etc | See alert which informs you about the action which was done by the user. | Works as expected |
 
 <details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-19.png">
+<img src="docs/userstories/user_story_19_alerts.png">
 </details>
+
+<br/>
 
 20. As a user, I can keep scrolling through the posts so that they are loaded automatically and I don't have to select the next page
 
