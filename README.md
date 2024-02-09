@@ -63,49 +63,47 @@ The key functionality aspects:
 1. As a new user, I can create a new account.
 2. As a user who has an account, I want to be able to log in to my account.
 3. As a user, I can use links to navigate from the login page to the sign-up page and back.
+4. As a login user I want to log out from my account
 
 #### Navigation 
 
-4. As a user, I can view the home page that describes the application, enabling me to understand its purpose.
+
 5. As a user, I can access a navigation bar on all pages, allowing me to conveniently navigate back to the main page or visit my profile page.
-6. As a user who is not logged in, I can see options to log in or sign up, providing me the ability to access my account or create a new one.
+
  
 ### Second sprint
 
 #### Note Page/Important page
 
-7. As a user, I can create notes to organize my thoughts and tasks.
-8. As a user, I can view the details of a single note to see its title and content.
-9. I can use the “Delete” button to delete a note.
-10. I can use the like/unlike button to mark a note as important.
-11. I can identify if the note is liked by the modal title or icon which appears on the “Like/Unlike” button.
-12. I can use the search field to search for a note according to keywords in the title.
-13. I can create a note using the form at the top of the page.
-14. I can edit the content of a note by clicking the “Edit” option on each note.
-15. I want to see only important notes on the “Important” page.
+6. As a user, I can create notes to organize my thoughts and tasks.
+7. As a user, I can view the details of a single note to see its title and content.
+8. I can use the “Delete” button to delete a note.
+9. I can use the like/unlike button to mark a note as important.
+10. I can identify if the note is liked by the modal title or icon which appears on the “Like/Unlike” button.
+11. I can use the search field to search for a note according to keywords in the title.
+12. I can edit the content of a note by clicking the “Edit” option on each note.
+13. I want to see only important notes on the “Important” page.
 
 #### Edit page
-16. As a user, I want to edit the “title” and “content” of a note.
-17. I want to return from the “Edit Note” page to the “Note” page without modifying the content of the note.
+14. I want to return from the “Edit Note” page to the “Note” page without modifying the content of the note.
 
 ### Third sprint
 
 #### Contact Form
 
-18. I want to be able to send feedback email to owner of the site.
+15. I want to be able to send feedback email to owner of the site.
 
 
 #### User Profile Page 
 
-19. As a user, I can update my profile picture.
-20. As a user, I can change my username.
-21. As a user, I can update my password.
+16. As a user, I can update my profile picture.
+17. As a user, I can change my username.
+18. As a user, I can update my password.
 
 #### General
 
-22. As a user of the application, I can see ReactBootstrap alerts after completing different actions, for example: creating a note, deleting a note, liking a note, editing a note, changing the password, changing the username, changing the profile picture, etc.
-23. As an application owner, I want my application to be fully responsive so that users can use it on various devices.
-24. As an application owner, I want users to be directed to an error page if they try to access a note that does not exist, preventing the need to use the browser’s back button.
+19. As a user of the application, I can see ReactBootstrap alerts after completing different actions, for example: creating a note, deleting a note, liking a note, editing a note, changing the password, changing the username, changing the profile picture, etc.
+
 
 
 
@@ -720,7 +718,19 @@ On Sign in page I see hyperlink "Already have an account?Register". When I click
 
 <br/>
 
-4. As a user, I can access a navigation bar on all pages, allowing me to conveniently navigate back to the main page or visit my profile page.
+4. As a login user I want to log out from my account
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+As logged in user I click on "sign out" option on Navbar | User logged out | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/userstories/user_story_18_sign_out.png">
+</details>
+
+<br/>
+
+5. As a user, I can access a navigation bar on all pages, allowing me to conveniently navigate back to the main page or visit my profile page.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -732,7 +742,7 @@ Navigate to application website. After sing sign in to your ccount  | As not aut
 
 <br/>
 
-5. As a user, I can create notes to organize my thoughts and tasks.
+6. As a user, I can create notes to organize my thoughts and tasks.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -744,7 +754,7 @@ As a logged in user, I am on "Note" page. I complete fields "Title", "Content" a
 
 <br/>
 
-6. As a user, I can view the details of a single note to see its title and content.
+7. As a user, I can view the details of a single note to see its title and content.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -757,7 +767,7 @@ As a user I navigate to "Notes page" after I click on Pensic button on the note|
 
 <br/>
 
-7. I can use the “Delete” button to delete a note.
+8. I can use the “Delete” button to delete a note.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -771,7 +781,7 @@ As logged in user I navigate to "Note" or "Import" page and click on bin icon | 
 
 <br/>
 
-8. I can use the like/unlike button to mark a note as important.
+9. I can use the like/unlike button to mark a note as important.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -785,7 +795,7 @@ On "Note", "Important" or "Edit" page I click on "Like/Unlike" button | Title of
 
 <br/>
 
-9. I can identify if the note is liked by the modal title or icon which appears on the “Like/Unlike” button.
+10. I can identify if the note is liked by the modal title or icon which appears on the “Like/Unlike” button.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -799,7 +809,7 @@ I navigate to "Important" page. After I navigate to "Note" page, finaly I click 
 
 <br/>
 
-10. I can use the search field to search for a note according to keywords in the title.
+11. I can use the search field to search for a note according to keywords in the title.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -812,7 +822,7 @@ Navigate to "Note" or "Important" page. Enter keyword in search field| All notes
 
 <br/>
 
-11. I can edit the content of a note by clicking the “Edit” option on each note.
+12. I can edit the content of a note by clicking the “Edit” option on each note.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -825,7 +835,7 @@ On "Note" or "Important page click on Edit Icon. On Edit page edit content and t
 
 <br/>
 
-12. I want to see only important notes on the “Important” page.
+13. I want to see only important notes on the “Important” page.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -838,7 +848,7 @@ Navigate to Important page | User sees  only important notes | Works as expected
 
 <br/>
 
-13. I want to return from the “Edit Note” page to the “Note” page without modifying the content of the note.
+14. I want to return from the “Edit Note” page to the “Note” page without modifying the content of the note.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -851,7 +861,7 @@ On "Edit" page click cancel. | User click on cancel, all changes in title and co
 <br/>
 
 
-14. I want to be able to send feedback email to owner of the site.
+15. I want to be able to send feedback email to owner of the site.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -864,7 +874,7 @@ Navigate to Contact  page. Complete all the fields and click "Send Feedback" | T
 
 <br/>
 
-15. As a user, I can update my profile picture.
+16. As a user, I can update my profile picture.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -876,7 +886,7 @@ Navigate to user profile page, click on "choose file", "upload image", save  | t
 
 <br/>
 
-16. As a user, I can change my username.
+17. As a user, I can change my username.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -891,7 +901,7 @@ Navigate to user profile page. Under "username" edit a username, click "Save | T
 
 <br/>
 
-17. As a user, I can update my password.
+18. As a user, I can update my password.
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -901,18 +911,6 @@ Navigate to user profile page. In "New Password" and "Confirm new password" type
 <details><summary>Screenshots</summary>
 <img src="docs/userstories/user_story_17_update_password.png">
 
-</details>
-
-<br/>
-
-18. As a login user I want to log out from my account
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-As logged in user I click on "sign out" option on Navbar | User logged out | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/userstories/user_story_18_sign_out.png">
 </details>
 
 <br/>
@@ -929,249 +927,32 @@ Complete any action on the page, for example: create note, edit note etc | See a
 
 <br/>
 
-20. As a user, I can keep scrolling through the posts so that they are loaded automatically and I don't have to select the next page
 
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to the main posts page and scroll to the bottom of the page | Loads new content and moves the scroll bar. Displays a spinning icon before the posts have been loaded | Works as expected |
 
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-20-a.png">
-<img src="docs/testing/user-stories-testing/user-story-20-b.png">
-</details>
+### Device Testing & Browser compatibility
 
+###  Performing tests on various devices
 
-21. As a user, I can see the posts I liked so that I can find the posts I enjoy the most
+Testing of the website was conducted on the following devices:
 
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-On the main posts page click on the 'Liked posts' icon/text | Loads all liked posts | Works as expected |
+- Latitude 5520
 
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-21-a.png">
-<img src="docs/testing/user-stories-testing/user-story-21-b.png">
-<img src="docs/testing/user-stories-testing/user-story-21-c.png">
-</details>
+- Redmi Note 10
 
+- Samsung Tablet A10.1
 
-22. As a user, I can view posts from users I followed, so I can follow their activity
+Furthermore, the website underwent testing using the Device Toggling feature of Google Chrome Developer Tools, which includes all available device options.
 
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-On the main posts page click on the 'Feed' icon/text | Loads all posts from followed users | Works as expected |
+###  Browser compatability
 
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-22-a.png">
-<img src="docs/testing/user-stories-testing/user-story-22-b.png">
-</details>
+The following browsers were used to test the website:
 
+- Google Chrome
 
-23. As a user, I can view posts category tags, so that I choose posts to display that I’m particularly interested in
+- Mozilla Firefox
 
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-On the main posts page click on the category badge of posts you'd like to view | Loads all posts with the selected category | Works as expected |
+- Microsoft Egde
 
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-23-a.png">
-<img src="docs/testing/user-stories-testing/user-story-23-b.png">
-<img src="docs/testing/user-stories-testing/user-story-23-c.png">
-<img src="docs/testing/user-stories-testing/user-story-23-d.png">
-</details>
-
-
-24. As a user, I can search for posts with keywords so that I can find the posts I am interested in
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-On the main posts page click on the search bar and type a phrase | Searches through all posts, users and post categories and displays posts containing searched words in their title, username or category | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-24-a.png">
-<img src="docs/testing/user-stories-testing/user-story-24-b.png">
-<img src="docs/testing/user-stories-testing/user-story-24-c.png">
-<img src="docs/testing/user-stories-testing/user-story-24-d.png">
-</details>
-
-
-25. As a user, I can add my profile avatar so that other users can easily identify me
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Each user has a default avatar upon signing up to the app. Click on the profile avatar/user name in the navbar and select the 'Profile' from the dropdown | Redirects to the profile page | Works as expected |
-Click on the dropdown menu and 'edit' icon | Redirects to the edit profile page | Works as expected |
-Upload a profile avatar and click 'Save' | Saves user profile, displays a feedback message to the user, redirects to user profile page and displays updated user avatar and info | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-25-a.png">
-<img src="docs/testing/user-stories-testing/user-story-25-b.png">
-<img src="docs/testing/user-stories-testing/user-story-25-c.png">
-<img src="docs/testing/user-stories-testing/user-story-25-d.png">
-</details>
-
-
-26. As a user, I can view user's avatars so that I can easily identify other users of the app
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to the main page or specific post page | User avatars are displayed next to username in top users, by each post or user comment | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-26-a.png">
-<img src="docs/testing/user-stories-testing/user-story-26-b.png">
-<img src="docs/testing/user-stories-testing/user-story-26-c.png">
-</details>
-
-
-27. As a user, I can update the picture and description of my profile on the profile page so that other users view up to date info about me
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to the user profile page and click on the dropdown menu and 'edit' icon | Redirects to the profile page | Works as expected |
-Add profile description and click 'Save' button | Saves user profile information, displays a feedback message to the user, redirects to user profile page and displays updated user info | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-27-a.png">
-<img src="docs/testing/user-stories-testing/user-story-27-b.png">
-<img src="docs/testing/user-stories-testing/user-story-27-c.png">
-<img src="docs/testing/user-stories-testing/user-story-27-d.png">
-</details>
-
-
-28. As a user, I can change password to my account so that I can keep my profile secure
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Navigate to the user profile page and click on the dropdown menu and the key icon | Redirects to the password change page | Works as expected |
-Input password in the 'new password' and 'confirm password' fields | Displays warning massage if password criteria are not met. Otherwise, saves a new password, displays a feedback message and redirects user to the profile page after a short delay | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-28-a.png">
-<img src="docs/testing/user-stories-testing/user-story-28-b.png">
-<img src="docs/testing/user-stories-testing/user-story-28-c.png">
-<img src="docs/testing/user-stories-testing/user-story-28-d.png">
-</details>
-
-
-29. As a user, I can view all the posts by a specific user so that I can see their latest activity
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Click on the user avatar or name | Redirects to the chosen user profile page and displays all their posts within the profile page | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-29-a.png">
-<img src="docs/testing/user-stories-testing/user-story-29-b.png">
-<img src="docs/testing/user-stories-testing/user-story-29-c.png">
-</details>
-
-
-30. As a user, I can view other users’ profiles with their profile description, number of posts, followers and users followed so that I can learn more about them
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Click on the user avatar or name | Redirects to the chosen user profile page and displays user avatar, number of followers, number of users followed, number of posts, user profile description (if added by the user) and user posts | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-30-a.png">
-<img src="docs/testing/user-stories-testing/user-story-30-b.png">
-</details>
-
-
-31. As a user, I can follow and unfollow other users so that I can get specific users’ posts in my posts feed
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Click on the 'follow' button within the user profile page or by the username in 'Top Users' menu | Follows the user, increases the 'following' number on current profile and increases the number of followers on followed user's profile | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-31-a.png">
-<img src="docs/testing/user-stories-testing/user-story-31-b.png">
-<img src="docs/testing/user-stories-testing/user-story-31-c.png">
-<img src="docs/testing/user-stories-testing/user-story-31-d.png">
-</details>
-
-
-32. As a user, I can see a list of the most followed profiles so that I can see which profiles are popular
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-(no specific step to follow) | The small navigation menu with top most followed profiles is displayed on the main page, specific post page and profile page | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-32-a.png">
-<img src="docs/testing/user-stories-testing/user-story-32-b.png">
-<img src="docs/testing/user-stories-testing/user-story-32-c.png">
-</details>
-
-
-33. As a site owner I want my site to be fully responsive so that users can you use it on different devices
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Change device screen size using chrome dev tools | The web functionality remains the same on various screen sizes | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-33-a.png">
-<img src="docs/testing/user-stories-testing/user-story-33-b.png">
-<img src="docs/testing/user-stories-testing/user-story-33-c.png">
-<img src="docs/testing/user-stories-testing/user-story-33-d.png">
-<img src="docs/testing/user-stories-testing/user-story-33-e.png">
-<img src="docs/testing/user-stories-testing/user-story-33-f.png">
-</details>
-
-
-34. As a site owner, I want users to come to a 404 error page so that they don't have to user the browser back button if they enter a URL that does not exist
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-Type the wrong page in the www address (e.g. https://ci-pp5-snapfood.onrender.com/xyz) | Reroutes to a customised 404 page | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/user-stories-testing/user-story-34.png">
-</details>
-
-
-35. As a site user, I can view feedback messages, so that I know if my comment/profile/post has been updated
-
-**Step** | **Expected Result** | **Actual Result**
------------- | ------------ | ------------ |
-In the post page comments section click on the dropdown menu and 'edit' icon to edit your existing comment. Make changes to your comment and click 'Update' | Saves the comment, changes time display to 'now' and displays the feedback message to the user | Works as expected |
-In the post page comments section click on the dropdown menu and 'bin' icon to delete your existing comment | Deletes the comment and displays the feedback message in its place | Works as expected |
-In the profile page click on the dropdown menu and 'edit' icon to edit user profile. Make desired changes and click 'Save' | Updates the profile, displays the feedback message and redirects the user to their profile page after a short delay | Works as expected |
-In the profile page click on the dropdown menu and the key icon to change user password. Update the password and click 'Save' | Updates the password, displays the feedback message and redirects the user to their profile page after a short delay | Works as expected |
-Within the post page click on the dropdown menu and 'bin' icon to delete the post | Deletes the post, displays the feedback message and redirects the user to the main posts page | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-stories-testing/user-story-35-a.png">
-<img src="docs/testing/user-stories-testing/user-story-35-b.png">
-<img src="docs/testing/user-stories-testing/user-story-35-c.png">
-<img src="docs/testing/user-stories-testing/user-story-35-d.png">
-<img src="docs/testing/user-stories-testing/user-story-35-e.png">
-<img src="docs/testing/user-stories-testing/user-story-35-f.png">
-<img src="docs/testing/user-stories-testing/user-story-35-g.png">
-<img src="docs/testing/user-stories-testing/user-story-35-h.png">
-<img src="docs/testing/user-stories-testing/user-story-35-i.png">
-<img src="docs/testing/user-stories-testing/user-story-35-j.png">
-</details>
-
-
-### Performing tests on various devices
-
-The website was tested using Google Chrome Developer Tools Toggle Device Toolbar to simulate viewports of different devices.
-
-The website was tested on the following devices:
-- ASUS ZenBook (laptop screen)
-- Samsung Galaxy Tab A (tablet screen)
-- Samsung S7 (mobile screen)
-
-
-### Browser compatibility
-
-Testing has been carried out on the following browsers:
-- Googe Chrome, version 104.0.5112.79 (Official Build) (64-bit)
-- Firefox Browser, version 103.0.2 (64-bit)
-- Microsoft Edge, version 104.0.1293.54 (Official build) (64-bit)
 
 ##### Back to [top](#table-of-contents)
 
@@ -1201,34 +982,23 @@ Testing has been carried out on the following browsers:
 3. You will then have a copy of the repository in your own GitHub account.
    
 ### Making a Local Clone
+Follow these steps to clone the repository:
 1. Go to the GitHub repository 
-2. Locate the Code button above the list of files and click it
-3. Highlight the "HTTPS" button to clone with HTTPS and copy the link
-4. Open commandline interface on your computer
-5. Change the current working directory to the one where you want the cloned directory
-6. Type git clone and paste the URL from the clipboard 
-  ```
-  $ git clone https://github.com/aleksandracodes/ci_pp5_snapfood.git
-  ```
-7. Press Enter to create your local clone
+2. Find the "Code" button located above the file list and click on it.
+3. Choose whether you prefer to clone via HTTPS, SSH, or Github CLI, and then click on the copy button to copy the URL to your clipboard.
+4. Open Git Bash
+5. Navigate to the directory where you would like to clone the directory and set it as the current working directory.
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Hit the Enter key to create your local clone.
+
+Please check the following link for more information: https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
 
 ##### Back to [top](#table-of-contents)
 
 
 ## Credits
-
-### Images
-
-- 404 picture tweaked using Paint taken from [here](https://www.istockphoto.com/pl/wektor/broken-danie-gm1132925979-300527202)
-- No results found picture taken from [here](https://www.vecteezy.com/vector-art/7104553-search-no-result-not-found-concept-illustration-flat-design-vector-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon)
-- Speech bubble image on comments page with no comments was taken from [here](https://www.freepik.com/free-vector/illustration-speech-bubble_2606145.htm#query=chat&position=17&from_view=search)
-- The lading page image of hands holding smartphone and taking photo of food comes from [here](https://media.istockphoto.com/vectors/hands-holding-smartphone-and-capture-photo-of-healthy-food-in-modern-vector-id1263096919?k=20&m=1263096919&s=612x612&w=0&h=YQ70hwbYb1LcCl16TvpzVv03lIVfiQ848fLhFCvW4BY=)
-- The thumb-up icon for like/unlike was taken from [here](https://image.shutterstock.com/shutterstock/photos/1391842757/display_1500/stock-vector-vector-hand-like-icon-template-good-food-logo-illustration-with-fork-sign-line-symbol-for-farmers-1391842757.jpg) and tweaked using Paint
-- Site logo was created with [Fiverr Logo Maker](https://www.fiverr.com/logo-maker/brief/logo_name?brief_id=0d212c49-2416-401d-99a5-780b9b233ff7)
-- Upload image icon taken from [here](https://static.thenounproject.com/png/741679-200.png) combining [this](https://cdn-icons-png.flaticon.com/512/80/80320.png) image using Paint
-- Admin user avatar found [here](https://us.123rf.com/450wm/yupiramos/yupiramos1704/yupiramos170412377/75993207-businesswoman-avatar-character-icon-vector-illustration-design.jpg?ver=6)
-- Loading gif (spinner) taken from [here](https://icon-library.com/icon/loading-icon-animated-gif-17.html)
-- This application was created for the education purpose only. A majority of food photographs added as posts were found via Google Search Engine or added directly by each user testing the app. Due to extensive testing of this app, I'm not able to provide the sources of all of the pictures found via search engine. Please do not repost the images without crediting the source.
+- Picture of the app logo was found here [here](https://commons.m.wikimedia.org/wiki/File:OutlineApp_Logo.png)
+- The login and loug out page was taken from here [here](https://mdbootstrap.com/docs/react/extended/login-form/)
 
 
 ### Code
