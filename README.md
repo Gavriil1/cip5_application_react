@@ -212,7 +212,7 @@ React is the go-to library for developing social networking and media content ap
 Reusability of components – Components can be created and re used throughout the app with no need to re write code for the same features.
 
   - `<NavBar />` - This is a reusable component that generates a navigation bar. It displays different options for logged-in and logged-out users. For logged-out users, it shows ‘Sign In’ and ‘Sign Up’ options. For logged-in users, it displays ‘Notes’, ‘Important’, ‘Contact Page’, ‘Profile Page’, and ‘Sign Out’ options.
-  - User stories covered: 
+  - User stories covered: 4, 5
 
 - `<Footer />` - This is a reusable component that generates a footer for the page. It includes copyright information and social media links.
   - User stories covered: 
@@ -225,40 +225,40 @@ Reusability of components – Components can be created and re used throughout t
   - User stories covered: 
 
 - `<SignInForm>` - This is a component designed to allow the user to log in to their account..
-  - User stories covered: 
+  - User stories covered: 2, 3
 
 - `<SignUpForm>` - This is a component designed to allow the user to register a new account.
-  - User stories covered: 
+  - User stories covered: 1, 3 
 
 - `<ContactForm>` - This is a component designed to allow the user to send a feedback to application owner.
-  - User stories covered: 
+  - User stories covered: 15
 
 - `<CrateArea />` - This is a reusable component used to create a new note. This component is assigned to NotesAll and NotesAllLike pages.
-  - User stories covered: 
+  - User stories covered: 6
 
 - `<EditNote />` - This is a reusable component used to modify the note’s content, title, and like status. 
-  - User stories covered: 
+  - User stories covered: 7, 9, 10, 12, 14
 
 - `<Header />` - This is a reusable component used to create a subject line with an icon on the NotesAll and NotesAllLike pages
   - User stories covered: 
 
 - `<NotesAll />` - This component is used to list all the notes of the user. It  allows user to search for the notes, create notes, like, delete and edit notes.
-  - User stories covered: 
+  - User stories covered: 6, 7, 8, 9, 10, 11, 12, 19
 
 - `<NotesAllLike />` - This component is used to list "Important/Liked"  notes of the user. It  allows user to search for the notes,  like, delete and edit notes.
-  - User stories covered: 
+  - User stories covered: 7, 8, 9, 10, 11, 12, 13 
 
 - `<ProfilePage />` - This is a component which embeds ProfileEditForm, UserNameForm, and UserPasswordForm. It allows the user to change Avatar, username, and password.
-  - User stories covered: 
+  - User stories covered: 16, 17, 18, 19
 
 - `<ProfileEditForm />` - This is a reusable component, which allows the user to change the profile picture.
-  - User stories covered: 
+  - User stories covered: 16
 
 - `<UsernameForm />` - This is a reusable component, which allows the user to change the username.
-  - User stories covered: 
+  - User stories covered: 17
 
 - `<UserPasswordForm />` - This is a reusable component, which allows the user to change the password.
-  - User stories covered: 
+  - User stories covered: 18
 
 
 
