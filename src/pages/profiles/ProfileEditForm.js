@@ -1,14 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-
 import { axiosReq } from "../../api/axiosDefaults";
 import {
   useCurrentUser,
@@ -53,12 +50,7 @@ const ProfileEditForm = () => {
     handleMount();
   }, [currentUser, history, id]);
 
-  const handleChange = (event) => {
-    setProfileData({
-      ...profileData,
-      [event.target.name]: event.target.value,
-    });
-  };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -97,14 +89,7 @@ const ProfileEditForm = () => {
   const textFields = (
     <>
       <Form.Group>
-        {/* <Form.Label>Bio</Form.Label>
-        <Form.Control
-          as="textarea"
-          value={content}
-          onChange={handleChange}
-          name="content"
-          rows={7}
-        /> */}
+
       </Form.Group>
 
       {errors?.content?.map((message, idx) => (
@@ -112,13 +97,6 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
-      {/* <Button
-        style={{ float: 'left' }}
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        cancel
-      </Button> */}
       <Button style={{ float: 'left' }} className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={CreateIconlert}>
         save
       </Button>
@@ -153,15 +131,7 @@ const ProfileEditForm = () => {
                 </Alert>
               ))}
               </div>
-              {/* <div>
-                <Form.Label
-                  className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
-                  htmlFor="image-upload"
-                >
-                  Change the image
-                </Form.Label>
-              </div> */}
-              
+             
               <div>
               <Form.File
                 id="image-upload"
@@ -177,11 +147,7 @@ const ProfileEditForm = () => {
                 }}
               />
               </div>
-              {/* <div style={{ textAlign: 'left', paddingLeft: 0 }}>
-              <Form.Label htmlFor="image-upload" >Picture Upload</Form.Label>
-              </div> */}
             </Form.Group>
-            {/* <div className="d-md-none">{textFields}</div> */}
           </Container>
         </Col>
         <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">

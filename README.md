@@ -211,46 +211,56 @@ React is the go-to library for developing social networking and media content ap
 
 Reusability of components – Components can be created and re used throughout the app with no need to re write code for the same features.
 
-- `<NavBar />` - This is a reusable component that generates a navigation bar. It displays different options for logged-in and logged-out users. For logged-out users, it shows ‘Sign In’ and ‘Sign Up’ options. For logged-in users, it displays ‘Notes’, ‘Important’, ‘Contact Page’, ‘Profile Page’, and ‘Sign Out’ options
+  - `<NavBar />` - This is a reusable component that generates a navigation bar. It displays different options for logged-in and logged-out users. For logged-out users, it shows ‘Sign In’ and ‘Sign Up’ options. For logged-in users, it displays ‘Notes’, ‘Important’, ‘Contact Page’, ‘Profile Page’, and ‘Sign Out’ options.
   - User stories covered: 
 
-- `<Footer />` - This is a reusable component that generates a footer of the page. It has copyright information and social media links.
+- `<Footer />` - This is a reusable component that generates a footer for the page. It includes copyright information and social media links.
   - User stories covered: 
 
 - `<NotFount />` - This is a reusable component that generates 404 error when the user tries to visit incorrect page. 
   - User stories covered: 
 
 
-- `<Avatar />` - This is a reusable component used to configure the profile picture size in the UI.
+- `<Avatar />` - This component reusable componentis designed for configuring the profile picture size in the user interface (UI). 
   - User stories covered: 
 
-- `<CrateArea />` - This is a reusable component used to create a new notes. This component is assigned to Notesall page.
+- `<SignInForm>` - This is a component designed to allow the user to log in to their account..
   - User stories covered: 
 
-- `<EditNote />` - This is a reusable component used to modify the note: content, title, like status. T
+- `<SignUpForm>` - This is a component designed to allow the user to register a new account.
+  - User stories covered: 
+
+- `<ContactForm>` - This is a component designed to allow the user to send a feedback to application owner.
+  - User stories covered: 
+
+- `<CrateArea />` - This is a reusable component used to create a new note. This component is assigned to NotesAll and NotesAllLike pages.
+  - User stories covered: 
+
+- `<EditNote />` - This is a reusable component used to modify the note’s content, title, and like status. 
+  - User stories covered: 
+
+- `<Header />` - This is a reusable component used to create a subject line with an icon on the NotesAll and NotesAllLike pages
+  - User stories covered: 
+
+- `<NotesAll />` - This component is used to list all the notes of the user. It  allows user to search for the notes, create notes, like, delete and edit notes.
+  - User stories covered: 
+
+- `<NotesAllLike />` - This component is used to list "Important/Liked"  notes of the user. It  allows user to search for the notes,  like, delete and edit notes.
+  - User stories covered: 
+
+- `<ProfilePage />` - This is a component which embeds ProfileEditForm, UserNameForm, and UserPasswordForm. It allows the user to change Avatar, username, and password.
+  - User stories covered: 
+
+- `<ProfileEditForm />` - This is a reusable component, which allows the user to change the profile picture.
+  - User stories covered: 
+
+- `<UsernameForm />` - This is a reusable component, which allows the user to change the username.
+  - User stories covered: 
+
+- `<UserPasswordForm />` - This is a reusable component, which allows the user to change the password.
   - User stories covered: 
 
 
-- `<FeedbackMsg />` - component for displaying feedback messages to the user upon editing/deleting comments, deleting post, updating profile information or a password.
-  - User stories covered: 35
-
-- `<Landing />` - specific component for displaying a landing page for new / not logged-in users, which contains links to sign up and log in, in addition to the navbar.
-  - User stories covered: 1
-
-- `<LikeFeedAddPost />` - reusable component containing 3 icons to add a post, show liked post or show posts by profiles the users follows. Displayed on various pages of the app.
-  - User stories covered: 7, 21, 22
-
-- `<NavBar />` - reusable component with the content depending on the login status of the user. For logged in user it shows icon link to the main posts page and user avatar/picture. For those who are not logged in, it displays icon links to sign up or log in instead of the avatar. The component is used on each page of the app.
-  - User stories covered: 2, 3
-
-- `<PageNotFound />` - specific component for displaying a 404 graphic error message with a return to menu button when user enters the url which does not exist.
-  - User stories covered: 34
-
-- `<PasswordCriteria />` - reusable component containing password criteria which are displayed on button hover or focus. Used on sign up page and profile password change page.
-  - User stories covered: 4, 28
-
-- `<PopularProfiles />` - reusable component showing first three most followed profiles in the app. The component displays user avatar, name and follow/unfollow button. These buttons are hidden on medium screen size devices. The component is used across the app together with the `<LikeFeedAddPost />` component and post categories badges on relevant pages.
-  - User stories covered: 32
 
 
 ## Back-End API

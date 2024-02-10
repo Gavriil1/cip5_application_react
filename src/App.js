@@ -14,13 +14,13 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
-import ContactForm from "./pages/contactform/contactform"
+import ContactForm from "./pages/contactform/ContactForm"
 import NotFound from "./components/NotFound";
 import NotesAll from "./pages/notes/NotesAll"
 import NotesAllLike from "./pages/notes/NotesAllLike"
 import EditNote from "./pages/notes/EditNote"
 import CreateArea from "./pages/notes/CreateArea"
-import Test from "./pages/Test"
+// import Test from "./pages/Test"
 import React, { useEffect, useState } from "react";
 
 function App() {
@@ -49,8 +49,6 @@ function App() {
               currentUser ? <NotesAll message="Yo results found. Adjust the search keyword or like a post."/> : <SignInForm />
             )}
           />
-          consoel.log("yo")
-          console.log(currentUser)
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/contact" render={() => <ContactForm />} />
