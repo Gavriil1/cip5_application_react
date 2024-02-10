@@ -104,6 +104,11 @@ The key functionality aspects:
 
 19. As a user of the application, I can see ReactBootstrap alerts after completing different actions, for example: creating a note, deleting a note, liking a note, editing a note, changing the password, changing the username, changing the profile picture, etc.
 
+20. As a site owner, I would like a user to see a footer on each page. On the footer, they can see copyright information and links to social media.
+
+21. As a site owner, I want a user to see a 404 page when he enters an incorrect URL or a URL which he is not authorized to use.
+22. As an owner of a website, I would like profile picture on navbar to have predefined size.
+23. As a site owner, I would like to display an icon on the subject line of NotesAll and NotesAllLike pages
 
 
 
@@ -215,14 +220,14 @@ Reusability of components – Components can be created and re used throughout t
   - User stories covered: 4, 5
 
 - `<Footer />` - This is a reusable component that generates a footer for the page. It includes copyright information and social media links.
-  - User stories covered: 
+  - User stories covered: 20
 
 - `<NotFount />` - This is a reusable component that generates 404 error when the user tries to visit incorrect page. 
-  - User stories covered: 
+  - User stories covered: 21
 
 
 - `<Avatar />` - This component reusable componentis designed for configuring the profile picture size in the user interface (UI). 
-  - User stories covered: 
+  - User stories covered: 22
 
 - `<SignInForm>` - This is a component designed to allow the user to log in to their account..
   - User stories covered: 2, 3
@@ -240,7 +245,7 @@ Reusability of components – Components can be created and re used throughout t
   - User stories covered: 7, 9, 10, 12, 14
 
 - `<Header />` - This is a reusable component used to create a subject line with an icon on the NotesAll and NotesAllLike pages
-  - User stories covered: 
+  - User stories covered: 23
 
 - `<NotesAll />` - This component is used to list all the notes of the user. It  allows user to search for the notes, create notes, like, delete and edit notes.
   - User stories covered: 6, 7, 8, 9, 10, 11, 12, 19
@@ -940,7 +945,46 @@ Complete any action on the page, for example: create note, edit note etc | See a
 
 <br/>
 
+20. As a site owner, I would like a user to see a footer on each page. On the footer, they can see copyright information and links to social media.
 
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Find on the buttom of the page a footer. | User sees copyrigh information and links to social media.| Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/userstories/user_story_20_footer.png">
+</details>
+
+<br/>
+
+21. As a site owner, I want a user to see a 404 page when he enters an incorrect URL or a URL which he is not authorized to use.
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+User enters incorrect URL  | 404 page is shown to the user | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/userstories/user_story_21_404.png">
+</details>
+
+<br/>
+
+22. As an owner of a website, I would like profile picture on navbar to have predefined size.
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Change Avatar picture for the user | Vwerify that this picture fits into Navbar Size | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/userstories/user_story_22_avatar.png">
+</details>
+
+23. As a site owner, I would like to display an icon on the subject line of NotesAll and NotesAllLike pages.
+ Find Subject line on NotesAll and NotesAllLike pages| Vwerify that subject line has icon | Works as expected |
+
+ <details><summary>Screenshot</summary>
+<img src="docs/userstories/user_story_23a_header.png">
+<img src="docs/userstories/user_story_23b_header.png">
+</details>
 
 ### Device Testing & Browser compatibility
 
