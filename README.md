@@ -496,7 +496,7 @@ On thsi page user may change or modify his/her:
 - User stories covered: 19
 
 <details><summary>See feature screenshot</summary>
-<img src="docs/features/feature-feedback-messages.png">
+<img src="docs/userstories/user_story_19_alerts.png">
 </details>
 
 
