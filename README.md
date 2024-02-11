@@ -306,7 +306,7 @@ The Application Programming Interface (API) for this front-end application was c
 ### Footer
 - A footer is displayed at the bottom of a each page.
 - Contains copyrights info and links to social media
-- User stories:
+- User stories: 20
 
 <details><summary>See feature screenshot</summary>
     <img src="docs/features/footer.png">
@@ -360,11 +360,6 @@ The Application Programming Interface (API) for this front-end application was c
 <img src="docs/features/important.png">
 </details>
 
-### User Settings page
-On thsi page user may change or modify his/her:
-  - Picture
-  - Username
-  - Reset Password
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/usersettingpage.png">
@@ -376,7 +371,7 @@ On thsi page user may change or modify his/her:
 - Contains Note title and note description
 - Description field is optional
 - Allows a user to create notes
-- User stories covered: 
+- User stories covered: 6
 
 <details><summary>See feature screenshots</summary>
 <img src="docs/features/notescreateform.png">
@@ -415,7 +410,7 @@ On thsi page user may change or modify his/her:
 - No Liked notes are market as green.
 - User can see and therefore can like only his own notes.
 - Allow user to seperate important notes from not important notes.
-- User stories covered: 
+- User stories covered: 9
 
 <details><summary>See feature screenshots</summary>
   <img src="docs/features/likes1.png">
@@ -445,7 +440,7 @@ On thsi page user may change or modify his/her:
 
 ### Username change form
 - Allows user to change their profile username
-- User stories covered: 
+- User stories covered: 17
 
 <details><summary>See feature screenshots</summary>
 <img src="docs/features/username.png">
@@ -454,19 +449,11 @@ On thsi page user may change or modify his/her:
 
 ### Password change form
 - Allows user to change their profile password
-- User stories covered: 
+- User stories covered: 18
 
 <details><summary>See feature screenshots</summary>
 <img src="docs/features/resetpassword.png">
 </details>
-
-
-### Infinite scroll
-- Allows user to scroll through the content without having to select the next/previous page
-- Used for the notes
-- Improves general user experience and user engagement
-- User stories covered: 
-
 
 
 ### Search bar
