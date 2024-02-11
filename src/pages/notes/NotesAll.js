@@ -17,13 +17,8 @@ import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 
-// NotesAll.defaultProps = {
-//   message: "Default message when not provided",
-// };
 
 function NotesAll({ message, filter = "" }) {
-
-  // console.log("the filter is " + filter)
   const [notesList, setNotesList] = useState([]);
   const [loading, setLoading] = useState(true);
   const history = useHistory();
@@ -31,10 +26,7 @@ function NotesAll({ message, filter = "" }) {
   
 
   const { pathname } = useLocation();
-  console.log("the pathname is" + pathname )
   const currentUser = useCurrentUser();
-  console.log("current user is: " + JSON.stringify(currentUser))
-  console.log("prfile id of current user is :" + currentUser?.profile_id)
   const [like_id, setLikeId] = useState([]);
 const fetchLikes = async () => {
   try {
@@ -43,7 +35,6 @@ const fetchLikes = async () => {
     let postValues = [];
     for (let like of data) {
       postValues.push(like.post);
-      console.log("postvalues are" + postValues)
     }
 
 
@@ -204,7 +195,6 @@ useEffect(() => {
   //show like alert
   const [showFirstAlert, setShowFirstAlert] = useState(false); // First Alert is initially hidden
   const likeUpdateGood = () => {
-    console.log("First Button clicked!");
     setShowFirstAlert(true); // Show the first alert when the first button is clicked
 
     // Set a timer to hide the alert after 2 seconds

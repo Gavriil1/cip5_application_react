@@ -114,3 +114,7 @@ function CreateArea(props) {
 }
 
 export default CreateArea;
+
+CreateArea.propTypes = {
+  reloadNotes: PropTypes.func.isRequired,
+};
