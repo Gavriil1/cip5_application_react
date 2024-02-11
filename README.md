@@ -1,8 +1,8 @@
-# SnapFood <img src="src/assets/SnapFood-logo.png" style="width: 85px; height:60px;">
+# Le Note
 
 **Developer: Aleksandra Haniok**
 
-💻 [Visit live website](https://ci-pp5-snapfood.onrender.com/)
+💻 [Visit live website](https://ci-p5-react-part-9d6b24103236.herokuapp.com/)
 
 ![Mockup image](docs/amiresponsive/amiresponsive.png)
 
@@ -35,12 +35,12 @@
 
 ## About
 
-"Le Note” is a note application. Customers may use this application to organize their day-to-day life. They may create a note, like it, delete it, or update it. The application provides a view for important notes. Customers may send feedback to the website developer to share feedback.
+"Le Note” is a note application. Customers may use this application to organize their day-to-day life. They may create a note, like it, delete it, or update it. The application provides a view for important notes. Customers may send feedback to the website developer.
 
 
 ## Project Goals
 
-The objective for this project was to develop an application that allows users to manage their notes in various ways such as creating, liking, deleting, or updating them. The concept was to keep the application user-friendly and for the purpose of enhancing productivity.e.
+The objective for this project was to develop an application that allows users to manage their notes in various ways such as creating, liking, deleting, or updating them. The concept was to keep the application user-friendly and for the purpose of enhancing productivity.
 
 The key functionality aspects:
 - Simple and intuitive navigation across all notes
@@ -285,7 +285,7 @@ The Application Programming Interface (API) for this front-end application was c
 - To login user needs to add username and password. Both fields are mandatory to login
 - Once a user loggs in he is navigated to notes page. 
 - Warning message is displayed on incorrect input
-- User stories covered: 
+- User stories covered: 2, 3
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/login.png">
@@ -296,7 +296,7 @@ The Application Programming Interface (API) for this front-end application was c
 - To create an account, a user needs to provide a nickname, password, and password validation.
 - A user cannot use a duplicate username to register the account.
 - Once registered, the user is redirected to the login page.
-- User stories covered: 
+- User stories covered: 1, 3
 
 <details><summary>See feature screenshots</summary>
 <img src="docs/features/signupform.png">
@@ -319,7 +319,7 @@ The Application Programming Interface (API) for this front-end application was c
     The navbar for logged-in users displays the Logo, Notes, Important, Contact, Avatar/User, and Sign out icons.
 - The navbar is responsive and becomes a hamburger menu on small screens.
 - By clicking on the logo icon, the user can navigate to the landing page, which is either the sign-in form or the notes page.
-- User stories covered: 
+- User stories covered: 4, 5
 
 <details><summary>See feature screenshots</summary>
 <img src="docs/features/navbar1.png">
@@ -328,6 +328,7 @@ The Application Programming Interface (API) for this front-end application was c
 
 ### Contact Form
 - Enables users to contact the admin/site owner to share feedback.
+  -user stories: 15
 <details><summary>See feature screenshots</summary>
   <img src="docs/features/feedbackform.png">
 </details>
@@ -340,7 +341,7 @@ The Application Programming Interface (API) for this front-end application was c
   - Create Note field
   - Notes created by sign in user.
 - Displays all notes ordered by the most recent one
-- User stories covered: 
+- User stories covered: 6, 7, 8, 9, 10, 11, 23, 12
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/notesmainpage.png">
@@ -353,7 +354,7 @@ The Application Programming Interface (API) for this front-end application was c
   - Create Note field
   - Notes created by sign in user.
 - Displays only important notes which were liked by a user.
-- User stories covered: 
+- User stories covered: 7, 8, 9, 10, 23, 13, 12
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/important.png">
@@ -387,7 +388,13 @@ On thsi page user may change or modify his/her:
 - User may modify the note and click on "Save Changes"
 - He may like/unlike note. 
 - If he clicks cancel he redirected to homepage.
-- User stories covered: 
+- User stories covered: 7, 8, 9, 10, 14, 12
+
+### Note Footer
+
+- Contains information on copyright
+- Contains links to social media
+- User stories covered: 20
 
 <details><summary>See feature screenshots</summary>
 <img src="docs/features/noteupdateform.png">
@@ -420,7 +427,7 @@ On thsi page user may change or modify his/her:
 ### Profile page
 - Displays profile information if it was provided by the profile owner
 - Allows user to change his profile Avatar, password, username
-- User stories covered:
+- User stories covered:16, 17, 18
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/profilepage.png">
@@ -430,7 +437,7 @@ On thsi page user may change or modify his/her:
 ### Profile avatar
 - Permit users to replace their default profile picture with a personal avatar or photo.
 - The updated avatar is visible in the navigation bar, on the user's profile page, 
-- User stories covered: 
+- User stories covered: 22
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/avatar.png">
@@ -466,7 +473,7 @@ On thsi page user may change or modify his/her:
 - Users may find the desired note by entering a keyword in the search bar.
 - It allows users to search through all note titles.
 - It enables searching through liked notes on the "Important" page.
-- User stories covered:
+- User stories covered: 11
 
 <details><summary>See feature screenshots</summary>
 <img src="docs/features/searchbar.png">
@@ -477,7 +484,7 @@ On thsi page user may change or modify his/her:
 ### 404 error page
 - This is displayed when the user attempts to access an incorrect or unauthorized URL.
 - It contains text indicating that the page does not exist, along with a link to the homepage.
-- User stories covered:
+- User stories covered: 21
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/404.png">
@@ -486,7 +493,7 @@ On thsi page user may change or modify his/her:
 
 ### Feedback messages
 - User is provided with feedback message about the action their performed such as edited/deleted comment, updated profile or password, deleted a post
-- User stories covered: 35
+- User stories covered: 19
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/feature-feedback-messages.png">
