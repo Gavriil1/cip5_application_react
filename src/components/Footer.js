@@ -9,7 +9,7 @@ function Footer() {
     <footer>
       <div
         className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 fixed-bottom"
-        style={{ backgroundColor: "#004085" }}
+        style={{ backgroundColor: "#004085", minHeight: "50px" }}
       >
         <div className="text-white mb-3 mb-md-0">
           Copyright © 2024. All rights reserved.

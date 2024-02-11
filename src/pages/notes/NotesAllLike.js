@@ -243,7 +243,7 @@ useEffect(() => {
     {showCreatenoteAlert && <Alert variant="danger" dismissible onClose={() => setShowCreatenotedAlert(false)} style={{ textAlign: "center" }}>Note Created Successfully.</Alert>}
   </Container>
       <Header />
-      <main className="container">
+      <main className="container" style={{ marginBottom: "150px" }}>
         {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
               className={styles.SearchBar}

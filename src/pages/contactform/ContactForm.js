@@ -50,7 +50,7 @@ const ContactForm = () => {
   };
 
   return (
-      <div className="main_container">
+      <div className="main_container" style={{ marginBottom: "100px" }}>
           <div className={'d-flex justify-content-center h-100 '}>
               <div className={`card-body ${style.card_body_task_form}`} style={{ height: 570 }}>
               <h1 className="text-black text-center">Feedback Form</h1>

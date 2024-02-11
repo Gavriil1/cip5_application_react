@@ -7,7 +7,7 @@ import ProfileEditForm from "./ProfileEditForm"
 function ProfilePage() {
   const currentUser = useCurrentUser();
   return (
-<div>
+<div style={{ marginBottom: "50px" }}>
       <div>
       <h1>User:{currentUser?.username}</h1>
       <p>You may change the following settings:</p>
