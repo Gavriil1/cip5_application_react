@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import PropTypes from 'prop-types';
+
 
 function CreateArea(props) {
   const [note, setNote] = useState({
@@ -14,7 +13,6 @@ function CreateArea(props) {
     content: "",
   });
   const {title, content} = note
-
   const handleChange = (event) => {
     setNote({
       ...note,
@@ -22,15 +20,19 @@ function CreateArea(props) {
     });
   };
 
+  /*
+    This code is used to create notes on home page.
+  */
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
   
     formData.append("title", title);
     formData.append("content", content);
-
+  
     try {
-      const postResponse = await axiosReq.post("/notes/", formData);
       props.reloadNotes();
       } catch (err) {
       console.log(err);
@@ -39,7 +41,8 @@ function CreateArea(props) {
       }
     }
   };
-
+  
+  
 
   const [showCreatenoteAlert, setShowCreatenotedAlert] = useState(false);
   const CreateNoteAlert = () => {
@@ -49,6 +52,7 @@ function CreateArea(props) {
       setShowCreatenotedAlert(false);
     }, 3000);
   };
+
  
   return (
     <>
@@ -94,13 +98,6 @@ function CreateArea(props) {
             className="description-color"
           />
         </Form.Group>
-
-        {/* <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => history.goBack()}
-        >
-          cancel
-        </Button> */}
         <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={CreateNoteAlert}>
             create
         </Button>
@@ -108,9 +105,11 @@ function CreateArea(props) {
     </div>
     </>
   );
-
-
-
+  
 }
 
 export default CreateArea;
+
+CreateArea.propTypes = {
+  reloadNotes: PropTypes.func.isRequired,
+};
