@@ -19,8 +19,8 @@ function SignInFormtest() {
 
   const history = useHistory();
     /* 
-    Handles submitted in the form data on logging in
-    Redirect user to home page
+    Manages the data submitted in the form upon login. Redirects the user to the home page.
+
   */
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,7 +35,7 @@ function SignInFormtest() {
   };
 
   /* 
-    Manages input field changes
+       Manages changes to any of the input fields.
   */
   const handleChange = (event) => {
     setSignInData({

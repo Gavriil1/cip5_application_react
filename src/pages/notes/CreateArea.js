@@ -8,6 +8,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import PropTypes from 'prop-types';
 
+// A form is created to allow the user to create a new note. Each note has a title and a textarea.
+
 function CreateArea(props) {
   const [note, setNote] = useState({
     title: "",
@@ -94,13 +96,6 @@ function CreateArea(props) {
             className="description-color"
           />
         </Form.Group>
-
-        {/* <Button
-          className={`${btnStyles.Button} ${btnStyles.Blue}`}
-          onClick={() => history.goBack()}
-        >
-          cancel
-        </Button> */}
         <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={CreateNoteAlert}>
             create
         </Button>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
   /*
-    When the user clicks on either the user avatar or the navbar dropdown menu (both having the ‘exp’ class), the navbar will not collapse
+    Handles user click away from the hamburger menu
   */
 
 const useClickOutsideToggle = () => {

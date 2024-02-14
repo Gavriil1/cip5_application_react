@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import style from  "../../styles/Contact.module.css";
 
-// Form is used created to allow user to send email to the customer.
+// Form is  created to allow user to send email to the customer.
 
 const ContactForm = () => {
   const currentUser = useCurrentUser();

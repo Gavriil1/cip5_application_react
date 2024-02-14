@@ -16,7 +16,13 @@ import { useLocation } from "react-router";
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-
+  /*
+    The page have multiple functionalties
+        1) Create notes
+        2) Display all the notes to the user
+        3) Has an embedded filter which filters the notes
+        4) Has an option to like, modify, or delete the
+  */
 
 function NotesAll({ message, filter = "" }) {
   const [notesList, setNotesList] = useState([]);
@@ -86,7 +92,7 @@ const handleUnlike = async (noteid) => {
 
 useEffect(() => {
   let isMounted = true;
-
+  // gets all the notes from API
   const getAllNotes = async () => {
     try {
       const { data } = await axiosReq.get(`/notes/?${filter}search=${query}`);
@@ -97,8 +103,7 @@ useEffect(() => {
         } else {
           console.error("Received data.results is not an array or is empty:", data.results);
           console.log("are you in else")
-          // <p>No results found</p>
-          setNotesList([]); // Clear the notes list
+          setNotesList([]); 
         }
         setLoading(false);
       }
@@ -120,15 +125,7 @@ useEffect(() => {
     isMounted = false;
   };
 }, [ pathname, filter, query]);
-
-  // const updateNotesList = (note) => {
-  //   setNotesList((prev) => {
-  //     return [note, ...prev].filter(
-  //       (element, index, array) => array.indexOf(element) === index
-  //     );
-  //   });
-  // };
-
+  // reload the notes after changes to the notes are submitted.
   const reloadNotes = async () => {
     try {
       const { data } = await axiosReq.get("/notes");
@@ -142,7 +139,7 @@ useEffect(() => {
     }
   };
 
-
+  // delete the note
   const deleteNote = async (id) => {
     try {
       console.log("Deleting note with ID:", id);
@@ -162,8 +159,8 @@ useEffect(() => {
     history.push(`/note/${id}/edit`);
   };
 
-  //show alert redirect from editnotepage for cancel
-  const [showSecondAlert, setShowSecondAlert] = useState(false); // Second Alert is initially hidden
+  //Show an alert when redirected from the edit note page after the user has pressed cancel.
+  const [showSecondAlert, setShowSecondAlert] = useState(false); 
     useEffect(() => {
       if (history.location.state?.showAlert) {
         setShowSecondAlert(true);
@@ -172,8 +169,8 @@ useEffect(() => {
         }, 3000);
       }
   }, []);
-    //show alert redirect from editnotepage for save
-    const [showThirdAlert, setShowThirdAlert] = useState(false); // Second Alert is initially hidden
+    // Show an alert when redirected from the edit note page after the user has pressed Save.
+    const [showThirdAlert, setShowThirdAlert] = useState(false); 
     useEffect(() => {
       if (history.location.state?.showSaveAlert) {
         setShowThirdAlert(true);
@@ -183,7 +180,7 @@ useEffect(() => {
       }
   }, []);
 
-  //show alert after deliting the note.
+  // Shows an alert after the note is deleted.
   const [showDeleteAlert, setShowDeletedAlert] = useState(false);
   const NoteDeletedAlert = () => {
     console.log("First Button clicked!");
@@ -192,18 +189,18 @@ useEffect(() => {
       setShowDeletedAlert(false);
     }, 3000);
   };
-  //show like alert
-  const [showFirstAlert, setShowFirstAlert] = useState(false); // First Alert is initially hidden
-  const likeUpdateGood = () => {
-    setShowFirstAlert(true); // Show the first alert when the first button is clicked
 
-    // Set a timer to hide the alert after 2 seconds
+  // Displays a notification once the user has liked the note.
+  const [showFirstAlert, setShowFirstAlert] = useState(false); 
+  const likeUpdateGood = () => {
+    setShowFirstAlert(true); 
     setTimeout(() => {
       setShowFirstAlert(false);
     }, 3000);
   };
-  //show email received notification
-  const [showEmailAlert, setShowEmailAlert] = useState(false); // Second Alert is initially hidden
+
+  // Shows an alert after the user has sent an email.
+  const [showEmailAlert, setShowEmailAlert] = useState(false); 
   useEffect(() => {
     if (history.location.state?.emailAlert) {
       setShowEmailAlert(true);
@@ -214,7 +211,7 @@ useEffect(() => {
     }
 }, []);
  
-  //show note creation alert
+  // Shows an alert after the note is created.
   const [showCreatenoteAlert, setShowCreatenotedAlert] = useState(false);
   useEffect(() => {
 
@@ -239,7 +236,6 @@ useEffect(() => {
   </Container>
       <Header />
       <main className="container" style={{ marginBottom: "150px" }}>
-        {/* <i className={`fas fa-search ${styles.SearchIcon}`} /> */}
         <Form
               className={styles.SearchBar}
               onSubmit={(event) => event.preventDefault()}

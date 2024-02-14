@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 /*
-  Displays a 404 page when customer enters incorrect link
+  Displays a 404 page when the user enters an incorrect link.
 */
 
 function NotFoundPage() {
