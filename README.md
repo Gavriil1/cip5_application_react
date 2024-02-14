@@ -309,7 +309,7 @@ The Application Programming Interface (API) for this front-end application was c
 - User stories: 20
 
 <details><summary>See feature screenshot</summary>
-    <img src="docs/features/footer.png">
+    <img src="docs/userstories/user_story_20_footer.png">
 </details>
 
 ### Logo and Navigation Bar
@@ -330,7 +330,7 @@ The Application Programming Interface (API) for this front-end application was c
 - Enables users to contact the admin/site owner to share feedback.
   -user stories: 15
 <details><summary>See feature screenshots</summary>
-  <img src="docs/features/feedbackform.png">
+  <img src="docs/userstories/user_story_14_sendfeedback.png">
 </details>
 
 
@@ -361,9 +361,6 @@ The Application Programming Interface (API) for this front-end application was c
 </details>
 
 
-<details><summary>See feature screenshot</summary>
-<img src="docs/features/usersettingpage.png">
-</details>
 
 
 ### Notes create form
@@ -392,7 +389,7 @@ The Application Programming Interface (API) for this front-end application was c
 - User stories covered: 20
 
 <details><summary>See feature screenshots</summary>
-<img src="docs/features/noteupdateform.png">
+<img src="docs/userstories/user_story_20_footer.png">
 </details>
 
 ### Note Update settings on Main page
@@ -1012,15 +1009,14 @@ The following browsers were used to test the website:
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-| Dropdown menu three dots going off the container on smaller screens | Changed grid-template-columns: from ‘60px auto 200px’ to ‘60px auto 60px’ |
-| User was redirected to 404 page after signing up and logging in | Changed history.goBack(); to history.push("/") |
 | Lighthouse validation: Poor performance of the landing page | Resized (compressed) the landing image |
-| Lighthouse validation: Image not displayed with the correct image ratio | Resized the site logo image with to correct dimensions and ratio |
-| Console warning: Please use ```require("react-router-dom").NavLink``` instead of ```require("react-router-dom/NavLink")```. Support for the latter will be removed in the next major release. | Changed import { NavLink } from "react-router-dom" to import { NavLink } from "react-router-dom" |
-| On small screens, clicking on the hamburger menu and then on user avatar/ user name was not displaying the dropdown menu with ‘Profile’ & ‘Logout’ options | Added a class to the Avatar component, and a div in the ‘loggedInNavBar’ dropdown. In the ‘useClickOutsideToggle’ hook added a check to see if element is the one we don’t want to cause the collapse of navbar |
-| The time under the post was displayed in UTC instead of the local time post was added | Unsuccessful fix. Added 'USE_TZ = True' in back-end settings but it didn't work as expected. Time fix is a future improvement |
 | Wave validator: Empty link | Add 'aria-label'|
-| Wave validator: Contrast errors | Change shade of initially set color 'salmon' and change font color from white to 'dark-slate-grey' on buttons |
+| Wave validator: Footer has low contrast | Changed color to dark blue |
+| Clicking on Logo image does not redirect the user to homepage | connected home url to Logo |
+| The filter was not working on "Important" page | fixed typo in filter's url |
+| Footer cover's page content on smaller screens | fixed it by adding style={{ marginBottom:  }} on each affected page. |
+
+
 
 ##### Back to [top](#table-of-contents)
 
@@ -1048,8 +1044,8 @@ Please check the following link for more information: https://docs.github.com/en
 
 
 ## Credits
-- Picture of the app logo was found here [here](https://commons.m.wikimedia.org/wiki/File:OutlineApp_Logo.png)
-- The login and loug out page was taken from here [here](https://mdbootstrap.com/docs/react/extended/login-form/)
+- Download the Logo Image from [here](https://commons.m.wikimedia.org/wiki/File:OutlineApp_Logo.png)
+- The login and loug out page was taken from  [here](https://mdbootstrap.com/docs/react/extended/login-form/)
 
 
 ### Code

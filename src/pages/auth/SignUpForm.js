@@ -50,7 +50,7 @@ const SignUpForm = () => {
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-9 col-lg-6 col-xl-5">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              src="https://res.cloudinary.com/dtdqranu0/image/upload/v1707908088/media/ym7df1h1mbjzjsnmzsmo.webp"
               className="img-fluid"
               alt="Sign UP"
             />
