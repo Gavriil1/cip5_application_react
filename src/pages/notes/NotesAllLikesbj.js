@@ -78,13 +78,7 @@ const handleUnlike = async (noteid) => {
     
     if (like) {
       await axiosRes.delete(`/likes/${like.id}/`);
-      // Fetch all notes after unliking
-      const { data } = await axiosReq.get(`/notes/?${filter}search=${query}`);
-      if (Array.isArray(data.results)) {
-        setNotesList(data.results);
-      } else {
-        console.error("Received data.results is not an array:", data.results);
-      }
+      fetchLikes();
     } else {
       console.log(`No like found with post value ${like_id}`);
     }
@@ -92,7 +86,6 @@ const handleUnlike = async (noteid) => {
     console.log(err);
   } 
 };
-
 
 
 
@@ -154,7 +147,7 @@ useEffect(() => {
       console.log("Deleting note with ID:", id);
       await axiosReq.delete(`/notes/${id}`);
       setNotesList((prevNotes) => prevNotes.filter((note) => note.id !== id));
-      const { data } = await axiosReq.get(`/notes/?${filter}search=${query}`);
+      const { data } = await axiosReq.get("/notes");
       if (Array.isArray(data.results)) {
         setNotesList(data.results);
       } else {

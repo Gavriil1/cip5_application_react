@@ -62,7 +62,7 @@ const UsernameForm = () => {
     }, 3000);
   };
 
-
+  // this form allowes the user to modify his username. This form is part of ProfilePage.
   return (
         <>  
         <Container>

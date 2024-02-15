@@ -15,6 +15,8 @@ import {
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
+// Form allowes the user to change his avatar. This page is part of Pageprofile page.
+
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
@@ -68,14 +70,12 @@ const ProfileEditForm = () => {
         ...currentUser,
         profile_image: data.image,
       }));
-      // history.goBack();
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
     }
   };
 
-    // Adding alert for changing avatar
     const [showIconAlert, setShowIconAlert] = useState(false);
     const CreateIconlert = () => {
       console.log("First Button clicked!");

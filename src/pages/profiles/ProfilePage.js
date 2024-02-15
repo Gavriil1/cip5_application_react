@@ -4,6 +4,8 @@ import UsernameForm from "./UsernameForm";
 import UserPasswordForm from "./UserPasswordForm"
 import ProfileEditForm from "./ProfileEditForm"
 
+// renders profile page. On this page the user can change his avatar image, username, password
+
 function ProfilePage() {
   const currentUser = useCurrentUser();
   return (
@@ -13,7 +15,6 @@ function ProfilePage() {
       <p>You may change the following settings:</p>
       </div>
       <div>
-        {/* <p>Profile Picture</p> */}
         <ProfileEditForm />
         <br></br>
         <br></br>

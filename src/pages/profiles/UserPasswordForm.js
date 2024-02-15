@@ -14,6 +14,8 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
+// this form allowes the user to change his password. This form is part of ProfilePage.
+
 const UserPasswordForm = () => {
   const history = useHistory();
   const { id } = useParams();
@@ -36,7 +38,6 @@ const UserPasswordForm = () => {
 
   useEffect(() => {
     if (currentUser?.profile_id?.toString() !== id) {
-      // redirect user if they are not the owner of this profile
       history.push("/");
     }
   }, [currentUser, history, id]);
@@ -45,14 +46,12 @@ const UserPasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
-      // history.goBack();
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
     }
   };
 
-  //Adding password alert
   const [showPasswordAlert, setPasswordAlert] = useState(false);
   const PasswordAlert = () => {
     console.log("First Button clicked!");
@@ -61,6 +60,7 @@ const UserPasswordForm = () => {
       setPasswordAlert(false);
     }, 3000);
   };
+
 
   return (
     <>
@@ -102,12 +102,6 @@ const UserPasswordForm = () => {
                 {message}
               </Alert>
             ))}
-            {/* <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
-              onClick={() => history.goBack()}
-            >
-              cancel
-            </Button> */}
             <Button
                 type="submit"
                 className={`${btnStyles.Button} ${btnStyles.Blue}`}

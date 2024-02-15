@@ -6,10 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
-// import PostCreateForm from "./pages/posts/PostCreateForm";
-// import PostPage from "./pages/posts/PostPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
-// import PostEditForm from "./pages/posts/PostEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
@@ -20,8 +17,9 @@ import NotesAll from "./pages/notes/NotesAll"
 import NotesAllLike from "./pages/notes/NotesAllLike"
 import EditNote from "./pages/notes/EditNote"
 import CreateArea from "./pages/notes/CreateArea"
-// import Test from "./pages/Test"
 import React, { useEffect, useState } from "react";
+
+ {/* React application routing table */}
 
 function App() {
   const currentUser = useCurrentUser();
@@ -35,7 +33,7 @@ function App() {
   }, [currentUser]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // Or replace with a loading spinner
+    return <div>Loading...</div>; 
   }
   return (
     <div className={styles.App}>
