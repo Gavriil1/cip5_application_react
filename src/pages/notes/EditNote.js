@@ -128,10 +128,9 @@ function EditNote() {
         title: note.title,
         content: note.content,
       });
-
       setTimeout(() => {
         history.push(`/notes`);
-      }, 2000);
+      }, 1000);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -154,11 +153,15 @@ function EditNote() {
     
     const handleThirdClick = () => {
       console.log("Third Button clicked!");
-      history.push({
-        pathname: "/notes",
-        state: { showSaveAlert: true }
-      });
+      // Add a delay of 2 seconds (2000 milliseconds)
+      setTimeout(() => {
+        history.push({
+          pathname: "/notes",
+          state: { showSaveAlert: true }
+        });
+      }, 1000);
     };
+    
     
 
     return (
@@ -209,7 +212,7 @@ function EditNote() {
                 style={{ backgroundColor: '#004085' }} 
                 variant="primary" 
                 type="button" 
-                onClick={() => { handleSubmit(); handleThirdClick(); }}
+                onClick={() => { handleThirdClick(); handleSubmit();  }}
               >
                 Save changes
               </Button>
