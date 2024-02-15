@@ -128,7 +128,10 @@ function EditNote() {
         title: note.title,
         content: note.content,
       });
-      history.push(`/notes`);
+
+      setTimeout(() => {
+        history.push(`/notes`);
+      }, 2000);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -136,6 +139,7 @@ function EditNote() {
       }
     }
   };
+  
 
 
    

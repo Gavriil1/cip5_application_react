@@ -18,7 +18,6 @@ import NotesAllLike from "./pages/notes/NotesAllLike"
 import EditNote from "./pages/notes/EditNote"
 import CreateArea from "./pages/notes/CreateArea"
 import React, { useEffect, useState } from "react";
-import { Redirect } from 'react-router-dom';
 
  {/* React application routing table */}
 
@@ -50,10 +49,9 @@ function App() {
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          {/* <Route exact path="/contact" render={() => <ContactForm />} /> */}
-          <Route exact path="/contact" render={() => (currentUser ? <ContactForm /> : <Redirect to="/signin" />)} />
+          <Route exact path="/contact" render={() => <ContactForm />} />
 
-          {/* <Route
+          <Route
             exact
             path="/notes"
             render={() => (
@@ -62,30 +60,22 @@ function App() {
 
               />
             )}
-          /> */}
-          <Route
-              exact
-              path="/notes"
-              render={() => (
-                currentUser ? <NotesAll message="No results found. Adjust the search keyword or like a post." /> : <Redirect to="/signin" />
-              )}
           />
 
           <Route
             exact
             path="/important"
             render={() => (
-                currentUser ? <NotesAllLike
+              <NotesAllLike
                 message="No important notes found. Mark the note as important or adjust a search"
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-              /> : <Redirect to="/signin" />
+              />
             )}
           />
 
-
+S
           <Route exact path="/note/create" render={() => <CreateArea />} />
-          {/* <Route exact path="/note/:id/edit" render={() => <EditNote />} /> */}
-          <Route exact path="/note/:id/edit" render={() => (currentUser ? <EditNote /> : <Redirect to="/signin" />)} />
+          <Route exact path="/note/:id/edit" render={() => <EditNote />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/test" render={() => <NotesAll
                 message="No important notes found. Mark the note as important or adjust a search"
@@ -101,13 +91,11 @@ function App() {
                 path="/profiles/:id/edit/password"
                 render={() => <UserPasswordForm />}
               />
-              {/* <Route
+              <Route
                 exact
                 path="/profiles/:id/edit"
                 render={() => <ProfileEditForm />}
-              /> */}
-              <Route exact path="/profiles/:id"
-               render={() => (currentUser ? <ProfilePage /> : <Redirect to="/signin" />)} />
+              />
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>
