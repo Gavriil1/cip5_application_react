@@ -619,27 +619,69 @@ I took ESLint configuration from the general chat of Slack. Configuration settin
 
 ### Chrome Dev Tools Lighthouse 
 
-Lighthouse was used to test the performance, accessibility, best practice and SEO of the site. The validation was done for both desktop & mobile.  
+Lighthouse was used to test the performance, accessibility, best practices, and SEO of the site. Unfortunately, the performance is low.
+
+ This happens because when React requests the status of the user, the API replies with a delay. Because of that, even if the user is authenticated, the system first loads the sign-in page, and only after that starts loading the notes page.
+
+I verified that cookies are configured as in the walkthrough. I compressed the login image to 7 MB, but the speed did not improve. I tried to use this image from Cloudinary or directly from the React application, but performance was not improved.
+
+The issue could be related to the speed of the HEROKU student account. For this reason, I am ignoring this error and reporting it as a bug..
+
 
 #### Desktop 
 
-<details><summary>Landing page</summary> 
-<img src="docs/validation/lighthouse-landing-desktop.png "> 
+<details><summary>Sign In</summary> 
+<img src="docs/performance/1_sign_in_desktop.png"> 
 </details> 
 
-<details><summary>Main posts page</summary> 
-<img src="docs/validation/lighthouse-mainpage-desktop.png "> 
+<details><summary>Sign Up</summary> 
+<img src="docs/performance/2_sign_up_desktop.png"> 
 </details> 
+
+<details><summary>Notes</summary> 
+<img src="docs/performance/3_notes_desktop.png"> 
+</details> 
+
+<details><summary>Important</summary> 
+<img src="docs/performance/4_important_desktop.png"> 
+</details> 
+
+<details><summary>Contact</summary> 
+<img src="docs/performance/5_contact_desktop.png"> 
+</details> 
+
+<details><summary>Profile</summary> 
+<img src="docs/performance/6_profile_desktop.png"> 
+</details> 
+
+
 
 #### Mobile 
 
-<details><summary>Landing page</summary> 
-<img src="docs/validation/lighthouse-landing-mobile.png "> 
+<details><summary>Sign In</summary> 
+<img src="docs/performance/1_sign_in_mobile.png"> 
 </details> 
 
-<details><summary>Main posts page</summary> 
-<img src="docs/validation/lighthouse-mainpage-mobile.png "> 
+<details><summary>Sign Up</summary> 
+<img src="docs/performance/2_sign_up_mobile.png"> 
 </details> 
+
+<details><summary>Notes</summary> 
+<img src="docs/performance/3_notes_mobile.png"> 
+</details> 
+
+<details><summary>Important</summary> 
+<img src="docs/performance/4_important_mobile.png"> 
+</details> 
+
+<details><summary>Contact</summary> 
+<img src="docs/performance/5_contact_mobile.png"> 
+</details> 
+
+<details><summary>Profile</summary> 
+<img src="docs/performance/6_profile_mobile.png"> 
+</details> 
+
 
 
 ### Wave
