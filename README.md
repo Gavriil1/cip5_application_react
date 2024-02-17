@@ -178,10 +178,10 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 
 ### Tools & Programs
 
-- [Am I Responsive](http://ami.responsivedesign.is/) Was used to verify if the site is responsive
-- [Balsamiq](https://balsamiq.com/) was used as wireframes creation tool
-- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for code debugging and for checking the responsivenes of a website
-- [Cloudinary](https://cloudinary.com/) It was used to store static files and images
+- [Am I Responsive](http://ami.responsivedesign.is/) Was used to verify if the site is responsive.
+- [Balsamiq](https://balsamiq.com/) was used as wireframes creation tool.
+- [Chrome dev tools](https://developers.google.com/web/tools/chrome-devtools/) was used for code debugging and for checking the responsivenes of a website.
+- [Cloudinary](https://cloudinary.com/) It was used to store static files and images.
 - [Font Awesome](https://fontawesome.com/) - Icons sourced from Font Awesome were extensively incorporated across the website.
 - [MUI](https://mui.com/material-ui/material-icons/) - Icons from Material UI were used in parallel to Font Awesome.
 - [Google Fonts](https://fonts.google.com/) - Was used for font input.
@@ -272,7 +272,7 @@ Reusability of components – Components can be created and re used throughout t
 
 ### Django REST Framework
 
-The Application Programming Interface (API) for this front-end application was constructed utilizing the Django REST Framework. For more information DRF you may click here. [here]https://www.django-rest-framework.org/).
+The Application Programming Interface (API) for this front-end application was constructed utilizing the Django REST Framework. For more information on DRF, you may click here. [here](https://www.django-rest-framework.org/).
 
 ##### Back to [top](#table-of-contents)
 
@@ -281,10 +281,10 @@ The Application Programming Interface (API) for this front-end application was c
 
 
 ### Login Form
-- Is used for a use to login to his account. User must have an account to login.
-- To login user needs to add username and password. Both fields are mandatory to login
-- Once a user loggs in he is navigated to notes page. 
-- Warning message is displayed on incorrect input
+- It is used for a user to log in to their account. The user must have an account to log in.
+- To log in, the user needs to add a username and password. Both fields are mandatory for logging in.
+- Once a user logs in, they are navigated to the notes page.
+- A warning message is displayed for incorrect input.
 - User stories covered: 2, 3
 
 <details><summary>See feature screenshot</summary>
@@ -304,9 +304,9 @@ The Application Programming Interface (API) for this front-end application was c
 
 
 ### Footer
-- A footer is displayed at the bottom of a each page.
-- Contains copyrights info and links to social media
-- User stories: 20
+- A footer is displayed at the bottom of each page.
+- It contains copyright info and links to social media.
+- User stories covered: 20
 
 <details><summary>See feature screenshot</summary>
     <img src="docs/userstories/user_story_20_footer.png">
@@ -436,7 +436,7 @@ The Application Programming Interface (API) for this front-end application was c
 </details>
 
 ### Username change form
-- Allows user to change their profile username
+- Allows user to change their profile username.
 - User stories covered: 17
 
 <details><summary>See feature screenshots</summary>
@@ -445,7 +445,7 @@ The Application Programming Interface (API) for this front-end application was c
 
 
 ### Password change form
-- Allows user to change their profile password
+- Allows user to change their profile password.
 - User stories covered: 18
 
 <details><summary>See feature screenshots</summary>
@@ -489,8 +489,8 @@ The Application Programming Interface (API) for this front-end application was c
 Examples of potential improvements for future versions of the project:
 
 - Authentication
-  - Allow users to sign up for the app using email, Gmail/Apple/Microsoft/SSO authentication.
-  - Include a functionality to recover passwords through email.
+  - Allow users to create an account and authenticate by using email, Gmail/Apple/Microsoft/SSO.
+  - Add password receovery through email.
 - Profile
   - Provide an option to share a note with another user, or with a non-registered user by sharing a note link.
 - Notes
@@ -510,9 +510,9 @@ Examples of potential improvements for future versions of the project:
 ## Validation 
 
 ### HTML
-The W3C Markup Validation Service was used to validate the HTML of the website. No errors were identified. 
+The W3C Markup Validation Service was used to validate the HTML of the website. No errors were identified.
 
-On all pages we have the following error, which is related to  fontawesome library. Since we cannot adjust and change fontawesome library I treat the error as false positive:
+On all pages, we have the following error, which is related to the bug in FontAwesome library. Since we cannot adjust and change the FontAwesome library, I treat the error as a false positive:
 
 "CSS: transform: var(--fa-rotate-angle, none) is not a transform value.
 ate-angle,none))}.fa-stack{dis"
@@ -619,13 +619,14 @@ I took ESLint configuration from the general chat of Slack. Configuration settin
 
 ### Chrome Dev Tools Lighthouse 
 
-Lighthouse was used to test the performance, accessibility, best practices, and SEO of the site. Unfortunately, the performance is low.
+I used Lighthouse to test the performance, accessibility, best practices, and SEO of the site. Unfortunately, the performance is low.
 
- This happens because when React requests the status of the user, the API replies with a delay. Because of that, even if the user is authenticated, the system first loads the sign-in page, and only after that starts loading the notes page.
+This occurs because when React requests the user’s status, the API responds with a delay. As a result, even if the user is authenticated, the system initially loads the sign-in page and only then starts loading the notes page.
 
-I verified that cookies are configured as in the walkthrough. I compressed the login image to 7 MB, but the speed did not improve. I tried to use this image from Cloudinary or directly from the React application, but performance was not improved.
+I confirmed that the cookies are configured as described in the walkthrough. I compressed the login image to 7 MB, but this did not improve the speed. I attempted to use this image from Cloudinary or directly from the React application, but the performance did not improve.
 
-The issue could be related to the speed of the HEROKU student account. For this reason, I am ignoring this error and reporting it as a bug..
+The issue could be related to the speed of the HEROKU student account. For this reason, I am ignoring  this error for the time being
+ and reporting it as a bug
 
 
 #### Desktop 
@@ -1051,6 +1052,7 @@ The following browsers were used to test the website:
 
 | **Bug** | **Fix** |
 | ------- | ------- |
+| When React Front End send request to API backend to query authenticated user, backend reply with a delay. This cause performance issue. The page loads content for not authenticated user and after for authenticated user.  | The issue cannot be solved. Since it can be caused by Heroku Student Account speed. The issue can be caused by Code Institute walkthrough code weakenes|
 | Lighthouse validation: Poor performance of the landing page | Resized (compressed) the landing image |
 | Wave validator: Empty link | Add 'aria-label'|
 | Wave validator: Footer has low contrast | Changed color to dark blue |
