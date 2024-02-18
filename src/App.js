@@ -69,29 +69,8 @@ function App() {
             )}
           />
 
-
-          {/* <Route exact path="/note/create" render={() => <CreateArea />} /> */}
           <Route exact path="/note/:id/edit" render={() => <EditNote />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
-          {/* <Route exact path="/test" render={() => <NotesAll
-                message="No important notes found. Mark the note as important or adjust a search"
-                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-          />} /> */}
-          {/* <Route
-                exact
-                path="/profiles/:id/edit/username"
-                render={() => <UsernameForm />}
-              /> */}
-              {/* <Route
-                exact
-                path="/profiles/:id/edit/password"
-                render={() => <UserPasswordForm />}
-              /> */}
-              {/* <Route
-                exact
-                path="/profiles/:id/edit"
-                render={() => <ProfileEditForm />}
-              /> */}
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>
