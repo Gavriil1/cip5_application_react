@@ -8,15 +8,11 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 import ProfilePage from "./pages/profiles/ProfilePage";
-import UsernameForm from "./pages/profiles/UsernameForm";
-import UserPasswordForm from "./pages/profiles/UserPasswordForm";
-import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactForm from "./pages/contactform/ContactForm"
 import NotFound from "./components/NotFound";
 import NotesAll from "./pages/notes/NotesAll"
 import NotesAllLike from "./pages/notes/NotesAllLike"
 import EditNote from "./pages/notes/EditNote"
-import CreateArea from "./pages/notes/CreateArea"
 import React, { useEffect, useState } from "react";
 
  {/* React application routing table */}
@@ -73,29 +69,29 @@ function App() {
             )}
           />
 
-S
-          <Route exact path="/note/create" render={() => <CreateArea />} />
+
+          {/* <Route exact path="/note/create" render={() => <CreateArea />} /> */}
           <Route exact path="/note/:id/edit" render={() => <EditNote />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
-          <Route exact path="/test" render={() => <NotesAll
+          {/* <Route exact path="/test" render={() => <NotesAll
                 message="No important notes found. Mark the note as important or adjust a search"
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
-          />} />
-          <Route
+          />} /> */}
+          {/* <Route
                 exact
                 path="/profiles/:id/edit/username"
                 render={() => <UsernameForm />}
-              />
-              <Route
+              /> */}
+              {/* <Route
                 exact
                 path="/profiles/:id/edit/password"
                 render={() => <UserPasswordForm />}
-              />
-              <Route
+              /> */}
+              {/* <Route
                 exact
                 path="/profiles/:id/edit"
                 render={() => <ProfileEditForm />}
-              />
+              /> */}
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>
