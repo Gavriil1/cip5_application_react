@@ -5,6 +5,7 @@ import {
   Alert,
 } from "react-bootstrap";
 import axios from "axios";
+import image from "../../assets/signin.webp"
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -50,7 +51,7 @@ const SignUpForm = () => {
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-9 col-lg-6 col-xl-5">
             <img
-              src="https://res.cloudinary.com/dtdqranu0/image/upload/v1707908088/media/ym7df1h1mbjzjsnmzsmo.webp"
+              src={image}
               className="img-fluid"
               alt="Sign UP"
             />

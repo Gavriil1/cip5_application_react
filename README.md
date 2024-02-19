@@ -1,6 +1,6 @@
 # Le Note
 
-**Developer: Aleksandra Haniok**
+**Developer: Gavriil Spyropoulos**
 
 💻 [Visit live website](https://ci-p5-react-part-9d6b24103236.herokuapp.com/)
 
@@ -29,6 +29,7 @@
     - [Performing tests on various devices](#performing-tests-on-various-devices)
     - [Browser compatibility](#browser-compatibility)
   - [Bugs](#bugs)
+  - [Deployment](#deployment)
   - [Config](#config)
   - [Credits](#credits)
 
@@ -689,7 +690,7 @@ The issue could be related to the speed of the HEROKU student account. For this 
 The WAVE WebAIM web accessibility evaluation tool was used to test the websites accessibility.
 There were a few errors related to "Redunnt link" and "NonScript" element. I verified that I can ignore these two errors.
 
-<img src="docs/validation/wave/allowto not fix.png">
+<img src="docs/validation/wave/allowtonotfix.png">
 
 <details><summary>Log in page</summary>
 <img src="docs/validation/wave/signinwave.png">
@@ -1063,6 +1064,84 @@ The following browsers were used to test the website:
 
 
 ##### Back to [top](#table-of-contents)
+
+## Deployment
+
+The application has been launched at. [Heroku](https://heroku.com). You can access the live version of the application at. https://ci-p5-react-part-9d6b24103236.herokuapp.com/
+
+Kindly proceed with the following steps to launch the application:
+
+1. Deploy your own version of the [Le Note](https://github.com/Gavriil1/CI-PP5-API) by following the [deployment instructions for the Note Explorers API](https://github.com/Gavriil1/CI-PP5-API#deployment).
+
+2. Duplicate or create a fork of this repository. To fork it, navigate to https://github.com/Gavriil1/cip5_application_react , click on `Fork` and follow the instructions. To Clone the repository, run `gh repo clone Gavriil1/cip5_application_react` in  terminal.
+
+    <details>
+
+    <summary>Show image</summary>
+
+    ![Clone or fork repository](docs/deployment/clonefork.png)
+
+    </hr>
+
+3. Navigate to the repository folder and modify the file. `src/api/axiosDefaults.js`. In the file, change the value of `axios.defaults.baseURL` to the URL of your launched API. The URL can be located by selecting your API app from the Heroku dashboard and then copying the URL from the `Open app` button. 
+
+4. If you haven’t already, sign in to your Heroku account at https://heroku.com. Initiate a new app from the Heroku dashboard by selecting New and then `Create new app`.
+
+    <details>
+
+    <summary>Show image</summary>
+
+    ![Create Heroku app](docs/deployment/createnewapp.png)
+
+    </details>
+
+5. Assign an available name to your app and select your region (US or Europe).
+
+
+
+6. Select the *Deploy* tab and link the Heroku app to your GitHub repository.
+
+    <details>
+
+    <summary>Show image</summary>
+
+    ![Connect Heroku app to GitHub repository](docs/deployment/connectgithub.png)
+
+    </details>
+
+7. Scroll down and select the branch you want to deploy in the *Manual deploy* section. Now click on `Deploy Branch` for the first deployment of the application.
+
+    <details>
+
+    <summary>Show image</summary>
+
+    ![Deploy branch](docs/deployment/maindeploy.png)
+
+    </details>
+
+8. In case of unsuccessful deployment, you may resolve the issue by checking the deployment logs. Click on `More`, then `View logs` You may also check the Activity tab for more information. 
+
+
+    <details>
+
+    <summary>Show image</summary>
+
+    ![Debugging](docs/deployment/debugging.png)
+
+    </details>
+
+9. After successful deployment, click on `View` to open the app.
+
+    <details>
+
+    <summary>Show image</summary>
+
+    ![Open app](docs/deployment/successfuldeploy.png)
+
+    </details>
+
+   If the application was successful, you should see the `Note Application` sign-in page. If you can see the landing page but cannot log in, double-check the `CLIENT_ORIGIN` config variable on your API project as described here. If you still can’t see the content, verify that the provided URL to the API is correct
+
 
 
 ## Config

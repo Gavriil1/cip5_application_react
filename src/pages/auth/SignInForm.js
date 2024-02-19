@@ -4,7 +4,7 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import { Link, useHistory } from "react-router-dom";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-import image from "../../assets/draw21234_50.webp"
+import image from "../../assets/signin.webp"
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
@@ -59,7 +59,7 @@ function SignInForm() {
         <img
           src={image}
           className="img-fluid"
-          alt="Sample"
+          alt="Sign In"
         />
       </div>
       <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 mt-20">
