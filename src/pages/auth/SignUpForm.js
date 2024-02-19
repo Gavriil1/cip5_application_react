@@ -59,7 +59,7 @@ const SignUpForm = () => {
             <form onSubmit={handleSubmit}>
               <div className="form-outline mb-4">
                 <input
-                  id="form3Example3"
+                  id="formsigninuse"
                   className="form-control form-control-lg"
                   type="text"
                   placeholder="Username"
@@ -67,7 +67,7 @@ const SignUpForm = () => {
                   value={username}
                   onChange={handleChange}
                 />
-                <label className="form-label" htmlFor="form3Example3">
+                <label className="form-label" htmlFor="formsigninuse">
                   Username
                 </label>
               </div>
@@ -78,7 +78,7 @@ const SignUpForm = () => {
             ))}
               <div className="form-outline mb-3">
                 <input
-                  id="form3Example4"
+                  id="formsigninpass"
                   className="form-control form-control-lg"
                   type="password"
                   placeholder="Password"
@@ -87,7 +87,7 @@ const SignUpForm = () => {
                   onChange={handleChange}
     
                 />
-                <label className="form-label" htmlFor="form3Example4">
+                <label className="form-label" htmlFor="formsigninpass">
                   Password
                 </label>
               </div>
@@ -101,7 +101,7 @@ const SignUpForm = () => {
 
               <div className="form-outline mb-3">
                 <input
-                  id="form3Example5"
+                  id="formsignuppass1"
                   className="form-control form-control-lg"
                   type="password"
                   placeholder="Confirm Passowrd"
@@ -110,7 +110,7 @@ const SignUpForm = () => {
                   onChange={handleChange}
     
                 />
-                <label className="form-label" htmlFor="form3Example5">
+                <label className="form-label" htmlFor="formsignuppass1">
                   Password
                 </label>
               </div>

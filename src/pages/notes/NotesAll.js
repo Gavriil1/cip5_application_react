@@ -98,11 +98,9 @@ useEffect(() => {
       const { data } = await axiosReq.get(`/notes/?${filter}search=${query}`);
       if (isMounted) {
         if (Array.isArray(data.results) && data.results.length > 0) {
-          console.log("Are you here?");
           setNotesList(data.results);
         } else {
           console.error("Received data.results is not an array or is empty:", data.results);
-          console.log("are you in else")
           setNotesList([]); 
         }
         setLoading(false);
@@ -160,22 +158,22 @@ useEffect(() => {
   };
 
   //Show an alert when redirected from the edit note page after the user has pressed cancel.
-  const [showSecondAlert, setShowSecondAlert] = useState(false); 
+  const [showCancelAlert, setCancelAlert] = useState(false); 
     useEffect(() => {
       if (history.location.state?.showAlert) {
-        setShowSecondAlert(true);
+        setCancelAlert(true);
         setTimeout(() => {
-          setShowSecondAlert(false);
+          setCancelAlert(false);
         }, 3000);
       }
   }, []);
     // Show an alert when redirected from the edit note page after the user has pressed Save.
-    const [showThirdAlert, setShowThirdAlert] = useState(false); 
+    const [showSaveAlert, setSaveAlert] = useState(false); 
     useEffect(() => {
       if (history.location.state?.showSaveAlert) {
-        setShowThirdAlert(true);
+        setSaveAlert(true);
         setTimeout(() => {
-          setShowThirdAlert(false);
+          setSaveAlert(false);
         }, 3000);
       }
   }, []);
@@ -183,7 +181,6 @@ useEffect(() => {
   // Shows an alert after the note is deleted.
   const [showDeleteAlert, setShowDeletedAlert] = useState(false);
   const NoteDeletedAlert = () => {
-    console.log("First Button clicked!");
     setShowDeletedAlert(true); 
     setTimeout(() => {
       setShowDeletedAlert(false);
@@ -191,11 +188,11 @@ useEffect(() => {
   };
 
   // Displays a notification once the user has liked the note.
-  const [showFirstAlert, setShowFirstAlert] = useState(false); 
+  const [showLikeAlert, setLikeAlert] = useState(false); 
   const likeUpdateGood = () => {
-    setShowFirstAlert(true); 
+    setLikeAlert(true); 
     setTimeout(() => {
-      setShowFirstAlert(false);
+      setLikeAlert(false);
     }, 3000);
   };
 
@@ -204,7 +201,6 @@ useEffect(() => {
   useEffect(() => {
     if (history.location.state?.emailAlert) {
       setShowEmailAlert(true);
-      console.log("email request received")
       setTimeout(() => {
         setShowEmailAlert(false);
       }, 3000);
@@ -217,7 +213,6 @@ useEffect(() => {
 
     if (history.location.state?.NoteAlert) {
       setShowCreatenotedAlert(true);
-      console.log("note created alert received")
       setTimeout(() => {
         setShowCreatenotedAlert(false);
       }, 3000);
@@ -227,10 +222,10 @@ useEffect(() => {
   return (
     <div className="d-flex flex-column h-100">
        <Container>
-    {showSecondAlert && <Alert variant="danger" dismissible onClose={() => setShowSecondAlert(false)} style={{ textAlign: "center" }}>Note is not saved.</Alert>} 
-    {showThirdAlert && <Alert variant="success" dismissible onClose={() => showThirdAlert(false)} style={{ textAlign: "center" }}>Note Was Saved</Alert>}
-    {showDeleteAlert && <Alert variant="warning" dismissible onClose={() => showThirdAlert(false)} style={{ textAlign: "center" }}>The Note was deleted</Alert>}
-    {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>}
+    {showCancelAlert && <Alert variant="danger" dismissible onClose={() => setCancelAlert(false)} style={{ textAlign: "center" }}>Note is not saved.</Alert>} 
+    {showSaveAlert && <Alert variant="success" dismissible onClose={() => showSaveAlert(false)} style={{ textAlign: "center" }}>Note Was Saved</Alert>}
+    {showDeleteAlert && <Alert variant="warning" dismissible onClose={() => showSaveAlert(false)} style={{ textAlign: "center" }}>The Note was deleted</Alert>}
+    {showLikeAlert && <Alert variant="success" dismissible onClose={() => setLikeAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>}
     {showEmailAlert && <Alert variant="success" dismissible onClose={() => setShowEmailAlert(false)} style={{ textAlign: "center" }}>We Received your message. Thank you !</Alert>}
     {showCreatenoteAlert && <Alert variant="danger" dismissible onClose={() => setShowCreatenotedAlert(false)} style={{ textAlign: "center" }}>Note Created Successfully.</Alert>}
   </Container>

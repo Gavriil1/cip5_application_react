@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import image from "../../assets/draw21234_50.webp"
 
-function SignInFormtest() {
+function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
@@ -71,7 +71,7 @@ function SignInFormtest() {
    
           <div className="form-outline mb-4">
             <input
-              id="form3Example3"
+              id="formsigninuse"
               className="form-control form-control-lg"
               type="text"
               placeholder="Username"
@@ -79,7 +79,7 @@ function SignInFormtest() {
               value={username}
               onChange={handleChange}
             />
-            <label className="form-label" htmlFor="form3Example3">
+            <label className="form-label" htmlFor="formsigninuser">
               Username
             </label>
           </div>
@@ -90,7 +90,7 @@ function SignInFormtest() {
             ))}
           <div className="form-outline mb-3">
             <input
-              id="form3Example4"
+              id="formsigninpass"
               className="form-control form-control-lg"
               type="password"
               placeholder="Password"
@@ -99,7 +99,7 @@ function SignInFormtest() {
               onChange={handleChange}
 
             />
-            <label className="form-label" htmlFor="form3Example4">
+            <label className="form-label" htmlFor="formsigninpass">
               Password
             </label>
           </div>
@@ -139,4 +139,4 @@ function SignInFormtest() {
   );
 }
 
-export default SignInFormtest;
+export default SignInForm;

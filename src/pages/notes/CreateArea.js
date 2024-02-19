@@ -45,7 +45,6 @@ function CreateArea(props) {
 
   const [showCreatenoteAlert, setShowCreatenotedAlert] = useState(false);
   const CreateNoteAlert = () => {
-    console.log("First Button clicked!");
     setShowCreatenotedAlert(true); 
     setTimeout(() => {
       setShowCreatenotedAlert(false);

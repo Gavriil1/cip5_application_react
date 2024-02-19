@@ -20,18 +20,16 @@ function EditNote() {
   const history = useHistory();
   const { id } = useParams();
   const noteid = id;
-  console.log("noteid value is " + noteid);
   const [like_id, setLikeId] = useState(false);
 
 
-  const [showFirstAlert, setShowFirstAlert] = useState(false); 
+  const [showLikeAlert, setLikeAlert] = useState(false); 
   const likeUpdateGood = () => {
-    console.log("First Button clicked!");
-    setShowFirstAlert(true); 
+    setLikeAlert(true); 
 
 
     setTimeout(() => {
-      setShowFirstAlert(false);
+      setLikeAlert(false);
     }, 3000);
   };
 
@@ -61,8 +59,6 @@ function EditNote() {
   }, [id]); 
 
   const handleLike = async (id) => {
-    console.log("this is id of note");
-    console.log(id);
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
       setLikeId(data.post);
@@ -142,17 +138,15 @@ function EditNote() {
 
 
    
-    const [showSecondAlert, setShowSecondAlert] = useState(false); 
-    const handleSecondClick = () => {
-      console.log("Second Button clicked!");
+    // const [showSecondAlert, setShowSecondAlert] = useState(false); 
+    const handleCancel = () => {
       history.push({
         pathname: "/notes",
         state: { showAlert: true }
       });
     };
     
-    const handleThirdClick = () => {
-      console.log("Third Button clicked!");
+    const handleSave = () => {
       // Add a delay of 2 seconds (2000 milliseconds)
       setTimeout(() => {
         history.push({
@@ -167,8 +161,7 @@ function EditNote() {
     return (
       <>
         <Container>
-          {showFirstAlert && <Alert variant="success" dismissible onClose={() => setShowFirstAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>}
-          {showSecondAlert && <Alert variant="success" dismissible onClose={() => setShowSecondAlert(false)} style={{ textAlign: "center" }}>The Note was saved Successfully</Alert>} 
+          {showLikeAlert && <Alert variant="success" dismissible onClose={() => setLikeAlert(false)} style={{ textAlign: "center" }}>Like Status of a Note Updated Successfully</Alert>}
         </Container>
     
         <Modal.Dialog>
@@ -204,7 +197,7 @@ function EditNote() {
 </button>
 
     
-            <Button variant="secondary" onClick={() => { history.push("/notes"); handleSecondClick(); }} aria-label="Cancel">
+            <Button variant="secondary" onClick={() => { history.push("/notes"); handleCancel(); }} aria-label="Cancel">
               Cancel
             </Button>
     
@@ -212,7 +205,7 @@ function EditNote() {
                 style={{ backgroundColor: '#004085' }} 
                 variant="primary" 
                 type="button" 
-                onClick={() => { handleThirdClick(); handleSubmit();  }}
+                onClick={() => { handleSave(); handleSubmit();  }}
               >
                 Save changes
               </Button>
