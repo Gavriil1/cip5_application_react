@@ -75,6 +75,8 @@ The key functionality aspects:
 - Simple, intuitive application.
 - Responsive website, which allows users to use it from various devices
 
+##### Back to [top](#table-of-contents)
+
 ## User Stories
 
 ### First sprint
@@ -208,6 +210,7 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 
 ##### Back to [top](#table-of-contents)
 
+##### Back to [top](#table-of-contents)
 
 ## Technologies Used
 
@@ -247,8 +250,9 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
   - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) It was employed to verifying the performance, accessibility, adherence to best practices, and Search Engine Optimization (SEO) of the application.
   - [Wave](https://wave.webaim.org/) - It was employed to assess the accessibility of the application
 
-##### Back to [top](#table-of-contents)
 
+
+##### Back to [top](#table-of-contents)
 
 ## Front-End
 
@@ -318,7 +322,7 @@ Reusability of components – Components can be created and re used throughout t
   - User stories covered: 18
 
 
-
+##### Back to [top](#table-of-contents)
 
 ## Back-End API
 
@@ -326,7 +330,7 @@ Reusability of components – Components can be created and re used throughout t
 
 The Application Programming Interface (API) for this front-end application was constructed utilizing the Django REST Framework. For more information on DRF, you may click here. [here](https://www.django-rest-framework.org/).
 
-##### Back to [top](#table-of-contents)
+
 
 
 ## Features
@@ -534,6 +538,8 @@ The Application Programming Interface (API) for this front-end application was c
 <details><summary>See feature screenshot</summary>
 <img src="docs/userstories/user_story_19_alerts.png">
 </details>
+
+
 
 
 ## Future features / improvements
