@@ -1,6 +1,7 @@
-# Le Note
-
 **Developer: Gavriil Spyropoulos**
+
+# Note Application: "Le Note"
+
 
 💻 [Visit live website](https://ci-p5-react-part-9d6b24103236.herokuapp.com/)
 
@@ -10,6 +11,7 @@
 ## Table of Contents
   - [About](#about)
   - [Project Goals](#project-goals)
+  - [User Experience](#user-experience)
   - [User Stories](#user-stories)
   - [Design](#design)
     - [Colours](#colours)
@@ -53,6 +55,20 @@ The key functionality aspects:
 - Search field, which allows user to search for notes by using keywords.
 - Responsiveness to allow users to use the app on various devices
 
+## User Experience
+
+### Target Audience
+
+- Individuals seeking assistance in organiz their notes.
+- Individuals aiming to monitor their pending tasks effectively.
+
+
+### User Requirements and Expectations
+- Interactive, high-quality website.
+- Links and functions work as expected.
+- Notifications to assist users in tracking all tasks.
+- Simple, intuitive application.
+- Responsive website, which allows users to use it from various devices
 
 ## User Stories
 
@@ -101,9 +117,9 @@ The key functionality aspects:
 17. As a user, I can change my username.
 18. As a user, I can update my password.
 
-#### General
+#### Site owner stories
 
-19. As a user of the application, I can see ReactBootstrap alerts after completing different actions, for example: creating a note, deleting a note, liking a note, editing a note, changing the password, changing the username, changing the profile picture, etc.
+19. As a site owner of the application, I would like user to see ReactBootstrap alerts after completing different actions, for example: creating a note, deleting a note, liking a note, editing a note, changing the password, changing the username, changing the profile picture, etc.
 
 20. As a site owner, I would like a user to see a footer on each page. On the footer, they can see copyright information and links to social media.
 
@@ -117,6 +133,36 @@ The key functionality aspects:
 
 
 ## Design
+
+### Agile Design
+This app was developed using an Agile methodology. We utilized GitHub’s projects to manage user stories and prioritize the implementation of features based on their significance, ensuring the app’s functionality and user experience remained uncompromised.
+
+Three categories were created indicating their level of importance, those were:
+
+MUST HAVE
+SHOULD HAVE
+COULD HAVE
+
+In addition, the user stories were divided according to their purpose:
+
+EPIC1: Authentication
+EPIC2: List-Create-Add-Delete-Tasks
+EPIC3: Contact Form
+EPIC4: Profile Edit
+EPIC5: Other
+
+The application of the AGILE methodology in this project enabled me to deliver a site that not only met all the necessary functionalities but also offered additional features. The time constraint on this project prevented the incorporation of all initially listed features, which is where the AGILE approach shines in app design. This is evident in the project, with completed User stories marked as ‘Done’ and those earmarked for future implementation listed under the ‘Future Implementations’ section of the readme.
+
+The GitHub Agile Project can be found here: https://github.com/users/Gavriil1/projects/6
+
+### CRUD Functionality
+Tick It handles data with full CRUD Functionality:
+
+Create - Users can create, an account, profile, note, feedback message
+Read - Users can view the notes, profile settings.
+Update - Users can update their profile setting: password, username, avatar.
+User can update notes
+Delete - Users can delete notes
 
 ### Colours
 
@@ -582,7 +628,7 @@ The JSX code was validated using the ESLint utility.
 
 Installed ESLint by using npm init @eslint/config according to the page https://eslint.org/
 
-I took ESLint configuration from the general chat of Slack. Configuration settings are saved in .eslintrc.json
+I took ESLint configuration from the general chat of Code Institute. Configuration settings are saved in .eslintrc.json
 
 
 <details><summary>Eslint validation for components</summary> 
@@ -1126,7 +1172,7 @@ Kindly proceed with the following steps to launch the application:
 
     <summary>Show image</summary>
 
-    ![Debugging](docs/deployment/debugging.png)
+    ![Debugging](docs/deployment/viewlogs.png)
 
     </details>
 
@@ -1168,7 +1214,7 @@ Please check the following link for more information: https://docs.github.com/en
 
 ## Credits
 - Download the Logo Image from [here](https://commons.m.wikimedia.org/wiki/File:OutlineApp_Logo.png)
-- The login and loug out page was taken from  [here](https://mdbootstrap.com/docs/react/extended/login-form/)
+- The login and log out page was taken from  [here](https://mdbootstrap.com/docs/react/extended/login-form/)
 
 
 ### Code
