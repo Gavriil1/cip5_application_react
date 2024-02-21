@@ -40,7 +40,7 @@ function App() {
             exact
             path="/"
             render={() => (
-              currentUser ? <NotesAll message="Yo results found. Adjust the search keyword or like a post."/> : <SignInForm />
+              currentUser ? <NotesAll message="No results found. Add a new note or adjust the search keyword"/> : <SignInForm />
             )}
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
