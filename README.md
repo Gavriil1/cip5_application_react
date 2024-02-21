@@ -1110,7 +1110,7 @@ The following browsers were used to test the website:
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-| When React Front End send request to API backend to query authenticated user, backend reply with a delay. This cause performance issue. The page loads content for not authenticated user and after for authenticated user.  | The issue cannot be solved. Since it can be caused by Heroku Student Account speed. The issue can be caused by Code Institute walkthrough code weakenes|
+| When the React Front End sends a request to the API backend to query the authenticated user, the backend replies with a delay. This causes multiple issues. Performance issue: The page loads content for the unauthenticated user first and then for the authenticated user. This delay does not allow me to block unauthorized users from accessing the “Notes”, “Important”, and “Contact Page”. This happens because even if the user is authenticated, a 404 page is loaded since the frontend receives the authenticated user details with a significant delay.Private information is not exposed, as I block the loading of notes for unauthorized users from the API." | The issue cannot be resolved. It could be due to the speed of the Heroku Student Account, or it could be a result of the design of the Code Institute walkthrough. I’ve opened multiple cases with tutors, but we have been unable to solve the issue. |
 | Lighthouse validation: Poor performance of the landing page | Resized (compressed) the landing image |
 | Wave validator: Empty link | Add 'aria-label'|
 | Wave validator: Footer has low contrast | Changed color to dark blue |
