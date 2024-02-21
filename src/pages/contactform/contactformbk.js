@@ -31,7 +31,7 @@ const ContactForm = () => {
 
       try {
           const { data } = await axiosReq.post("api/contact/", formData);
-          handleEmailSend();
+          history.push(`/notes`);
       } catch (err) {
           console.log(err);
           if (err.response?.status !== 401) {
@@ -140,7 +140,7 @@ const ContactForm = () => {
                               type="submit"
                               value="Send Feedback"
                               className={`btn btn-lg btn-block float-right ${style.login_btn_task_form}`}
-                         
+                              onClick={handleEmailSend}
                           />
                       </div>
                       
