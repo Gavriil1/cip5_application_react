@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { Form, Button } from 'react-bootstrap';
 import style from  "../../styles/Contact.module.css";
-
-
-// Form is  created to allow user to send email to the customer.
 
 const ContactForm = () => {
   const currentUser = useCurrentUser();
-  const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
       name: '',
       email: '',
@@ -42,7 +39,6 @@ const ContactForm = () => {
       }
   };
 
-
   const handleEmailSend = () => {
     console.log("email sent!");
     history.push({
@@ -57,97 +53,62 @@ const ContactForm = () => {
               <div className={`card-body ${style.card_body_task_form}`} style={{ height: 570 }}>
               <h1 className="text-black text-center">Feedback Form</h1>
               <br></br>
-                  <form
+                  <Form
                       id="contact-form"
                       name="contact-form"
-                      method="POST"
-                      className="was-validated"
                       onSubmit={handleSubmit}
                       style={{ maxWidth: '100%', margin: '0 auto' }}
                   >
-                      <div className="row">
-                          <div className="col-md-6">
-                              <div className="md-form mb-0">
-                                  <input
-                                      type="text"
-                                      id="name"
-                                      name="name"
-                                      className="form-control"
-                                      maxLength={200}
-                                      required=""
-                                      value={formData.name}
-                                      onChange={handleChange}
-                                      
-                                  />
-                                  <label htmlFor="name" className="text-black">
-                                      Your name
-                                  </label>
-                              </div>
-                          </div>
-                          <div className="col-md-6">
-                              <div className="md-form mb-0">
-                                  <input
-                                      type="email"
-                                      id="email"
-                                      name="email"
-                                      className="form-control"
-                                      required=""
-                                      value={formData.email}
-                                      onChange={handleChange}
-                                  />
-                                  <label htmlFor="email" className="text-black">
-                                      Your email
-                                  </label>
-                              </div>
-                          </div>
-                      </div>
-                      <div className="row">
-                          <div className="col-md-12">
-                              <div className="md-form mb-0">
-                                  <input
-                                      type="text"
-                                      id="subject"
-                                      name="subject"
-                                      className="form-control"
-                                      maxLength={200}
-                                      required=""
-                                      value={formData.subject}
-                                      onChange={handleChange}
-                                  />
-                                  <label htmlFor="subject" className="text-black">
-                                      Subject
-                                  </label>
-                              </div>
-                          </div>
-                      </div>
-                      <div className="row">
-                          <div className="col-md-12">
-                              <div className="md-form">
-                                  <textarea
-                                      id="message"
-                                      name="message"
-                                      rows={2}
-                                      className="form-control md-textarea"
-                                      required=""
-                                      value={formData.message}
-                                      onChange={handleChange}
-                                  />
-                                  <label htmlFor="message" className="text-black">
-                                      Your message
-                                  </label>
-                              </div>
-                          </div>
-                      </div>
-                      <div className="form-group">
-                          <input
-                              type="submit"
-                              value="Send Feedback"
-                              className={`btn btn-lg btn-block float-right ${style.Button} ${style.Blue}`}
-                         
+                      <Form.Group controlId="name">
+                          <Form.Label>Your name</Form.Label>
+                          <Form.Control
+                              type="text"
+                              name="name"
+                              maxLength={200}
+                              required
+                              value={formData.name}
+                              onChange={handleChange}
                           />
-                      </div>
-                      
-                  </form>
+                      </Form.Group>
+                      <Form.Group controlId="email">
+                          <Form.Label>Your email</Form.Label>
+                          <Form.Control
+                              type="email"
+                              name="email"
+                              required
+                              value={formData.email}
+                              onChange={handleChange}
+                          />
+                      </Form.Group>
+                      <Form.Group controlId="subject">
+                          <Form.Label>Subject</Form.Label>
+                          <Form.Control
+                              type="text"
+                              name="subject"
+                              maxLength={200}
+                              required
+                              value={formData.subject}
+                              onChange={handleChange}
+                          />
+                      </Form.Group>
+                      <Form.Group controlId="message">
+                          <Form.Label>Your message</Form.Label>
+                          <Form.Control
+                              as="textarea"
+                              rows={2}
+                              name="message"
+                              required
+                              value={formData.message}
+                              onChange={handleChange}
+                          />
+                      </Form.Group>
+                      <Button variant="primary"
+                       type="submit"
+                       className={`btn btn-lg btn-block float-right ${style.Button} ${style.Blue}`}
+                       >
+                          Send Feedback
+                      </Button>
+                  </Form>
               </div>
           </div>
       </div>
