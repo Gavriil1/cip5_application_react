@@ -84,7 +84,6 @@ function EditNote() {
       return;
     } else {
       try {
-        console.log("are you here")
         await axiosReq.put(`/notes/${id}/`, {
           title: note.title,
           content: note.content,

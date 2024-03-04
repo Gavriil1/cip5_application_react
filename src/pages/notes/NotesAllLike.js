@@ -41,7 +41,6 @@ const fetchLikes = async () => {
     let postValues = [];
     for (let like of data) {
       postValues.push(like.post);
-      console.log("postvalues are" + postValues)
     }
 
 
