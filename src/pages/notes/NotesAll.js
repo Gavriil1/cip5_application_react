@@ -139,6 +139,9 @@ useEffect(() => {
 
   // delete the note
   const deleteNote = async (id) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this note?");
+    if (!confirmDelete) return;
+    
     try {
       console.log("Deleting note with ID:", id);
       await axiosReq.delete(`/notes/${id}`);

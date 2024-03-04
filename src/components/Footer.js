@@ -12,7 +12,7 @@ function Footer() {
         style={{ backgroundColor: "#004085", minHeight: "50px" }}
       >
         <div className="text-white mb-3 mb-md-0">
-          Copyright © 2024. All rights reserved.
+          Copyright © 2024.
         </div>
         <div>
           <a href="https://www.facebook.com/" className="text-white me-4" aria-label="Facebook">
