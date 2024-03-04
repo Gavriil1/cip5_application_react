@@ -9,6 +9,7 @@ import style from  "../../styles/Contact.module.css";
 
 const ContactForm = () => {
   const currentUser = useCurrentUser();
+  const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
       name: '',
       email: '',
@@ -76,6 +77,7 @@ const ContactForm = () => {
                                       required=""
                                       value={formData.name}
                                       onChange={handleChange}
+                                      
                                   />
                                   <label htmlFor="name" className="text-black">
                                       Your name
@@ -140,7 +142,6 @@ const ContactForm = () => {
                           <input
                               type="submit"
                               value="Send Feedback"
-                            //   className={`btn btn-lg btn-block float-right ${style.login_btn_task_form}`}
                               className={`btn btn-lg btn-block float-right ${style.Button} ${style.Blue}`}
                          
                           />
