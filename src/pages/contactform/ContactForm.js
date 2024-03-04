@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import style from  "../../styles/Contact.module.css";
 
+
 // Form is  created to allow user to send email to the customer.
 
 const ContactForm = () => {
@@ -139,7 +140,8 @@ const ContactForm = () => {
                           <input
                               type="submit"
                               value="Send Feedback"
-                              className={`btn btn-lg btn-block float-right ${style.login_btn_task_form}`}
+                            //   className={`btn btn-lg btn-block float-right ${style.login_btn_task_form}`}
+                              className={`btn btn-lg btn-block float-right ${style.Button} ${style.Blue}`}
                          
                           />
                       </div>
