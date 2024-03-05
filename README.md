@@ -389,7 +389,16 @@ The Application Programming Interface (API) for this front-end application was c
 - Enables users to contact the admin/site owner to share feedback.
   -user stories: 15
 <details><summary>See feature screenshots</summary>
-  <img src="docs/userstories/user_story_14_sendfeedback.png">
+  <img src="docs/features/contactform.png">
+</details>
+
+### Create notes page
+- Create note page allows user to create a new note. 
+- Contains a form which user can submit to create a page.
+- User stories covered: 6
+
+<details><summary>See feature screenshot</summary>
+<img src="docs/features/createnote.png">
 </details>
 
 
@@ -397,10 +406,9 @@ The Application Programming Interface (API) for this front-end application was c
 - Main notes page is displayed for logged-in users 
 - Contains :
   - Search Bar.
-  - Create Note field
   - Notes created by sign in user.
 - Displays all notes ordered by the most recent one
-- User stories covered: 6, 7, 8, 9, 10, 11, 23, 12
+- User stories covered: 7, 8, 9, 10, 11, 23, 12
 
 <details><summary>See feature screenshot</summary>
 <img src="docs/features/notesmainpage.png">
@@ -410,7 +418,6 @@ The Application Programming Interface (API) for this front-end application was c
 - Main notes page is displayed for logged-in users 
 - Contains :
   - Search Bar.
-  - Create Note field
   - Notes created by sign in user.
 - Displays only important notes which were liked by a user.
 - User stories covered: 7, 8, 9, 10, 23, 13, 12
@@ -421,18 +428,6 @@ The Application Programming Interface (API) for this front-end application was c
 
 
 
-
-### Notes create form
-
-- Contains Note title and note description
-- Description field is optional
-- Allows a user to create notes
-- User stories covered: 6
-
-<details><summary>See feature screenshots</summary>
-<img src="docs/features/notescreateform.png">
-</details>
-
 ### Note Update form
 
 - Contains Note title and note description
@@ -440,6 +435,10 @@ The Application Programming Interface (API) for this front-end application was c
 - He may like/unlike note. 
 - If he clicks cancel he redirected to homepage.
 - User stories covered: 7, 8, 9, 10, 14, 12
+
+<details><summary>See feature screenshots</summary>
+<img src="docs/userstories/user_story_20_footer.png">
+</details>
 
 ### Note Footer
 
@@ -457,7 +456,7 @@ The Application Programming Interface (API) for this front-end application was c
 - Each Note has "Like/Unlick", Delete and Edit Note button.
 <details>
 <summary>See feature screenshots</summary>
-<img src="docs/features/updatesettingsmainpage.png">
+<img src="docs/features/noteupdateform.png">
 </details>
 
 ### Likes
