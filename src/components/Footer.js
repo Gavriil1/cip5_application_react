@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer>
       <div
-        className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 fixed-bottom"
+        className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-1 px-1 px-xl-5 fixed-bottom"
         style={{ backgroundColor: "#004085", minHeight: "50px" }}
       >
         <div className="text-white mb-3 mb-md-0">

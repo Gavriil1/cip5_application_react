@@ -252,20 +252,20 @@ useEffect(() => {
             </Form.Group>
         </Form>
        
-        <button
+
+
+        <div style={{ marginTop: '20px' }}>
+        {notesList.length === 0 && <p>{message}</p>} 
+        </div>
+        <p></p>
+        <Button
             className={`${btnStyles.Button} ${btnStyles.Blue}`}
             onClick={() => {
               window.location.href = '/note/create';
             }}
           >
             Create Note
-        </button>
-
-        <div style={{ marginTop: '20px' }}>
-        {notesList.length === 0 && <p>{message}</p>} 
-        </div>
-        <p></p>
-
+        </Button>
         <div className="row">
           {notesList.map((note) => (
             <div className="col-lg-4 col-md-6 col-sm-12" key={note.id}>
