@@ -213,7 +213,7 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 
 ##### Back to [top](#table-of-contents)
 
-##### Back to [top](#table-of-contents)
+
 
 ## Technologies Used
 
@@ -585,6 +585,10 @@ ate-angle,none))}.fa-stack{dis"
 <img src="docs/validation/html/signuppagehtmlcheck.png"> 
 </details>
 
+<details><summary>Create Note Form</summary> 
+<img src="docs/validation/html/createnote.png"> 
+</details> 
+
 <details><summary>Contact Form</summary> 
 <img src="docs/validation/html/contactformpagehtmlpage.png"> 
 </details> 
@@ -699,6 +703,10 @@ The issue could be related to the speed of the HEROKU student account. For this 
 <img src="docs/performance/2_sign_up_desktop.png"> 
 </details> 
 
+<details><summary>Create Note</summary> 
+<img src="docs/performance/7_createnote_desktop.png"> 
+</details> 
+
 <details><summary>Notes</summary> 
 <img src="docs/performance/3_notes_desktop.png"> 
 </details> 
@@ -726,6 +734,10 @@ The issue could be related to the speed of the HEROKU student account. For this 
 <details><summary>Sign Up</summary> 
 <img src="docs/performance/2_sign_up_mobile.png"> 
 </details> 
+
+<details><summary>Create Note</summary> 
+<img src="docs/performance/7_createnote_mobile.png"> 
+</details>
 
 <details><summary>Notes</summary> 
 <img src="docs/performance/3_notes_mobile.png"> 
