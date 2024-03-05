@@ -191,6 +191,9 @@ The website has been designed using Google Fonts. The “Poppins” font, with s
 <details><summary>Contact Form</summary>
     <img src="docs/wireframes/contactform.png">
 </details>
+<details><summary>Create Note Page</summary>
+    <img src="docs/wireframes/createnote.png">
+</details>
 <details><summary>Main Note Page</summary>
     <img src="docs/wireframes/notes.png">
 </details>

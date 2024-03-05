@@ -7,6 +7,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import PropTypes from 'prop-types';
 import { useHistory } from "react-router";
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 function CreateArea(props) {
   const history = useHistory();
@@ -63,7 +64,15 @@ function CreateArea(props) {
           </Alert>
         )}
       </Container>
-      <div>
+      <header>
+      <h1>
+        <AddBoxIcon fontSize="large" />
+        Create a Note
+      </h1>
+    </header>
+
+    <div style={{ marginTop: '20px' }}>
+
         <Form
           className="create-note"
           onSubmit={(event) => {
