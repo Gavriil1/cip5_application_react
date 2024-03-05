@@ -771,6 +771,9 @@ There were a few errors related to "Redunnt link" and "NonScript" element. I ver
 <img src="docs/validation/wave/signupwave.png">
 </details>
 
+<details><summary>Create Note page</summary>
+<img src="docs/validation/wave/createnotepage.png">
+</details>
 
 <details><summary>Note page</summary>
 <img src="docs/validation/wave/notewaive.png">
