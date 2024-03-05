@@ -15,6 +15,7 @@ import Container from 'react-bootstrap/Container';
 import { useLocation } from "react-router";
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import btnStyles from "../../styles/Button.module.css";
 
   /*
     The page have multiple functionalties
@@ -250,7 +251,15 @@ useEffect(() => {
             />
             </Form.Group>
         </Form>
-        <CreateArea reloadNotes={reloadNotes} />
+       
+        <button
+            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            onClick={() => {
+              window.location.href = '/note/create';
+            }}
+          >
+            Create Note
+        </button>
 
         <div style={{ marginTop: '20px' }}>
         {notesList.length === 0 && <p>{message}</p>} 

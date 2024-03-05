@@ -6,12 +6,15 @@ import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 import btnStyles from "../../styles/Button.module.css";
 import PropTypes from 'prop-types';
+import { useHistory } from "react-router";
 
 function CreateArea(props) {
+  const history = useHistory();
   const [note, setNote] = useState({
     title: "",
     content: "",
   });
+  const [errors, setErrors] = useState(null);
 
   const { title, content } = note;
   const [showCreatenoteAlert, setShowCreatenoteAlert] = useState(false);
@@ -27,7 +30,7 @@ function CreateArea(props) {
     event.preventDefault();
     if (!title.trim() || !content.trim()) {
       setShowCreatenoteAlert(true);
-      setTimeout(() => setShowCreatenoteAlert(false), 2000); // Dismiss alert after 2 seconds
+      setTimeout(() => setShowCreatenoteAlert(false), 3000); 
       return;
     }
 
@@ -37,6 +40,11 @@ function CreateArea(props) {
 
     try {
       const postResponse = await axiosReq.post("/notes/", formData);
+      console.log("are you here")
+      history.push({
+        pathname: "/notes",
+        state: { showCreatenoteAlert: true }
+      });
       props.reloadNotes();
     } catch (err) {
       console.log(err);
@@ -101,6 +109,14 @@ function CreateArea(props) {
           <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
             Create
           </Button>
+          <Button
+              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              onClick={() => {
+              window.location.href = '/notes';
+    }}
+  >
+    Cancel
+  </Button>
         </Form>
       </div>
     </>

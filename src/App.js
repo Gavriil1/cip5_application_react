@@ -14,6 +14,7 @@ import NotesAll from "./pages/notes/NotesAll"
 import NotesAllLike from "./pages/notes/NotesAllLike"
 import EditNote from "./pages/notes/EditNote"
 import React, { useEffect, useState } from "react";
+import CreateArea from "./pages/notes/CreateArea"
 
  {/* React application routing table */}
 
@@ -68,7 +69,7 @@ function App() {
               />
             )}
           />
-
+          <Route exact path="/note/create" render={() => <CreateArea />} />
           <Route exact path="/note/:id/edit" render={() => <EditNote />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route render={() => <NotFound />} />
