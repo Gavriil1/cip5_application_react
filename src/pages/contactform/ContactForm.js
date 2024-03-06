@@ -5,6 +5,10 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Form, Button, Alert, Container } from 'react-bootstrap';
 import style from  "../../styles/Contact.module.css";
 
+ /* 
+      Contact form. It allows the user to send feedback to the user
+  */
+
 const ContactForm = () => {
     const currentUser = useCurrentUser();
     const history = useHistory();
@@ -15,7 +19,7 @@ const ContactForm = () => {
         message: '',
     });
     const [error, setError] = useState(null);
-    const [ notValidEmail, setNotValidEmail] = useState(false); // State to control alert visibility
+    const [ notValidEmail, setNotValidEmail] = useState(false); 
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

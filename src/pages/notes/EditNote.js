@@ -7,6 +7,10 @@ import { Form } from 'react-bootstrap';
 import StarIcon from '@mui/icons-material/Star';
 import AddIcon from '@mui/icons-material/Add';  
 
+ /* 
+      Edit form. It allows the user th edit the note.
+  */
+
 function EditNote() {
   const [errors, setErrors] = useState({});
   const [note, setNote] = useState({

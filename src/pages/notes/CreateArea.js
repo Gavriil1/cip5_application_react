@@ -9,6 +9,10 @@ import PropTypes from 'prop-types';
 import { useHistory } from "react-router";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
+ /* 
+      Create Note page. It allows the user to create a new page
+  */
+
 function CreateArea(props) {
   const history = useHistory();
   const [note, setNote] = useState({
