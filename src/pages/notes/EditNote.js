@@ -23,6 +23,15 @@ function EditNote() {
   const [showEmptyFieldsAlert, setShowEmptyFieldsAlert] = useState(false);
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
+  const likeUpdateGood = () => {
+    setLikeAlert(true); 
+
+
+    setTimeout(() => {
+      setLikeAlert(false);
+    }, 3000);
+  };
+
   useEffect(() => {
     const checkLikeExists = async () => {
       try {
@@ -42,6 +51,33 @@ function EditNote() {
   
     checkLikeExists();
   }, [id]); 
+
+  const handleLike = async (id) => {
+    try {
+      const { data } = await axiosRes.post("/likes/", { post: id });
+      setLikeId(data.post);
+      likeUpdateGood();
+    } catch (err) {
+      console.log(err.data);
+    }
+  };
+
+  const handleUnlike = async () => {
+    try {
+      const response = await axiosRes.get('/likes/');
+      const data = response.data.results; 
+      const like = data.find(like => like.post === like_id);
+      if (like) {
+        await axiosRes.delete(`/likes/${like.id}/`);
+        likeUpdateGood();
+        setLikeId(false);
+      } else {
+        console.log(`No like found with post value ${like_id}`);
+      }
+    } catch (err) {
+      console.log(err);
+    } 
+  };
 
   useEffect(() => {
     const handleMount = async () => {
