@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from "react";
-
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-
-
 import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
-import {
-  useCurrentUser,
-  useSetCurrentUser,
-} from "../../contexts/CurrentUserContext";
-
+import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 const UsernameForm = () => {
   const [username, setUsername] = useState("");
   const [errors, setErrors] = useState({});
-
   const history = useHistory();
   const { id } = useParams();
-
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
@@ -60,40 +51,40 @@ const UsernameForm = () => {
     }, 3000);
   };
 
-  // this form allowes the user to modify his username. This form is part of ProfilePage.
+  // this form allows the user to modify his username. This form is part of ProfilePage.
   return (
-        <>  
-        <Container>
+    <>  
+      <Container>
         {showUsernameAlert && <Alert variant="success" dismissible onClose={() => setShowUsernameAlert(false)} style={{ textAlign: "center" }}>Username Updated Successfully.</Alert>} 
-        </Container>
-        <Container className={appStyles.Content}>
-          <Form onSubmit={handleSubmit} className="my-2" >
-            <Form.Group>
-              <Form.Label htmlFor="ChangeUsername"><strong>Change username</strong></Form.Label>
-              <Form.Control style={{ width: '50%' }}
-                placeholder="username"
-                id = "ChangeUsername"
-                type="text"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-              />
-            </Form.Group>
-            {errors?.username?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
-                {message}
-              </Alert>
-            ))}
-            <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
-              type="submit"
-              onClick={editUsername}
-            >
-              save
-            </Button>
-          </Form>
-        </Container>
-
-        </>
+      </Container>
+      <Container className={appStyles.Content}>
+        <Form onSubmit={handleSubmit} className="my-2">
+          <Form.Group>
+            <Form.Label htmlFor="ChangeUsername"><strong>Change username</strong></Form.Label>
+            <Form.Control
+              style={{ width: '50%' }}
+              placeholder="username"
+              id="ChangeUsername"
+              type="text"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+          </Form.Group>
+          {errors?.username?.map((message, idx) => (
+            <Alert key={idx} variant="warning">
+              {message}
+            </Alert>
+          ))}
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            type="submit"
+            onClick={editUsername}
+          >
+            save
+          </Button>
+        </Form>
+      </Container>
+    </>
   );
 };
 

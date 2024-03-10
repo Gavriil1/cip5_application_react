@@ -7,15 +7,12 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
-import {
-  useCurrentUser,
-  useSetCurrentUser,
-} from "../../contexts/CurrentUserContext";
+import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-// Form allowes the user to change his avatar. This page is part of Pageprofile page.
+// Form allows the user to change his avatar. This page is part of Pageprofile page.
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -52,8 +49,6 @@ const ProfileEditForm = () => {
     handleMount();
   }, [currentUser, history, id]);
 
-
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -76,15 +71,14 @@ const ProfileEditForm = () => {
     }
   };
 
-    const [showIconAlert, setShowIconAlert] = useState(false);
-    const CreateIconlert = () => {
-      console.log("First Button clicked!");
-      setShowIconAlert(true); 
-      setTimeout(() => {
-        setShowIconAlert(false);
-      }, 3000);
-    };
-  
+  const [showIconAlert, setShowIconAlert] = useState(false);
+  const CreateIconAlert = () => {
+    console.log("First Button clicked!");
+    setShowIconAlert(true); 
+    setTimeout(() => {
+      setShowIconAlert(false);
+    }, 3000);
+  };
 
   const textFields = (
     <>
@@ -97,55 +91,50 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
-      <Button style={{ float: 'left' }} className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={CreateIconlert}>
+      <Button style={{ float: 'left' }} className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit" onClick={CreateIconAlert}>
         save
       </Button>
     </>
   );
 
-
-
   return (
     <>
-    <Container>
+      <Container>
         {showIconAlert && <Alert variant="success" dismissible onClose={() => setShowIconAlert(false)} style={{ textAlign: "center" }}>Profile Picture Updated Successfully.</Alert>} 
-    </Container>
-    <Form onSubmit={handleSubmit}>
-
+      </Container>
+      <Form onSubmit={handleSubmit}>
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
           <Container className={appStyles.Content}>
-            
             <Form.Group>
-            <div style={{ textAlign: 'left', paddingLeft: 0 }}>
-              <Form.Label htmlFor="image-upload" ><strong>Picture Upload</strong></Form.Label>
+              <div style={{ textAlign: 'left', paddingLeft: 0 }}>
+                <Form.Label htmlFor="image-upload" ><strong>Picture Upload</strong></Form.Label>
               </div>
               <div>
-              {image && (
-                <figure style={{ float: 'left' }}>
-                  <Image src={image} fluid alt="Profile"/>
-                </figure>
-              )}
-              {errors?.image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                  {message}
-                </Alert>
-              ))}
+                {image && (
+                  <figure style={{ float: 'left' }}>
+                    <Image src={image} fluid alt="Profile"/>
+                  </figure>
+                )}
+                {errors?.image?.map((message, idx) => (
+                  <Alert variant="warning" key={idx}>
+                    {message}
+                  </Alert>
+                ))}
               </div>
-             
               <div>
-              <Form.File
-                id="image-upload"
-                ref={imageFile}
-                accept="image/*"
-                onChange={(e) => {
-                  if (e.target.files.length) {
-                    setProfileData({
-                      ...profileData,
-                      image: URL.createObjectURL(e.target.files[0]),
-                    });
-                  }
-                }}
-              />
+                <Form.File
+                  id="image-upload"
+                  ref={imageFile}
+                  accept="image/*"
+                  onChange={(e) => {
+                    if (e.target.files.length) {
+                      setProfileData({
+                        ...profileData,
+                        image: URL.createObjectURL(e.target.files[0]),
+                      });
+                    }
+                  }}
+                />
               </div>
             </Form.Group>
           </Container>
@@ -153,8 +142,7 @@ const ProfileEditForm = () => {
         <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
-
-    </Form>
+      </Form>
     </>
   );
 };
